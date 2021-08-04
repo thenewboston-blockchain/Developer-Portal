@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  // font family
+  --font-family-default: Inter;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  // font weight
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+
+  // line height
+  --line-height-display1: 52.5px;
+  --line-height-display2: 45px;
+  --line-height-h1: 28.8px;
+  --line-height-h2: 24px;
+  --line-height-h3: 19px;
+  --line-height-h4: 17px;
+  --line-height-body1: 20px;
+  --line-height-body2: 20px;
+  --line-height-body3: 16px;
+  --line-height-body4: 16px;
+  --line-height-body5: 12px;
+
+  // font size
+  --font-size-display1: 42px;
+  --font-size-display2: 34px;
+  --font-size-h1: 24px;
+  --font-size-h2: 20px;
+  --font-size-h3: 16px;
+  --font-size-h4: 14px;
+  --font-size-body1: 14px;
+  --font-size-body2: 14px;
+  --font-size-body3: 12px;
+  --font-size-body4: 12px;
+  --font-size-body5: 10px;
+}

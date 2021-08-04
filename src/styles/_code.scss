@@ -1,0 +1,10 @@
+@import 'styles/font-mixins';
+
+pre {
+  @extend %body2;
+  margin: 0 0 24px 0;
+
+  code {
+    @extend %body2;
+  }
+}

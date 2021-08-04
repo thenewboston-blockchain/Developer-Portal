@@ -1,0 +1,29 @@
+.DocSubSection {
+  $self: &;
+
+  &__h2 {
+    font-size: var(--font-size-h2);
+    font-weight: 800;
+    margin: 36px 0 18px;
+
+    &::before {
+      content: ' ';
+      display: block;
+      height: 60px;
+      margin-top: -60px;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    &:hover {
+      #{$self}__HashLink {
+        display: inline;
+      }
+    }
+  }
+
+  &__HashLink {
+    display: none;
+    padding-left: 4px;
+  }
+}

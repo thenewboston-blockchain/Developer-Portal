@@ -1,0 +1,35 @@
+$opening-card-box-shadow: 0 15px 30px 15px rgba(85, 108, 214, 0.18);
+
+.OpeningsOpening {
+  $self: &;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(85, 108, 214, 0.18);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: block;
+  margin: 0 36px 12px;
+  padding: 18px;
+
+  &:hover {
+    box-shadow: $opening-card-box-shadow;
+  }
+
+  &__description {
+    margin-top: 12px;
+  }
+
+  &__position {
+    font-size: 18px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &__project {
+    color: var(--color-blue-gray-800);
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-regular);
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 24px 12px;
+  }
+}

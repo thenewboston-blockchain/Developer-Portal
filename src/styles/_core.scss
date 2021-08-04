@@ -1,0 +1,83 @@
+@import 'styles/z-index';
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline-color: var(--color-gray-100);
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @extend %body1;
+  background: var(--color-bg);
+  color: var(--color-primary);
+}
+
+#popover-root {
+  position: fixed;
+  top: 0;
+  z-index: $z-index-popover-root;
+}
+
+#slide-up-root {
+  bottom: 0;
+  position: fixed;
+  z-index: $z-index-slideup-root;
+}
+
+b,
+strong {
+  font-weight: 800;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--color-gray-4);
+}
+
+p {
+  margin: 20px 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding-inline-start: 32px;
+}

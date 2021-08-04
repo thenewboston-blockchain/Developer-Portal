@@ -1,0 +1,28 @@
+@import 'styles/z-index';
+
+$top-nav-height: 60px;
+$footer-height: 348px;
+
+.Layout {
+  $self: &;
+  position: relative;
+
+  &__content {
+    min-height: calc(100vh - #{$top-nav-height + $footer-height});
+  }
+
+  &__footer-wrapper {
+    background: var(--color-primary);
+    padding: 60px 60px 120px;
+
+    @media (max-width: 992px) {
+      padding: 60px 36px 120px;
+    }
+  }
+
+  &__top-nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: $z-index-layout;
+  }
+}

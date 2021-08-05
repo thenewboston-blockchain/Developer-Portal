@@ -27,11 +27,7 @@ const ScheduleAdjustment: FC = () => {
         <br />
         The decision of whether or not to skip a PV requires a consensus agreement by the CVs. CVs’ votes on whether or
         not to skip a PV are weighted equally, rather than being weighted by boost. For details about how this happens,
-        see{' '}
-        <Link to="/developer/whitepaper/architecture#architecture-consensus">
-          Consensus between Confirmation Validators
-        </Link>
-        .
+        see <Link to="/whitepaper/architecture#architecture-consensus">Consensus between Confirmation Validators</Link>.
       </p>
       <div className="PrincipalEvents__section-image-container">
         <img

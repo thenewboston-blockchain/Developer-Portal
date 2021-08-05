@@ -26,7 +26,7 @@ const DeveloperPortalCards: FC = () => {
           <Button
             className="DeveloperPortalCards__card-button"
             variant="outlined"
-            onClick={() => history.push('/developer/whitepaper')}
+            onClick={() => history.push('/whitepaper')}
           >
             Learn More
             <Icon icon={IconType.chevronRight} size={16} />

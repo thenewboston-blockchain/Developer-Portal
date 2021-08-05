@@ -12,13 +12,13 @@ const DocumentationSitemap: FC = () => {
         <div className="DocumentationSitemap__topics">
           <div className="DocumentationSitemap__topic-container">
             <div className="DocumentationSitemap__topic-header">Living Whitepaper</div>
-            <Link className="DocumentationSitemap__link" to="/developer/whitepaper/principal-entities">
+            <Link className="DocumentationSitemap__link" to="/whitepaper/principal-entities">
               Principal Entities on the Network
             </Link>
-            <Link className="DocumentationSitemap__link" to="/developer/whitepaper/principal-events">
+            <Link className="DocumentationSitemap__link" to="/whitepaper/principal-events">
               Principal Events and Processes on the Network
             </Link>
-            <Link className="DocumentationSitemap__link" to="/developer/whitepaper/architecture">
+            <Link className="DocumentationSitemap__link" to="/whitepaper/architecture">
               Architecture - Deep Dive
             </Link>
           </div>
@@ -44,7 +44,7 @@ const DocumentationSitemap: FC = () => {
           </div>
           <div className="DocumentationSitemap__topic-container">
             <div className="DocumentationSitemap__topic-header">Tools</div>
-            <Link className="DocumentationSitemap__link" to="/developer/api/bank-api">
+            <Link className="DocumentationSitemap__link" to="/api/bank-api">
               APIs
             </Link>
           </div>

@@ -39,7 +39,7 @@ const PrincipalEventsAndProcesses: FC = () => {
         <RatesAndAmount />
         <Divider className="PrincipalEvents__divider" />
         <div className="PrincipalEntities__bottom-bar">
-          <Navigation path="/developer/whitepaper/architecture" text="Architecture - Deep Dive" type="right" />
+          <Navigation path="/whitepaper/architecture" text="Architecture - Deep Dive" type="right" />
         </div>
       </div>
     </DeveloperPortalLayout>

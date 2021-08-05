@@ -14,7 +14,7 @@ import ApiDocsMenuItems, {primaryValidatorApiNavigationData} from '../ApiDocsMen
 import NodeApiConnectionRequests from '../NodeApi/NodeApiConnectionRequests';
 
 const defaultPageData: PageData = {
-  content: <Redirect to="/developer/api/primary-validator-api/accounts" />,
+  content: <Redirect to="/api/primary-validator-api/accounts" />,
   name: '',
 };
 

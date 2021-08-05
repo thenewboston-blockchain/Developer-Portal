@@ -577,7 +577,7 @@ const PrincipalEntities: FC = () => {
         <Divider className="PrincipalEntities__divider" />
         <div className="PrincipalEntities__bottom-bar">
           <Navigation
-            path="/developer/whitepaper/principal-events"
+            path="/whitepaper/principal-events"
             text="Principal Events and Processes on the Network"
             type="right"
           />

@@ -19,7 +19,7 @@ import NodeApiConnectionRequests from '../NodeApi/NodeApiConnectionRequests';
 import NodeApiCrawl from '../NodeApi/NodeApiCrawl';
 
 const defaultPageData: PageData = {
-  content: <Redirect to="/developer/api/confirmation-validator-api/accounts" />,
+  content: <Redirect to="/api/confirmation-validator-api/accounts" />,
   name: '',
 };
 

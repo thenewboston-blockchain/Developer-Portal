@@ -26,11 +26,7 @@ const ArchitectureDeepDive: FC = () => {
         <NetworkInitialization />
         <FAQ />
         <div className="ArchitectureDeepDive__navigation">
-          <Navigation
-            path="/developer/whitepaper/principal-entities"
-            text="Principal Entities on the Network"
-            type="right"
-          />
+          <Navigation path="/whitepaper/principal-entities" text="Principal Entities on the Network" type="right" />
         </div>
       </div>
     </DeveloperPortalLayout>

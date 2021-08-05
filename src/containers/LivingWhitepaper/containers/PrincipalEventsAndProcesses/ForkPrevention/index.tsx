@@ -19,8 +19,8 @@ const ForkPrevention: FC = () => {
         the unlikely event of a malicious PV attempting to fork the network by sending multiple versions of the same
         block to different CVs. To ensure that all CVs are building identical blockchains, after each block is received
         and before its validation, CVs must broadcast data that uniquely identifies each block (
-        <Link to="/developer/whitepaper/principal-entities#blocks-and-blockchain">hash value of the block</Link>) to all
-        other CVs.
+        <Link to="/whitepaper/principal-entities#blocks-and-blockchain">hash value of the block</Link>) to all other
+        CVs.
       </p>
       <p className="PrincipalEvents__section-paragraph PrincipalEvents__section-paragraph--mb-32">
         After confirming that the majority of CVs have received identical blocks, the{' '}

@@ -56,9 +56,9 @@ export enum PrincipalEventsId {
   Nodes = 'principal-events-nodes',
 }
 
-export const principalEntitiesPath = '/developer/whitepaper/principal-entities';
-export const principalEventsPath = '/developer/whitepaper/principal-events';
-export const architecturePath = '/developer/whitepaper/architecture';
+export const principalEntitiesPath = '/whitepaper/principal-entities';
+export const principalEventsPath = '/whitepaper/principal-events';
+export const architecturePath = '/whitepaper/architecture';
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
   architecture: [

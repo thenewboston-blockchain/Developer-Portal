@@ -34,7 +34,7 @@ const LivingWhitepaper: FC = () => {
           <div className="LivingWhitepaper__main-buttons">
             <Button
               className="LivingWhitepaper__button-explore"
-              onClick={() => history.push('/developer/whitepaper/principal-entities')}
+              onClick={() => history.push('/whitepaper/principal-entities')}
             >
               Explore Document
             </Button>
@@ -59,7 +59,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/developer/whitepaper/principal-entities')}
+          onClick={() => history.push('/whitepaper/principal-entities')}
           onFocus={() => {}}
           onMouseLeave={() => setIsPrincipalEntitiesTopicHovered(false)}
           onMouseOver={() => setIsPrincipalEntitiesTopicHovered(true)}
@@ -79,7 +79,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/developer/whitepaper/principal-events')}
+          onClick={() => history.push('/whitepaper/principal-events')}
           onFocus={() => {}}
           onMouseLeave={() => setIsPrincipalEventsTopicHovered(false)}
           onMouseOver={() => setIsPrincipalEventsTopicHovered(true)}
@@ -99,7 +99,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/developer/whitepaper/architecture')}
+          onClick={() => history.push('/whitepaper/architecture')}
           onFocus={() => {}}
           onMouseLeave={() => setIsArchitectureTopicHovered(false)}
           onMouseOver={() => setIsArchitectureTopicHovered(true)}

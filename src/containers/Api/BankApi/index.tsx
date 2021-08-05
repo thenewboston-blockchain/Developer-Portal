@@ -21,7 +21,7 @@ import NodeApiCrawl from '../NodeApi/NodeApiCrawl';
 import NodeApiClean from '../NodeApi/NodeApiClean';
 
 const defaultPageData: PageData = {
-  content: <Redirect to="/developer/api/bank-api/accounts" />,
+  content: <Redirect to="/api/bank-api/accounts" />,
   name: '',
 };
 

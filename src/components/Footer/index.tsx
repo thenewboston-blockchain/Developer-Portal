@@ -58,11 +58,11 @@ const navLists = [
     links: [
       {
         title: 'Developer',
-        url: '/developer',
+        url: '/',
       },
       {
         title: 'Living Whitepaper',
-        url: '/developer/whitepaper',
+        url: '/whitepaper',
       },
       {
         title: 'Projects',

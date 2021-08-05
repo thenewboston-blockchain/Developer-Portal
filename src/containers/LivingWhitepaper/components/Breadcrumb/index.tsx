@@ -75,7 +75,7 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
                 <>
                   <ReactRouterLink
                     className={clsx('Breadcrumb__link', isLastIndex && 'Breadcrumb__link--active')}
-                    to={`/developer/${pathname}`}
+                    to={`/${pathname}`}
                   >
                     {PATHNAME_TO_TITLE_MAPPING[pathname]}
                   </ReactRouterLink>

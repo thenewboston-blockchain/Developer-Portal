@@ -1,13 +1,9 @@
-import React, {useMemo, useState} from 'react';
-import {useSelector} from 'react-redux';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {IconType} from '@thenewboston/ui';
 
-import {Avatar, Button} from 'components';
-import {isCreateAccountAllowed, isSignInAllowed} from 'config';
-import TopNavLink from 'containers/TopNav/TopNavLink';
+import {Button} from 'components';
 import TopNavPopover, {TopNavPopoverItemType} from 'containers/TopNav/TopNavPopover';
-import {selectActiveUser} from 'selectors/state';
 
 import './TopNavDesktopItems.scss';
 
@@ -98,49 +94,10 @@ const aboutPopoverItems: TopNavPopoverItemType[] = [
 ];
 
 const TopNavDesktopItems = () => {
-  const activeUser = useSelector(selectActiveUser);
-  const [activeUserAnchorEl, setActiveUserAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [communityAnchorEl, setCommunityAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [getStartedAnchorEl, setGetStartedAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [resourcesAnchorEl, setResourcesAnchorEl] = useState<HTMLButtonElement | null>(null);
   const [aboutAnchorEl, setAboutAnchorEl] = useState<HTMLButtonElement | null>(null);
-
-  const activeUserPopoverItems = useMemo<TopNavPopoverItemType[]>(() => {
-    if (activeUser) {
-      return [
-        {title: 'Your Profile', to: `/users/${activeUser.pk}`},
-        {title: 'Sign Out', to: '/sign-out'},
-      ];
-    }
-    return [];
-  }, [activeUser]);
-
-  const renderActiveUser = () => {
-    if (!activeUser) return null;
-    const {profile_image: profileImage} = activeUser;
-    return (
-      <TopNavPopover
-        className="TopNavDesktopItems__profile-image"
-        anchorEl={activeUserAnchorEl}
-        customButtonContent={<Avatar src={profileImage} size={36} />}
-        items={activeUserPopoverItems}
-        popoverId="active-user-popover"
-        setAnchorEl={setActiveUserAnchorEl}
-      />
-    );
-  };
-
-  const renderAuthButtons = () => {
-    if (activeUser) return null;
-    return (
-      <>
-        {isCreateAccountAllowed && (
-          <TopNavLink className="TopNavDesktopItems__right-item" text="Create Account" to="/create-account" />
-        )}
-        {isSignInAllowed && <TopNavLink className="TopNavDesktopItems__right-item" text="Sign In" to="/sign-in" />}
-      </>
-    );
-  };
 
   return (
     <>
@@ -160,7 +117,7 @@ const TopNavDesktopItems = () => {
         popoverId="community-popover"
         setAnchorEl={setCommunityAnchorEl}
       />
-      <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to="/developer">
+      <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to="/">
         Developer
       </Link>
       <TopNavPopover
@@ -183,11 +140,9 @@ const TopNavDesktopItems = () => {
         FAQ
       </Link>
       <div className="TopNavDesktopItems__separator" />
-      {renderAuthButtons()}
       <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__download-button" tabIndex={-1} to="/download">
         <Button>Download Wallet</Button>
       </Link>
-      {renderActiveUser()}
     </>
   );
 };

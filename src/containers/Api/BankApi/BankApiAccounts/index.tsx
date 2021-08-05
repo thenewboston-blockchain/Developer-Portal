@@ -13,7 +13,7 @@ const BankApiAccounts: FC = () => {
       </p>
       <p>
         For more information, see{' '}
-        <NavLink to="/developer/whitepaper/principal-entities#principal-entities-account">Accounts</NavLink>.
+        <NavLink to="/whitepaper/principal-entities#principal-entities-account">Accounts</NavLink>.
       </p>
 
       <DocEndpoint endpoint="/accounts" method="GET" />

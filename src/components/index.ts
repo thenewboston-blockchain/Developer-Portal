@@ -17,7 +17,7 @@ import {
   DocSubSection,
 } from './DocWrapper';
 import Footer from './Footer';
-import {Button, ErrorMessage, Input} from './FormElements';
+import {Button} from './FormElements';
 import GoToTop from './GoToTop';
 import HashLink from './HashLink';
 import ProgressiveImage from './ProgressiveImage';
@@ -53,11 +53,9 @@ export {
   DocList,
   DocSubHeader,
   DocSubSection,
-  ErrorMessage,
   Footer,
   GoToTop,
   HashLink,
-  Input,
   Layout,
   Loader,
   MenuGroup,

@@ -32,24 +32,19 @@ const Breadcrumb: FC<Props> = ({approvedProjectUrls, breadcrumbHeight, className
 
   return (
     <div className={clsx('Breadcrumb', className)}>
+      {/* Developer */}
+      <BreadcrumbSection
+        isSectionSelected={pathnames.length === 0}
+        hasItems={false}
+        hasPrecedingArrowIcon={false}
+        key="developer"
+        title={PATHNAME_TO_TITLE_MAPPING.developer}
+        titleLink="/"
+      />
       {pathnames.map((pathname, index) => {
         const isLastIndex = index === pathnames.length - 1;
-        // developer
-        if (index === 0) {
-          return (
-            <BreadcrumbSection
-              isSectionSelected={isLastIndex}
-              hasItems={false}
-              hasPrecedingArrowIcon={false}
-              key={pathname}
-              title={PATHNAME_TO_TITLE_MAPPING[pathname]}
-              titleLink={`/${pathname}`}
-            />
-          );
-        }
-
         // projects
-        if (index === 1) {
+        if (index === 0) {
           return (
             <BreadcrumbSection
               isItemsInSamePage={false}
@@ -66,7 +61,7 @@ const Breadcrumb: FC<Props> = ({approvedProjectUrls, breadcrumbHeight, className
         }
 
         // rules or approved projects
-        if (index === 2) {
+        if (index === 1) {
           if (pathname === 'approved-projects') {
             return (
               <BreadcrumbSection

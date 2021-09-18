@@ -24,9 +24,6 @@ const DeveloperPortalHero: FC = () => {
   return (
     <div className="DeveloperPortalHero">
       <div className="DeveloperPortalHero__links-container">
-        <Link to="/" className="DeveloperPortalHero__link">
-          Developer
-        </Link>
         <Link to="/whitepaper" className="DeveloperPortalHero__link">
           Living Whitepaper
         </Link>

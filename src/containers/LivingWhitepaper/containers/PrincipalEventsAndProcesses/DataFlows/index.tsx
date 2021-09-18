@@ -83,7 +83,7 @@ const DataFlows: FC = () => {
         </div>
         <Note
           className="PrincipalEvents__section-note PrincipalEvents__section-note--mb-32"
-          text="Confirmations from CVs represent the confidence that the changes are irreversible. Similar to oter  blockchains, nodes must choose how many confirmations are acceptable for a use case. "
+          text="Confirmations from CVs represent the confidence that the changes are irreversible. Similar to other blockchains, nodes must choose how many confirmations are acceptable for a use case. "
           type={NoteType.Important}
         />
         <p className="PrincipalEvents__section-paragraph PrincipalEvents__section-text--bold">Example</p>

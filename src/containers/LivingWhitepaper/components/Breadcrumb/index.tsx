@@ -48,27 +48,24 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
 
   return (
     <div className={clsx('Breadcrumb', className)}>
+      {/* developer */}
+      {width > 992 ? (
+        <div className="Breadcrumb__link-container" key="developer">
+          <ReactRouterLink className="Breadcrumb__link" to="/">
+            {PATHNAME_TO_TITLE_MAPPING.developer}
+          </ReactRouterLink>
+          <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
+        </div>
+      ) : (
+        <ReactRouterLink className="Breadcrumb__link-container" key="developer" to="/">
+          <span className="Breadcrumb__link">{PATHNAME_TO_TITLE_MAPPING.developer}</span>
+          <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
+        </ReactRouterLink>
+      )}
       {pathnames.map((pathname, index) => {
-        // developer
-        if (index === 0) {
-          return width > 992 ? (
-            <div className="Breadcrumb__link-container" key={pathname}>
-              <ReactRouterLink className="Breadcrumb__link" to={`/${pathname}`}>
-                {PATHNAME_TO_TITLE_MAPPING[pathname]}
-              </ReactRouterLink>
-              <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
-            </div>
-          ) : (
-            <ReactRouterLink className="Breadcrumb__link-container" key={pathname} to={`/${pathname}`}>
-              <span className="Breadcrumb__link">{PATHNAME_TO_TITLE_MAPPING[pathname]}</span>
-              <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
-            </ReactRouterLink>
-          );
-        }
-
         // whitepaper
         const isLastIndex = index === pathnames.length - 1;
-        if (index === 1) {
+        if (index === 0) {
           return (
             <div className="Breadcrumb__link-container" key={pathname}>
               {width > 992 ? (

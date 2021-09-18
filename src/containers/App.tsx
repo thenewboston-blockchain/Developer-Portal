@@ -11,6 +11,9 @@ import LivingWhitepaper from './LivingWhitepaper';
 import PrimaryValidatorApi from './Api/PrimaryValidatorApi';
 import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
 import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/PrincipalEventsAndProcesses';
+import Projects from './Projects';
+import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
+import ApprovedProjects from './Projects/containers/ApprovedProjects';
 
 /**
  * Lazy load pages that may contribute a lot to the bundle size
@@ -54,6 +57,9 @@ const App: FC = () => {
           <Route exact path="/whitepaper/principal-entities/:chapter?" component={PrincipalEntities} />
           <Route exact path="/whitepaper/principal-events/:chapter?" component={PrincipalEventsAndProcesses} />
           <Route exact path="/whitepaper/architecture/:chapter?" component={ArchitectureDeepDive} />
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/projects/rules" component={ProjectRulesAndGuidelines} />
+          <Route exact path="/projects/approved-projects/:projectId?" component={ApprovedProjects} />
           <Route path="/api/bank-api/:chapter?" component={BankApi} />
           <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />

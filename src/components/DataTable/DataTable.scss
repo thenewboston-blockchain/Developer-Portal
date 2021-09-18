@@ -4,7 +4,7 @@
   &__table {
     box-shadow: 0 1px 13px rgba(0, 0, 0, 0.06);
     display: block;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
 
     &-tbody {

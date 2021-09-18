@@ -78,7 +78,7 @@ const Projects: FC = () => {
           >
             Propose a Project
           </Button>
-          <Button onClick={() => history.push('/developer/projects/rules')} variant="outlined">
+          <Button onClick={() => history.push('/projects/rules')} variant="outlined">
             Rules & Guidelines
           </Button>
         </div>

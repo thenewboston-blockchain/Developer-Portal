@@ -38,7 +38,7 @@ const DocumentationSitemap: FC = () => {
             <Link className="DocumentationSitemap__link" to="/projects">
               Approved Projects
             </Link>
-            <Link className="DocumentationSitemap__link" to="/project-rules/overview#how-proposals-work">
+            <Link className="DocumentationSitemap__link" to="/projects/rules">
               Rules and Guidelines
             </Link>
           </div>

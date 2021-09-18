@@ -3,11 +3,11 @@
 @import 'styles/z-index';
 
 .SideMenu {
-  max-height: calc(100vh - #{$top-nav-height} - #{$top-links-height} - #{$breadcrumbs-height});
+  max-height: calc(100vh - #{$top-nav-height} - #{$breadcrumbs-height});
   overflow-y: scroll;
   padding: 32px 32px 32px 0;
   position: sticky;
-  top: $top-nav-height + $top-links-height + $breadcrumbs-height;
+  top: $top-nav-height + $breadcrumbs-height;
   z-index: $z-index-dev-portal-sidemenu;
 
   @media (max-width: 1366px) {

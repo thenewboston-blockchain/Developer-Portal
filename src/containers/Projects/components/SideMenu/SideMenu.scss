@@ -4,11 +4,11 @@
 
 .SideMenu {
   box-sizing: content-box;
-  max-height: calc(100vh - #{$top-nav-height} - #{$top-links-height} - #{$breadcrumbs-height});
+  max-height: calc(100vh - #{$top-nav-height} - #{$breadcrumbs-height});
   overflow-y: auto;
   padding: 32px 32px 32px 0;
   position: sticky;
-  top: $top-nav-height + $top-links-height + $breadcrumbs-height;
+  top: $top-nav-height + $breadcrumbs-height;
   width: 256px;
   z-index: $z-index-dev-portal-sidemenu;
 

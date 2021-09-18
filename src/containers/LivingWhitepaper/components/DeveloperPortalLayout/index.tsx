@@ -5,7 +5,6 @@ import {NAVBAR_HEIGHT, TOP_LINKS_HEIGHT} from 'constants/offsets';
 import Measure from 'react-measure';
 import {scroller} from 'react-scroll';
 import {useLocation} from 'react-router';
-import TopLinks from '../TopLinks';
 import Breadcrumb from '../Breadcrumb';
 import SideMenu from '../SideMenu';
 
@@ -38,7 +37,6 @@ const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
   return (
     <>
       <PageTitle title={pageName} />
-      <TopLinks />
       <Measure bounds onResize={(contentRect) => setBreadcrumbHeight(contentRect?.bounds?.height || 0)}>
         {({measureRef}) => (
           <div className="DeveloperPortalLayout__breadcrumb" ref={measureRef}>

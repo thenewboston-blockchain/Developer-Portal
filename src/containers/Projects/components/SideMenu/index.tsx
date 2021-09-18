@@ -45,7 +45,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             }
           }}
         >
-          <div>APPROVED PROJECTS</div>
+          <div>Approved Projects</div>
           <Icon
             className="SideMenu__toggle-icon"
             icon={isApprovedProjectsSelected && shouldOpenApprovedProjects ? IconType.chevronUp : IconType.chevronDown}
@@ -81,7 +81,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             }
           }}
         >
-          <div>RULES & GUIDELINES</div>
+          <div>Rules &amp; Guidelines</div>
           <Icon
             className="SideMenu__toggle-icon"
             icon={isProjectRulesSelected && shouldOpenProjectRules ? IconType.chevronUp : IconType.chevronDown}
@@ -115,7 +115,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
           className="SideMenu__section-header"
           href="https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT"
         >
-          PROPOSE A PROJECT
+          Propose a Project
         </A>
       </div>
     </div>

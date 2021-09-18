@@ -18,7 +18,7 @@
 
   &__breadcrumb {
     position: sticky;
-    top: $top-nav-height + $top-links-height;
+    top: $top-nav-height;
     z-index: $z-index-dev-portal-breadcrumb;
   }
 }

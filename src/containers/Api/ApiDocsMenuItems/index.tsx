@@ -148,15 +148,15 @@ const DocsMenuItems: FC = () => {
 
   return (
     <>
-      <MenuGroup title="Bank API" urlBase="developer/api/bank-api">
+      <MenuGroup title="Bank API" urlBase="api/bank-api">
         {renderNavLinks(bankApiNavigationData)}
       </MenuGroup>
 
-      <MenuGroup title="Primary Validator API" urlBase="developer/api/primary-validator-api">
+      <MenuGroup title="Primary Validator API" urlBase="api/primary-validator-api">
         {renderNavLinks(primaryValidatorApiNavigationData)}
       </MenuGroup>
 
-      <MenuGroup title="Confirmation Validator API" urlBase="developer/api/confirmation-validator-api">
+      <MenuGroup title="Confirmation Validator API" urlBase="api/confirmation-validator-api">
         {renderNavLinks(confirmationValidatorApiNavigationData)}
       </MenuGroup>
     </>

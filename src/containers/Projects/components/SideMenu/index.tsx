@@ -59,11 +59,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             approvedProjectUrls &&
             approvedProjectUrls.map((selection) => {
               return (
-                <ReactRouterLink
-                  className={clsx('SideMenu__link', 'SideMenu__approved-projects-link')}
-                  to={selection.url}
-                  key={selection.url}
-                >
+                <ReactRouterLink className={clsx('SideMenu__link')} to={selection.url} key={selection.url}>
                   {selection.title}
                 </ReactRouterLink>
               );

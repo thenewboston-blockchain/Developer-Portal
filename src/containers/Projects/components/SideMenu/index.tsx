@@ -6,7 +6,7 @@ import {Link as ReactRouterLink} from 'react-router-dom';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {A} from 'components';
-import {NAVBAR_HEIGHT, TOP_LINKS_HEIGHT} from 'constants/offsets';
+import {NAVBAR_HEIGHT} from 'constants/offsets';
 
 import {PATHNAME_TO_DROPDOWN_SELECTIONS, approvedProjectsPath, projectRulesPath} from '../../constants';
 
@@ -58,8 +58,13 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             shouldOpenApprovedProjects &&
             approvedProjectUrls &&
             approvedProjectUrls.map((selection) => {
+              const isActive = pathname === selection.url;
               return (
-                <ReactRouterLink className={clsx('SideMenu__link')} to={selection.url} key={selection.url}>
+                <ReactRouterLink
+                  className={clsx('SideMenu__link', {'SideMenu__link--active': isActive})}
+                  to={selection.url}
+                  key={selection.url}
+                >
                   {selection.title}
                 </ReactRouterLink>
               );
@@ -96,7 +101,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
                 hashSpy
                 ignoreCancelEvents
                 key={selection.url}
-                offset={-(NAVBAR_HEIGHT + TOP_LINKS_HEIGHT + breadcrumbHeight)}
+                offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
                 smooth
                 spy
                 to={selectionHash}

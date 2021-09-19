@@ -58,8 +58,13 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             shouldOpenApprovedProjects &&
             approvedProjectUrls &&
             approvedProjectUrls.map((selection) => {
+              const isActive = pathname === selection.url;
               return (
-                <ReactRouterLink className={clsx('SideMenu__link')} to={selection.url} key={selection.url}>
+                <ReactRouterLink
+                  className={clsx('SideMenu__link', {'SideMenu__link--active': isActive})}
+                  to={selection.url}
+                  key={selection.url}
+                >
                   {selection.title}
                 </ReactRouterLink>
               );

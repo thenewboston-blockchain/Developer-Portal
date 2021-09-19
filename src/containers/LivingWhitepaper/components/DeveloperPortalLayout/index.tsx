@@ -1,11 +1,10 @@
 import React, {FC, ReactNode, useEffect, useState} from 'react';
 
 import {Container, Divider, PageTitle} from 'components';
-import {NAVBAR_HEIGHT, TOP_LINKS_HEIGHT} from 'constants/offsets';
+import {NAVBAR_HEIGHT} from 'constants/offsets';
 import Measure from 'react-measure';
 import {scroller} from 'react-scroll';
 import {useLocation} from 'react-router';
-import TopLinks from '../TopLinks';
 import Breadcrumb from '../Breadcrumb';
 import SideMenu from '../SideMenu';
 
@@ -21,7 +20,7 @@ const TIMEOUT_DELAY = 200;
 const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
   const [breadcrumbHeight, setBreadcrumbHeight] = useState(56);
   const {hash} = useLocation();
-  const TOTAL_OFFSET = NAVBAR_HEIGHT + TOP_LINKS_HEIGHT + breadcrumbHeight;
+  const TOTAL_OFFSET = NAVBAR_HEIGHT + breadcrumbHeight;
 
   useEffect(() => {
     // hack: scroll to the correct position based on hash when page reloads
@@ -38,7 +37,6 @@ const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
   return (
     <>
       <PageTitle title={pageName} />
-      <TopLinks />
       <Measure bounds onResize={(contentRect) => setBreadcrumbHeight(contentRect?.bounds?.height || 0)}>
         {({measureRef}) => (
           <div className="DeveloperPortalLayout__breadcrumb" ref={measureRef}>

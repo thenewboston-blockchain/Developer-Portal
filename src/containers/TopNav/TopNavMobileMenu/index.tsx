@@ -1,9 +1,9 @@
 import React, {FC, ReactNode, useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
-import {A, Button} from 'components';
+import {A} from 'components';
 import './TopNavMobileMenu.scss';
 
 interface ComponentProps {
@@ -13,10 +13,9 @@ interface ComponentProps {
   toggleMenu(): void;
 }
 
-type SectionStrings = 'community' | 'getStarted' | 'resources' | 'about' | 'faq' | 'developer';
+type SectionStrings = 'whitepaper' | 'projects' | 'developer';
 
 const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice, toggleMenu}) => {
-  const history = useHistory();
   const [openSection, setOpenSection] = useState<SectionStrings | null>(null);
 
   const handleColumnTitleClick = (section: SectionStrings) => (): void => {
@@ -50,49 +49,26 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice,
       <>
         <div className="TopNavMobileMenu__dropdown-container">
           <div className="TopNavMobileMenu__links-container">
+            {renderColumn('developer', 'Developer', <>{renderMobileLink('Home', '/')}</>)}
             {renderColumn(
-              'getStarted',
-              'Get Started',
+              'whitepaper',
+              'Living Whitepaper',
               <>
-                {renderMobileLink('Tasks', '/tasks')}
-                {renderMobileLink('Projects', '/projects/overview')}
+                {renderMobileLink('Home', '/whitepaper')}
+                {renderMobileLink('Principal Entities on the Network', '/whitepaper/principal-entities')}
+                {renderMobileLink('Principal Events and Processes on the Network', '/whitepaper/principal-events')}
+                {renderMobileLink('Architecture Deep Dive', '/whitepaper/architecture')}
               </>,
             )}
             {renderColumn(
-              'community',
-              'Community',
+              'projects',
+              'Projects',
               <>
-                {renderMobileLink('Join the Community!', '/social')}
-                {renderMobileLink('Weekly Progress', '/progress')}
-                {renderMobileLink('Openings', '/openings')}
-                {renderMobileLink('Community Guidelines', '/guidelines')}
-                {renderMobileLink('Blog', 'https://blog.thenewboston.com', true)}
+                {renderMobileLink('Home', '/projects')}
+                {renderMobileLink('Approved Projects', '/projects/approved-projects')}
+                {renderMobileLink('Projects Rules and Guidelines', '/projects/rules')}
               </>,
             )}
-            {renderColumn('developer', 'Developer', <>{renderMobileLink('Developer', '/')}</>)}
-            {renderColumn(
-              'resources',
-              'Resources',
-              <>
-                {renderMobileLink('Documentation', '/wallet')}
-                {renderMobileLink('Tutorials', '/tutorials')}
-                {renderMobileLink('Media Kit', '/assets')}
-              </>,
-            )}
-            {renderColumn(
-              'about',
-              'About',
-              <>
-                {renderMobileLink('Teams', '/teams')}
-                {renderMobileLink('Donate', '/donate')}
-              </>,
-            )}
-            {renderColumn('faq', 'FAQ', <>{renderMobileLink('FAQ', '/faq')}</>)}
-          </div>
-          <div className="TopNavMobileMenu__download-container">
-            <Button className="TopNavMobileMenu__download-button" onClick={() => history.push('/download')}>
-              Download Wallet
-            </Button>
           </div>
         </div>
         <div className="TopNavMobileMenu__overlay" onClick={closeMenu} role="button" tabIndex={0} />

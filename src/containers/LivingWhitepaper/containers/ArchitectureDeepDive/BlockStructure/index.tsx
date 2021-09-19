@@ -28,7 +28,7 @@ const BlockStructure = () => {
         <Divider className="ArchitectureDeepDive__point-divider" />
         <div className="ArchitectureDeepDive__emphasized-text">Updates</div>
         <p className="ArchitectureDeepDive__description">Resulting changes to one or more objects</p>
-        <DocImage alt="Block Structure" maxWidth={479} src={BlockStructureImage} />
+        <DocImage alt="Block Structure" maxWidth={580} src={BlockStructureImage} />
       </section>
 
       <section id={ArchitectureDeepDiveId.SignedChangeRequest}>

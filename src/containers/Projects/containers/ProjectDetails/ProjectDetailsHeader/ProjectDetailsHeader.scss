@@ -9,7 +9,7 @@
   flex-direction: row;
   height: $details-header-height;
   position: sticky;
-  top: $top-nav-height + $top-links-height + $breadcrumbs-height;
+  top: $top-nav-height + $breadcrumbs-height;
   z-index: $z-index-project-header;
 
   @media (max-width: 768px) {

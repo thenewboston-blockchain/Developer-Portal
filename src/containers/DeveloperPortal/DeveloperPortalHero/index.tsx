@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 
 import {ProgressiveImage} from 'components';
 import {useWindowDimensions} from 'hooks';
-import {Link} from 'react-router-dom';
 import Particles from '../Particles';
 import developerPortalImage from './Portal.webp';
 import developerPortalPlaceholderImage from './PortalPlaceholder.webp';
@@ -23,14 +22,6 @@ const DeveloperPortalHero: FC = () => {
 
   return (
     <div className="DeveloperPortalHero">
-      <div className="DeveloperPortalHero__links-container">
-        <Link to="/whitepaper" className="DeveloperPortalHero__link">
-          Living Whitepaper
-        </Link>
-        <Link to="/projects" className="DeveloperPortalHero__link">
-          Projects
-        </Link>
-      </div>
       <Particles />
       <ProgressiveImage
         alt="Developer Portal"

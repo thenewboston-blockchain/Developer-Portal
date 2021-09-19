@@ -4,7 +4,7 @@ import {useLocation} from 'react-router';
 import {scroller} from 'react-scroll';
 
 import {Container, Divider, PageTitle} from 'components';
-import {NAVBAR_HEIGHT, TOP_LINKS_HEIGHT} from 'constants/offsets';
+import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {useWindowDimensions} from 'hooks';
 
 import Breadcrumb from '../Breadcrumb';
@@ -33,7 +33,7 @@ const DeveloperPortalLayout: FC<Props> = ({approvedProjectUrls, children, pageNa
   const {width} = useWindowDimensions();
 
   const TOTAL_OFFSET = useMemo(() => {
-    const baseOffset = NAVBAR_HEIGHT + TOP_LINKS_HEIGHT + breadcrumbHeight + SECTION_PADDING;
+    const baseOffset = NAVBAR_HEIGHT + breadcrumbHeight + SECTION_PADDING;
     if (width < 786) {
       return baseOffset;
     }

@@ -7,6 +7,7 @@ import withSuspense from 'hoc/withSuspense';
 import ArchitectureDeepDive from './LivingWhitepaper/containers/ArchitectureDeepDive';
 import BankApi from './Api/BankApi';
 import ConfirmationValidatorApi from './Api/ConfirmationValidatorApi';
+import Guidelines from './Guidelines';
 import LivingWhitepaper from './LivingWhitepaper';
 import PrimaryValidatorApi from './Api/PrimaryValidatorApi';
 import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
@@ -63,6 +64,7 @@ const App: FC = () => {
           <Route path="/api/bank-api/:chapter?" component={BankApi} />
           <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
+          <Route path="/guidelines" component={Guidelines} />
           <Redirect to="/" />
         </Switch>
       </Layout>

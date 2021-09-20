@@ -16,6 +16,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import Projects from './Projects';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
+import SdkAndLibraries from './SdkAndLibraries';
 import TermsOfUse from './TermsOfUse';
 
 /**
@@ -67,6 +68,7 @@ const App: FC = () => {
           <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
           <Redirect path="/api" to="/api/bank-api" />
+          <Route exact path="/sdks-and-libraries" component={SdkAndLibraries} />
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/terms-of-use" component={TermsOfUse} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />

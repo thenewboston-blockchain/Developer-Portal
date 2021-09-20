@@ -59,7 +59,7 @@ const navLists = [
       },
       {
         title: 'SDKs & Libraries',
-        url: '/sdk-and-libraries',
+        url: '/sdks-and-libraries',
       },
     ],
   },

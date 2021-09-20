@@ -55,7 +55,7 @@ const navLists = [
     links: [
       {
         title: 'APIs',
-        url: '/api/bank-api/accounts',
+        url: '/api',
       },
       {
         title: 'SDKs & Libraries',

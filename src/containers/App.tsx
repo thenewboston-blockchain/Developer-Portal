@@ -66,6 +66,7 @@ const App: FC = () => {
           <Route path="/api/bank-api/:chapter?" component={BankApi} />
           <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
+          <Redirect path="/api" to="/api/bank-api" />
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/terms-of-use" component={TermsOfUse} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />

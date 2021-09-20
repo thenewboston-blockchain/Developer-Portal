@@ -1,7 +1,7 @@
 export const getFirstPathParam = (path: string): string => path.split('/').filter((pathParam) => !!pathParam)[0];
 
-export const getFirstThreePathParams = (path: string): string =>
+export const getFirstTwoPathParams = (path: string): string =>
   path
     .split('/')
-    .filter((pathParam, index) => !!pathParam && index <= 3)
+    .filter((pathParam, index) => !!pathParam && index <= 2)
     .join('/');

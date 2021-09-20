@@ -1,4 +1,5 @@
 import A from './A';
+import Avatar from './Avatar';
 import BreadcrumbMenu from './BreadcrumbMenu';
 import {CodeSnippet, RequestResponseSnippet, SnippetLang} from './CodeSnippet';
 import Container from './Container';
@@ -21,6 +22,7 @@ import {Button} from './FormElements';
 import GoToTop from './GoToTop';
 import HashLink from './HashLink';
 import ProgressiveImage from './ProgressiveImage';
+import Label from './Label';
 import Layout from './Layout';
 import MenuGroup from './MenuGroup';
 import Navigation from './Navigation';
@@ -37,6 +39,7 @@ import {TableBorderGrid, TableParams, TableVertical} from './Table';
 
 export {
   A,
+  Avatar,
   BreadcrumbMenu,
   Button,
   CalloutType,
@@ -56,6 +59,7 @@ export {
   Footer,
   GoToTop,
   HashLink,
+  Label,
   Layout,
   Loader,
   MenuGroup,

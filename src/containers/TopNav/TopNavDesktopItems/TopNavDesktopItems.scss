@@ -15,6 +15,10 @@
 
   &__right-item {
     margin-left: 42px;
+
+    &:last-of-type {
+      margin-right: 24px;
+    }
   }
 
   &__link {

@@ -15,6 +15,7 @@ import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/Principal
 import Projects from './Projects';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
+import TermsOfUse from './TermsOfUse';
 
 /**
  * Lazy load pages that may contribute a lot to the bundle size
@@ -65,6 +66,7 @@ const App: FC = () => {
           <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
           <Route path="/guidelines" component={Guidelines} />
+          <Route path="/terms-of-use" component={TermsOfUse} />
           <Redirect to="/" />
         </Switch>
       </Layout>

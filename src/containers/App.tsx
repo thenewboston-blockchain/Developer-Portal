@@ -12,6 +12,7 @@ import LivingWhitepaper from './LivingWhitepaper';
 import PrimaryValidatorApi from './Api/PrimaryValidatorApi';
 import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
 import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/PrincipalEventsAndProcesses';
+import PrivacyPolicy from './PrivacyPolicy';
 import Projects from './Projects';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
@@ -67,6 +68,7 @@ const App: FC = () => {
           <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
           <Route path="/guidelines" component={Guidelines} />
           <Route path="/terms-of-use" component={TermsOfUse} />
+          <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Redirect to="/" />
         </Switch>
       </Layout>

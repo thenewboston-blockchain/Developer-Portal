@@ -7,6 +7,7 @@ import {Icon, IconType} from '@thenewboston/ui';
 
 import {A} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
+import {DURATION} from 'constants/scroll';
 
 import {PATHNAME_TO_DROPDOWN_SELECTIONS, approvedProjectsPath, projectRulesPath} from '../../constants';
 
@@ -98,6 +99,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
               <Link
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
+                duration={DURATION}
                 hashSpy
                 ignoreCancelEvents
                 key={selection.url}

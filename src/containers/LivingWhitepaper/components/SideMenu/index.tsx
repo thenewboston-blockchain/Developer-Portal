@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
-
-import {Icon, IconType} from '@thenewboston/ui';
-import clsx from 'clsx';
-import {NAVBAR_HEIGHT} from 'constants/offsets';
-import {Link} from 'react-scroll';
 import {useLocation, useHistory} from 'react-router';
+import {Link} from 'react-scroll';
+import clsx from 'clsx';
+import {Icon, IconType} from '@thenewboston/ui';
+
+import {NAVBAR_HEIGHT} from 'constants/offsets';
+import {DURATION} from 'constants/scroll';
 import {
   PATHNAME_TO_DROPDOWN_SELECTIONS,
   architecturePath,
@@ -51,6 +52,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
               <Link
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
+                duration={DURATION}
                 hashSpy
                 ignoreCancelEvents
                 key={selection.url}
@@ -85,6 +87,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
               <Link
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
+                duration={DURATION}
                 hashSpy
                 ignoreCancelEvents
                 key={selection.url}
@@ -119,6 +122,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
               <Link
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
+                duration={DURATION}
                 hashSpy
                 ignoreCancelEvents
                 key={selection.url}

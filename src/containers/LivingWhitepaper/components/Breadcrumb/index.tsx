@@ -1,12 +1,13 @@
 import React, {FC, useState} from 'react';
-import clsx from 'clsx';
-
-import {Icon, IconType} from '@thenewboston/ui';
-import {Popover} from 'components';
-import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {useLocation} from 'react-router';
 import {Link as ReactRouterLink} from 'react-router-dom';
 import {Link} from 'react-scroll';
+import clsx from 'clsx';
+import {Icon, IconType} from '@thenewboston/ui';
+
+import {DURATION} from 'constants/scroll';
+import {NAVBAR_HEIGHT} from 'constants/offsets';
+import {Popover} from 'components';
 import {useWindowDimensions} from 'hooks';
 import {PATHNAME_TO_TITLE_MAPPING, PATHNAME_TO_DROPDOWN_SELECTIONS} from '../../constants';
 
@@ -149,6 +150,7 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
                       <Link
                         activeClass="SideMenu__link--active"
                         className="Breadcrumb__Popover-link"
+                        duration={DURATION}
                         hashSpy
                         ignoreCancelEvents
                         key={selection.url}

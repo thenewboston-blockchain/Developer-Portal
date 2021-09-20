@@ -1,11 +1,12 @@
 import React, {FC, useState} from 'react';
-
-import clsx from 'clsx';
-import {Icon, IconType} from '@thenewboston/ui';
-import {Popover} from 'components';
-import {useWindowDimensions} from 'hooks';
 import {Link as ReactRouterLink} from 'react-router-dom';
 import {Link} from 'react-scroll';
+import clsx from 'clsx';
+import {Icon, IconType} from '@thenewboston/ui';
+
+import {DURATION} from 'constants/scroll';
+import {Popover} from 'components';
+import {useWindowDimensions} from 'hooks';
 
 import './BreadcrumbSection.scss';
 
@@ -99,6 +100,7 @@ const BreadcrumbSection: FC<Props> = ({
                     <Link
                       activeClass="BreadcrumbSection__link--active"
                       className="BreadcrumbSection__Popover-link"
+                      duration={DURATION}
                       hashSpy
                       ignoreCancelEvents
                       key={item.url}

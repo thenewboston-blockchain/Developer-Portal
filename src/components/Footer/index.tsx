@@ -15,88 +15,60 @@ interface ComponentProps {
 
 const navLists = [
   {
-    header: 'Get Started',
+    header: 'Living Whitepaper',
     links: [
       {
-        title: 'Tasks',
-        url: '/tasks',
+        title: 'Principal Entities on the Network',
+        url: '/whitepaper/principal-entities',
       },
       {
-        title: 'Projects',
-        url: '/projects/overview',
+        title: 'Principal Events and Processes on the Network',
+        url: '/whitepaper/principal-events',
+      },
+      {
+        title: 'Architecture - Deep Dive',
+        url: '/whitepaper/architecture',
       },
     ],
   },
   {
-    header: 'Community',
+    header: 'Projects',
     links: [
       {
-        title: 'Join the Community!',
-        url: '/social',
+        isExternal: true,
+        title: 'Propose Project',
+        url:
+          'https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT',
       },
       {
-        title: 'Weekly Progress',
-        url: '/progress',
+        title: 'Approved Projects',
+        url: '/projects/approved-projects',
       },
       {
-        title: 'Openings',
-        url: '/openings',
+        title: 'Rules & Guidelines',
+        url: '/projects/rules',
       },
+    ],
+  },
+  {
+    header: 'Tools',
+    links: [
+      {
+        title: 'APIs',
+        url: '/api',
+      },
+      {
+        title: 'SDKs & Libraries',
+        url: '/sdks-and-libraries',
+      },
+    ],
+  },
+  {
+    header: 'Legal',
+    links: [
       {
         title: 'Community Guidelines',
         url: '/guidelines',
-      },
-      {
-        isExternal: true,
-        title: 'Blog',
-        url: 'https://blog.thenewboston.com',
-      },
-    ],
-  },
-  {
-    header: 'Developer',
-    links: [
-      {
-        title: 'Developer',
-        url: '/',
-      },
-      {
-        title: 'Living Whitepaper',
-        url: '/whitepaper',
-      },
-      {
-        title: 'Projects',
-        url: '/projects',
-      },
-    ],
-  },
-  {
-    header: 'Resources',
-    links: [
-      {
-        title: 'Documentation',
-        url: '/wallet',
-      },
-      {
-        title: 'Tutorials',
-        url: '/tutorials',
-      },
-      {
-        title: 'Media Kit',
-        url: '/assets',
-      },
-    ],
-  },
-  {
-    header: 'About',
-    links: [
-      {
-        title: 'Team',
-        url: '/teams',
-      },
-      {
-        title: 'Donate',
-        url: '/donate',
       },
       {
         title: 'Terms of Use',
@@ -105,15 +77,6 @@ const navLists = [
       {
         title: 'Privacy Policy',
         url: '/privacy-policy',
-      },
-    ],
-  },
-  {
-    header: 'FAQ',
-    links: [
-      {
-        title: 'FAQ',
-        url: '/faq',
       },
     ],
   },

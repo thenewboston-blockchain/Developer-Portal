@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@thenewboston/ui": "^0.1.11",
+    "@thenewboston/ui": "^0.1.16",
     "@thenewboston/utils": "^1.0.0",
     "axios": "^0.21.4",
     "clsx": "^1.1.1",

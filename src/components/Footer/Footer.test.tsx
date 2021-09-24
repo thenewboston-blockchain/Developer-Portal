@@ -50,9 +50,9 @@ describe('Footer component', () => {
   test('renders FooterNavLists', () => {
     render(<WrappedComponent />);
 
-    expect(screen.getByText('Get Started')).toBeTruthy();
-    expect(screen.getByText('Community')).toBeTruthy();
-    expect(screen.getByText('Resources')).toBeTruthy();
-    expect(screen.getByText('About')).toBeTruthy();
+    expect(screen.getByText('Living Whitepaper')).toBeTruthy();
+    expect(screen.getByText('Projects')).toBeTruthy();
+    expect(screen.getByText('Tools')).toBeTruthy();
+    expect(screen.getByText('Legal')).toBeTruthy();
   });
 });

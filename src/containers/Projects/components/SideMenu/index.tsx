@@ -1,13 +1,11 @@
 import React, {FC, useState} from 'react';
 import clsx from 'clsx';
-import {Link} from 'react-scroll';
 import {useLocation, useHistory} from 'react-router';
 import {Link as ReactRouterLink} from 'react-router-dom';
 import {Icon, IconType} from '@thenewboston/ui';
 
-import {A} from 'components';
+import {A, ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
-import {DURATION} from 'constants/scroll';
 
 import {PATHNAME_TO_DROPDOWN_SELECTIONS, approvedProjectsPath, projectRulesPath} from '../../constants';
 
@@ -96,20 +94,15 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
           PATHNAME_TO_DROPDOWN_SELECTIONS.rules.map((selection) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
-              <Link
+              <ReactScrollLink
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
-                duration={DURATION}
-                hashSpy
-                ignoreCancelEvents
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
-                smooth
-                spy
                 to={selectionHash}
               >
                 {selection.title}
-              </Link>
+              </ReactScrollLink>
             );
           })}
       </div>

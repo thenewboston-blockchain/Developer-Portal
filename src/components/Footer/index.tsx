@@ -1,9 +1,10 @@
 import React, {FC, memo, useCallback} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 
 import Logo from 'assets/svgs/thenewboston-white.svg';
 import {Button, SocialMediaIcon} from 'components';
+import {ROUTES, URLS} from 'constants/routes';
 import {SocialMedia} from 'types/social-media';
 
 import FooterNavList from './FooterNavList';
@@ -19,15 +20,15 @@ const navLists = [
     links: [
       {
         title: 'Principal Entities on the Network',
-        url: '/whitepaper/principal-entities',
+        url: ROUTES.whitepaper.principalEntities,
       },
       {
         title: 'Principal Events and Processes on the Network',
-        url: '/whitepaper/principal-events',
+        url: ROUTES.whitepaper.principalEvents,
       },
       {
         title: 'Architecture - Deep Dive',
-        url: '/whitepaper/architecture',
+        url: ROUTES.whitepaper.architecture,
       },
     ],
   },
@@ -37,16 +38,15 @@ const navLists = [
       {
         isExternal: true,
         title: 'Propose Project',
-        url:
-          'https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT',
+        url: URLS.github.proposeProjects,
       },
       {
         title: 'Approved Projects',
-        url: '/projects/approved-projects',
+        url: ROUTES.projects.approvedProjects,
       },
       {
         title: 'Rules & Guidelines',
-        url: '/projects/rules',
+        url: ROUTES.projects.rules,
       },
     ],
   },
@@ -55,11 +55,11 @@ const navLists = [
     links: [
       {
         title: 'APIs',
-        url: '/api',
+        url: ROUTES.tools.apis,
       },
       {
         title: 'SDKs & Libraries',
-        url: '/sdks-and-libraries',
+        url: ROUTES.tools.sdks,
       },
     ],
   },
@@ -68,23 +68,21 @@ const navLists = [
     links: [
       {
         title: 'Community Guidelines',
-        url: '/guidelines',
+        url: ROUTES.legal.guidelines,
       },
       {
         title: 'Terms of Use',
-        url: '/terms-of-use',
+        url: ROUTES.legal.termsOfUse,
       },
       {
         title: 'Privacy Policy',
-        url: '/privacy-policy',
+        url: ROUTES.legal.privacyPolicy,
       },
     ],
   },
 ];
 
 const Footer: FC<ComponentProps> = ({className}) => {
-  const history = useHistory();
-
   const renderSocialMediaLinks = useCallback(
     () =>
       [
@@ -124,7 +122,13 @@ const Footer: FC<ComponentProps> = ({className}) => {
           </Link>
           <div className="Footer__social-media-links">{renderSocialMediaLinks()}</div>
         </div>
-        <Button className="Footer__download-button" onClick={() => history.push('/download')} variant="outlined">
+        <Button
+          className="Footer__download-button"
+          onClick={() => {
+            window.location.href = URLS.website.download;
+          }}
+          variant="outlined"
+        >
           Download Wallet
         </Button>
       </div>

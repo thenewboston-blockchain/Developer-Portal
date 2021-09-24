@@ -2,138 +2,139 @@ import React, {FC} from 'react';
 import {NavLink} from 'react-router-dom';
 
 import {MenuGroup} from 'components';
+import {ROUTES} from 'constants/routes';
 import {NavigationItem} from 'types/navigation';
 
 export const bankApiNavigationData = [
   {
     name: 'Accounts',
-    url: '/api/bank-api/accounts',
+    url: `${ROUTES.tools.apis}/bank-api/accounts`,
   },
   {
     name: 'Bank Transactions',
-    url: '/api/bank-api/bank-transactions',
+    url: `${ROUTES.tools.apis}/bank-api/bank-transactions`,
   },
   {
     name: 'Banks',
-    url: '/api/bank-api/banks',
+    url: `${ROUTES.tools.apis}/bank-api/banks`,
   },
   {
     name: 'Blocks',
-    url: '/api/bank-api/blocks',
+    url: `${ROUTES.tools.apis}/bank-api/blocks`,
   },
   {
     name: 'Clean',
-    url: '/api/bank-api/clean',
+    url: `${ROUTES.tools.apis}/bank-api/clean`,
   },
   {
     name: 'Config',
-    url: '/api/bank-api/config',
+    url: `${ROUTES.tools.apis}/bank-api/config`,
   },
   {
     name: 'Confirmation Blocks',
-    url: '/api/bank-api/confirmation-blocks',
+    url: `${ROUTES.tools.apis}/bank-api/confirmation-blocks`,
   },
   {
     name: 'Crawl',
-    url: '/api/bank-api/crawl',
+    url: `${ROUTES.tools.apis}/bank-api/crawl`,
   },
   {
     name: 'Invalid Blocks',
-    url: '/api/bank-api/invalid-blocks',
+    url: `${ROUTES.tools.apis}/bank-api/invalid-blocks`,
   },
   {
     name: 'Connection Requests',
-    url: '/api/bank-api/connection-requests',
+    url: `${ROUTES.tools.apis}/bank-api/connection-requests`,
   },
   {
     name: 'Confirmation Services',
-    url: '/api/bank-api/validator-confirmation-services',
+    url: `${ROUTES.tools.apis}/bank-api/validator-confirmation-services`,
   },
   {
     name: 'Upgrade Notice',
-    url: '/api/bank-api/upgrade-notice',
+    url: `${ROUTES.tools.apis}/bank-api/upgrade-notice`,
   },
   {
     name: 'Validators',
-    url: '/api/bank-api/validators',
+    url: `${ROUTES.tools.apis}/bank-api/validators`,
   },
 ];
 
 export const confirmationValidatorApiNavigationData = [
   {
     name: 'Accounts',
-    url: '/api/confirmation-validator-api/accounts',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/accounts`,
   },
   {
     name: 'Confirmation Services',
-    url: '/api/confirmation-validator-api/bank-confirmation-services',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/bank-confirmation-services`,
   },
   {
     name: 'Banks',
-    url: '/api/confirmation-validator-api/banks',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/banks`,
   },
   {
     name: 'Clean',
-    url: '/api/confirmation-validator-api/clean',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/clean`,
   },
   {
     name: 'Config',
-    url: '/api/confirmation-validator-api/config',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/config`,
   },
   {
     name: 'Confirmation Blocks',
-    url: '/api/confirmation-validator-api/confirmation-blocks',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/confirmation-blocks`,
   },
   {
     name: 'Connection Requests',
-    url: '/api/confirmation-validator-api/connection-requests',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/connection-requests`,
   },
   {
     name: 'Crawl',
-    url: '/api/confirmation-validator-api/crawl',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/crawl`,
   },
   {
     name: 'Primary Validator Updated',
-    url: '/api/confirmation-validator-api/primary-validator-updated',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/primary-validator-updated`,
   },
   {
     name: 'Upgrade Request',
-    url: '/api/confirmation-validator-api/upgrade-request',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/upgrade-request`,
   },
   {
     name: 'Validators',
-    url: '/api/confirmation-validator-api/validators',
+    url: `${ROUTES.tools.apis}/confirmation-validator-api/validators`,
   },
 ];
 
 export const primaryValidatorApiNavigationData = [
   {
     name: 'Accounts',
-    url: '/api/primary-validator-api/accounts',
+    url: `${ROUTES.tools.apis}/primary-validator-api/accounts`,
   },
   {
     name: 'Bank Blocks',
-    url: '/api/primary-validator-api/bank-blocks',
+    url: `${ROUTES.tools.apis}/primary-validator-api/bank-blocks`,
   },
   {
     name: 'Banks',
-    url: '/api/primary-validator-api/banks',
+    url: `${ROUTES.tools.apis}/primary-validator-api/banks`,
   },
   {
     name: 'Config',
-    url: '/api/primary-validator-api/config',
+    url: `${ROUTES.tools.apis}/primary-validator-api/config`,
   },
   {
     name: 'Confirmation Blocks',
-    url: '/api/primary-validator-api/confirmation-blocks',
+    url: `${ROUTES.tools.apis}/primary-validator-api/confirmation-blocks`,
   },
   {
     name: 'Connection Requests',
-    url: '/api/primary-validator-api/connection-requests',
+    url: `${ROUTES.tools.apis}/primary-validator-api/connection-requests`,
   },
   {
     name: 'Validators',
-    url: '/api/primary-validator-api/validators',
+    url: `${ROUTES.tools.apis}/primary-validator-api/validators`,
   },
 ];
 

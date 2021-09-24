@@ -1,3 +1,5 @@
+import {ROUTES} from 'constants/routes';
+
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
   'approved-projects': 'Approved Projects',
   architecture: 'Architecture - Deep Dive',
@@ -18,8 +20,8 @@ export enum ProjectRulesId {
   Rules = 'rules',
 }
 
-export const approvedProjectsPath = '/projects/approved-projects';
-export const projectRulesPath = '/projects/rules';
+export const approvedProjectsPath = ROUTES.projects.approvedProjects;
+export const projectRulesPath = ROUTES.projects.rules;
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
   'approved-projects': [], // selections will be obtained from calling API

@@ -1,3 +1,5 @@
+import {ROUTES} from 'constants/routes';
+
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
   architecture: 'Architecture - Deep Dive',
   developer: 'Developer',
@@ -56,9 +58,9 @@ export enum PrincipalEventsId {
   Nodes = 'principal-events-nodes',
 }
 
-export const principalEntitiesPath = '/whitepaper/principal-entities';
-export const principalEventsPath = '/whitepaper/principal-events';
-export const architecturePath = '/whitepaper/architecture';
+export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
+export const principalEventsPath = ROUTES.whitepaper.principalEvents;
+export const architecturePath = ROUTES.whitepaper.architecture;
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
   architecture: [

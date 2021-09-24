@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {Link as ReactRouterLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
@@ -56,12 +56,12 @@ const BreadcrumbSection: FC<Props> = ({
           {hasPrecedingArrowIcon && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
           )}
-          <ReactRouterLink
+          <Link
             className={clsx('BreadcrumbSection__link', isSectionSelected && 'BreadcrumbSection__link--active')}
             to={titleLink}
           >
             {title}
-          </ReactRouterLink>
+          </Link>
         </div>
       ) : (
         <>
@@ -107,9 +107,9 @@ const BreadcrumbSection: FC<Props> = ({
                   );
                 }
                 return (
-                  <ReactRouterLink className="BreadcrumbSection__Popover-link" key={item.url} to={item.url}>
+                  <Link className="BreadcrumbSection__Popover-link" key={item.url} to={item.url}>
                     {item.title}
-                  </ReactRouterLink>
+                  </Link>
                 );
               })}
           </Popover>

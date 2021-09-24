@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import {useLocation} from 'react-router';
-import {Link as ReactRouterLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
@@ -50,16 +50,16 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
       {/* developer */}
       {width > 992 ? (
         <div className="Breadcrumb__link-container" key="developer">
-          <ReactRouterLink className="Breadcrumb__link" to="/">
+          <Link className="Breadcrumb__link" to="/">
             {PATHNAME_TO_TITLE_MAPPING.developer}
-          </ReactRouterLink>
+          </Link>
           <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
         </div>
       ) : (
-        <ReactRouterLink className="Breadcrumb__link-container" key="developer" to="/">
+        <Link className="Breadcrumb__link-container" key="developer" to="/">
           <span className="Breadcrumb__link">{PATHNAME_TO_TITLE_MAPPING.developer}</span>
           <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
-        </ReactRouterLink>
+        </Link>
       )}
       {pathnames.map((pathname, index) => {
         // whitepaper
@@ -69,12 +69,12 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
             <div className="Breadcrumb__link-container" key={pathname}>
               {width > 992 ? (
                 <>
-                  <ReactRouterLink
+                  <Link
                     className={clsx('Breadcrumb__link', isLastIndex && 'Breadcrumb__link--active')}
                     to={`/${pathname}`}
                   >
                     {PATHNAME_TO_TITLE_MAPPING[pathname]}
-                  </ReactRouterLink>
+                  </Link>
                   <Icon className="Breadcrumb__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
                 </>
               ) : (
@@ -103,9 +103,9 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
                   >
                     {PATHNAME_TO_DROPDOWN_SELECTIONS.whitepaper.map((selection) => {
                       return (
-                        <ReactRouterLink className="Breadcrumb__Popover-link" key={selection.url} to={selection.url}>
+                        <Link className="Breadcrumb__Popover-link" key={selection.url} to={selection.url}>
                           {selection.title}
-                        </ReactRouterLink>
+                        </Link>
                       );
                     })}
                   </Popover>

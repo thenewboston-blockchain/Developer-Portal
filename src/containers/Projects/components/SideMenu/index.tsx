@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import clsx from 'clsx';
 import {useLocation, useHistory} from 'react-router';
-import {Link as ReactRouterLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {A, ReactScrollLink} from 'components';
@@ -59,13 +59,13 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             approvedProjectUrls.map((selection) => {
               const isActive = pathname === selection.url;
               return (
-                <ReactRouterLink
+                <Link
                   className={clsx('SideMenu__link', {'SideMenu__link--active': isActive})}
                   to={selection.url}
                   key={selection.url}
                 >
                   {selection.title}
-                </ReactRouterLink>
+                </Link>
               );
             })}
         </div>

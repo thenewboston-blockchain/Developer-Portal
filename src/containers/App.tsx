@@ -2,6 +2,7 @@ import React, {FC, lazy} from 'react';
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 
 import {Layout} from 'components';
+import {ROUTES} from 'constants/routes';
 import withSuspense from 'hoc/withSuspense';
 
 import ArchitectureDeepDive from './LivingWhitepaper/containers/ArchitectureDeepDive';
@@ -57,21 +58,28 @@ const App: FC = () => {
       <Layout>
         <Switch>
           <Route exact path="/" component={withSuspense(DeveloperPortal)} />
-          <Route exact path="/whitepaper" component={LivingWhitepaper} />
-          <Route exact path="/whitepaper/principal-entities/:chapter?" component={PrincipalEntities} />
-          <Route exact path="/whitepaper/principal-events/:chapter?" component={PrincipalEventsAndProcesses} />
-          <Route exact path="/whitepaper/architecture/:chapter?" component={ArchitectureDeepDive} />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/projects/rules" component={ProjectRulesAndGuidelines} />
-          <Route exact path="/projects/approved-projects/:projectId?" component={ApprovedProjects} />
-          <Route path="/api/bank-api/:chapter?" component={BankApi} />
-          <Route path="/api/confirmation-validator-api/:chapter?" component={ConfirmationValidatorApi} />
-          <Route path="/api/primary-validator-api/:chapter?" component={PrimaryValidatorApi} />
-          <Redirect path="/api" to="/api/bank-api" />
-          <Route exact path="/sdks-and-libraries" component={SdkAndLibraries} />
-          <Route path="/guidelines" component={Guidelines} />
-          <Route path="/terms-of-use" component={TermsOfUse} />
-          <Route path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path={ROUTES.whitepaper.home} component={LivingWhitepaper} />
+          <Route exact path={`${ROUTES.whitepaper.principalEntities}/:chapter?`} component={PrincipalEntities} />
+          <Route
+            exact
+            path={`${ROUTES.whitepaper.principalEvents}/:chapter?`}
+            component={PrincipalEventsAndProcesses}
+          />
+          <Route exact path={`${ROUTES.whitepaper.architecture}/:chapter?`} component={ArchitectureDeepDive} />
+          <Route exact path={ROUTES.projects.home} component={Projects} />
+          <Route exact path={ROUTES.projects.rules} component={ProjectRulesAndGuidelines} />
+          <Route exact path={`${ROUTES.projects.approvedProjects}/:projectId?`} component={ApprovedProjects} />
+          <Route path={`${ROUTES.tools.apis}/bank-api/:chapter?`} component={BankApi} />
+          <Route
+            path={`${ROUTES.tools.apis}/confirmation-validator-api/:chapter?`}
+            component={ConfirmationValidatorApi}
+          />
+          <Route path={`${ROUTES.tools.apis}/primary-validator-api/:chapter?`} component={PrimaryValidatorApi} />
+          <Redirect path={ROUTES.tools.apis} to={`${ROUTES.tools.apis}/bank-api`} />
+          <Route exact path={ROUTES.tools.sdks} component={SdkAndLibraries} />
+          <Route path={ROUTES.legal.guidelines} component={Guidelines} />
+          <Route path={ROUTES.legal.termsOfUse} component={TermsOfUse} />
+          <Route path={ROUTES.legal.privacyPolicy} component={PrivacyPolicy} />
           <Redirect to="/" />
         </Switch>
       </Layout>

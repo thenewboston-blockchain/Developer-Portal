@@ -44,7 +44,15 @@ $top-nav-height: 60px;
   display: none;
 
   @media (max-width: 1200px) {
-    display: block;
+    display: flex;
+  }
+
+  &__home {
+    color: var(--color-neutral-800);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__button {

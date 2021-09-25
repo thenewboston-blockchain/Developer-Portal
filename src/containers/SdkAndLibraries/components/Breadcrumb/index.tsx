@@ -22,7 +22,7 @@ type Props = {
 
 const Breadcrumb: SFC<Props> = ({className, selectedLanguages, toggleLanguage}) => {
   const location = useLocation();
-  const {width, clientWidth} = useWindowDimensions();
+  const {width} = useWindowDimensions();
   const pathnames = location.pathname.slice(1).split('/');
 
   const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
@@ -67,7 +67,7 @@ const Breadcrumb: SFC<Props> = ({className, selectedLanguages, toggleLanguage}) 
             open={isPopoverOpen}
             closePopover={unsetAnchorEl}
             anchorOrigin={{horizontal: 'center', vertical: 'bottom'}}
-            transformOrigin={{horizontal: clientWidth < 380 ? 'right' : 'center', vertical: 'top'}}
+            transformOrigin={{horizontal: 'center', vertical: 'top'}}
             transformOffset={{horizontal: 0, vertical: 16}}
           >
             <Filters selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />

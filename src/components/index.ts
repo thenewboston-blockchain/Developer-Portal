@@ -32,6 +32,7 @@ import PageTitle from './PageTitle';
 import Pagination from './Pagination';
 import Popover from './Popover';
 import {QueryParamsOffsetAndLimit} from './QueryParams';
+import ReactScrollLink from './ReactScrollLink';
 import RequiredAsterisk from './RequiredAsterisk';
 import Shadow from './Shadow';
 import SocialMediaIcon from './SocialMediaIcon';
@@ -71,6 +72,7 @@ export {
   Popover,
   ProgressiveImage,
   QueryParamsOffsetAndLimit,
+  ReactScrollLink,
   RequestResponseSnippet,
   RequiredAsterisk,
   Shadow,

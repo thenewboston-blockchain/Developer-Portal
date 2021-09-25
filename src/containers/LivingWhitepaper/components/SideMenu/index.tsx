@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
-
-import {Icon, IconType} from '@thenewboston/ui';
-import clsx from 'clsx';
-import {NAVBAR_HEIGHT} from 'constants/offsets';
-import {Link} from 'react-scroll';
 import {useLocation, useHistory} from 'react-router';
+import clsx from 'clsx';
+import {Icon, IconType} from '@thenewboston/ui';
+
+import {ReactScrollLink} from 'components';
+import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {
   PATHNAME_TO_DROPDOWN_SELECTIONS,
   architecturePath,
@@ -48,19 +48,15 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
           PATHNAME_TO_DROPDOWN_SELECTIONS['principal-entities'].map((selection) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
-              <Link
+              <ReactScrollLink
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
-                hashSpy
-                ignoreCancelEvents
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
-                smooth
-                spy
                 to={selectionHash}
               >
                 {selection.title}
-              </Link>
+              </ReactScrollLink>
             );
           })}
       </div>
@@ -82,19 +78,15 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
           PATHNAME_TO_DROPDOWN_SELECTIONS['principal-events'].map((selection) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
-              <Link
+              <ReactScrollLink
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
-                hashSpy
-                ignoreCancelEvents
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
-                smooth
-                spy
                 to={selectionHash}
               >
                 {selection.title}
-              </Link>
+              </ReactScrollLink>
             );
           })}
       </div>
@@ -116,19 +108,15 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
           PATHNAME_TO_DROPDOWN_SELECTIONS.architecture.map((selection) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
-              <Link
+              <ReactScrollLink
                 activeClass="SideMenu__link--active"
                 className={clsx('SideMenu__link')}
-                hashSpy
-                ignoreCancelEvents
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
-                smooth
-                spy
                 to={selectionHash}
               >
                 {selection.title}
-              </Link>
+              </ReactScrollLink>
             );
           })}
       </div>

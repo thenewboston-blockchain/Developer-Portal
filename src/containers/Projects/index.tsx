@@ -3,10 +3,10 @@ import {useHistory} from 'react-router';
 
 import * as projectsApi from 'apis/projects';
 import {Button, Loader} from 'components';
+import {ROUTES, URLS} from 'constants/routes';
 import {Project} from 'types/projects';
 import ProjectsIcon from './assets/ProjectsIcon.webp';
 import DeveloperPortalLayout from './components/DeveloperPortalLayout';
-import {approvedProjectsPath} from './constants';
 
 import './Projects.scss';
 
@@ -39,7 +39,7 @@ const Projects: FC = () => {
           <div
             className="Projects__showcase-projects-tile"
             key={project.pk}
-            onClick={() => history.push(`${approvedProjectsPath}/${project.pk}`)}
+            onClick={() => history.push(`${ROUTES.projects.approvedProjects}/${project.pk}`)}
             role="button"
             tabIndex={0}
           >
@@ -69,16 +69,11 @@ const Projects: FC = () => {
         <div className="Projects__main-buttons">
           <Button
             className="Projects__button-project"
-            onClick={() =>
-              window.open(
-                'https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT',
-                '_blank',
-              )
-            }
+            onClick={() => window.open(URLS.github.proposeProjects, '_blank')}
           >
             Propose a Project
           </Button>
-          <Button onClick={() => history.push('/projects/rules')} variant="outlined">
+          <Button onClick={() => history.push(ROUTES.projects.rules)} variant="outlined">
             Rules & Guidelines
           </Button>
         </div>

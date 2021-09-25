@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
 import {Icon, IconType} from '@thenewboston/ui';
+import {useHistory} from 'react-router';
 
 import {Button, Container} from 'components';
-import {useHistory} from 'react-router';
+import {ROUTES} from 'constants/routes';
 import ArchitectureIcon from '../icons/ArchitectureIcon';
 import ProjectsIcon from '../icons/ProjectsIcon';
 import './DeveloperPortalCards.scss';
@@ -26,7 +27,7 @@ const DeveloperPortalCards: FC = () => {
           <Button
             className="DeveloperPortalCards__card-button"
             variant="outlined"
-            onClick={() => history.push('/whitepaper')}
+            onClick={() => history.push(ROUTES.whitepaper.home)}
           >
             Learn More
             <Icon icon={IconType.chevronRight} size={16} />
@@ -44,7 +45,7 @@ const DeveloperPortalCards: FC = () => {
           <Button
             className="DeveloperPortalCards__card-button"
             variant="outlined"
-            onClick={() => history.push('/projects')}
+            onClick={() => history.push(ROUTES.projects.home)}
           >
             Learn More
             <Icon icon={IconType.chevronRight} size={16} />

@@ -3,6 +3,7 @@ import {useHistory} from 'react-router';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {Button, Container} from 'components';
+import {ROUTES} from 'constants/routes';
 import ApiIcon from '../icons/ApiIcon';
 import SdkIcon from '../icons/SdkIcon';
 import './Tools.scss';
@@ -24,7 +25,7 @@ const Tools: FC = () => {
               Python, or if you prefer to work in Vanilla JavaScript or plain Python without using our SDKs and
               Libraries, this is your starting point.
             </div>
-            <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push('/api')}>
+            <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push(ROUTES.tools.apis)}>
               Learn More
               <Icon icon={IconType.chevronRight} size={16} />
             </Button>
@@ -38,11 +39,7 @@ const Tools: FC = () => {
               Are you a JavaScript or Python developer? Are you ready to develop your awesome software for thenewboston
               network? Our SDKs and Libraries will help you get started.
             </div>
-            <Button
-              className="Tools__tool-button"
-              variant="outlined"
-              onClick={() => history.push('/sdks-and-libraries')}
-            >
+            <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push(ROUTES.tools.sdks)}>
               Learn More
               <Icon icon={IconType.chevronRight} size={16} />
             </Button>

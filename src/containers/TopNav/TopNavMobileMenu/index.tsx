@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {A} from 'components';
+import {ROUTES} from 'constants/routes';
 import './TopNavMobileMenu.scss';
 
 interface ComponentProps {
@@ -54,19 +55,19 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice,
               'whitepaper',
               'Living Whitepaper',
               <>
-                {renderMobileLink('Home', '/whitepaper')}
-                {renderMobileLink('Principal Entities on the Network', '/whitepaper/principal-entities')}
-                {renderMobileLink('Principal Events and Processes on the Network', '/whitepaper/principal-events')}
-                {renderMobileLink('Architecture Deep Dive', '/whitepaper/architecture')}
+                {renderMobileLink('Home', ROUTES.whitepaper.home)}
+                {renderMobileLink('Principal Entities on the Network', ROUTES.whitepaper.principalEntities)}
+                {renderMobileLink('Principal Events and Processes on the Network', ROUTES.whitepaper.principalEvents)}
+                {renderMobileLink('Architecture Deep Dive', ROUTES.whitepaper.architecture)}
               </>,
             )}
             {renderColumn(
               'projects',
               'Projects',
               <>
-                {renderMobileLink('Home', '/projects')}
-                {renderMobileLink('Approved Projects', '/projects/approved-projects')}
-                {renderMobileLink('Projects Rules and Guidelines', '/projects/rules')}
+                {renderMobileLink('Home', ROUTES.projects.home)}
+                {renderMobileLink('Approved Projects', ROUTES.projects.approvedProjects)}
+                {renderMobileLink('Projects Rules and Guidelines', ROUTES.projects.rules)}
               </>,
             )}
           </div>

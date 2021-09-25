@@ -3,9 +3,9 @@ import {useHistory, useParams} from 'react-router-dom';
 
 import * as projectsApi from 'apis/projects';
 import {Loader} from 'components';
+import {ROUTES} from 'constants/routes';
 import {Project} from 'types/projects';
 import DeveloperPortalLayout from '../../components/DeveloperPortalLayout';
-import {approvedProjectsPath} from '../../constants';
 
 import './ApprovedProjects.scss';
 import ProjectDetails from '../ProjectDetails';
@@ -31,14 +31,14 @@ const ApprovedProjects = () => {
           sortedProjects.map((p) => {
             return {
               title: p.title,
-              url: `${approvedProjectsPath}/${p.pk}`,
+              url: `${ROUTES.projects.approvedProjects}/${p.pk}`,
             };
           }),
         );
         if (projectId) {
           const index = sortedProjects.findIndex((p) => p.pk === projectId);
           if (index === -1) {
-            history.push('/projects/approved-projects');
+            history.push(ROUTES.projects.approvedProjects);
           } else {
             setProject(sortedProjects[index]);
             if (index !== sortedProjects.length - 1) {
@@ -72,7 +72,7 @@ const ApprovedProjects = () => {
               <div
                 className="ApprovedProjects__grid-card"
                 key={p.pk}
-                onClick={() => history.push(`/projects/approved-projects/${p.pk}`)}
+                onClick={() => history.push(`${ROUTES.projects.approvedProjects}/${p.pk}`)}
                 role="button"
                 tabIndex={0}
               >

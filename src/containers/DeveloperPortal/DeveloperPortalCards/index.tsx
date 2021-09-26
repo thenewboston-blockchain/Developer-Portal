@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import {Icon, IconType} from '@thenewboston/ui';
 import {useHistory} from 'react-router';
 
 import {Button, Container, EmojiIcon, EmojiType} from 'components';

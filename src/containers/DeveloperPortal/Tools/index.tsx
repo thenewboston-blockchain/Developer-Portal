@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import {useHistory} from 'react-router';
-import {Icon, IconType} from '@thenewboston/ui';
 
 import {Button, Container, EmojiIcon, EmojiType} from 'components';
 import {ROUTES} from 'constants/routes';

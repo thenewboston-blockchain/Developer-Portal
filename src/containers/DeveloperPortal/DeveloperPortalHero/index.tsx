@@ -1,36 +1,27 @@
 import React, {FC} from 'react';
+import {Icon, IconType} from '@thenewboston/ui';
 
-import {ProgressiveImage} from 'components';
-import {useWindowDimensions} from 'hooks';
-import Particles from '../Particles';
-import developerPortalImage from './Portal.webp';
-import developerPortalPlaceholderImage from './PortalPlaceholder.webp';
+import {Button} from 'components';
 
 import './DeveloperPortalHero.scss';
 
 const DeveloperPortalHero: FC = () => {
-  const {width} = useWindowDimensions();
-
-  let imageSize: number;
-  if (width < 768) {
-    imageSize = 280;
-  } else if (width < 992) {
-    imageSize = 412;
-  } else {
-    imageSize = 558;
-  }
-
   return (
     <div className="DeveloperPortalHero">
-      <Particles />
-      <ProgressiveImage
-        alt="Developer Portal"
-        containerClassName="DeveloperPortalHero__main-image"
-        height={imageSize}
-        placeholderSrc={developerPortalPlaceholderImage}
-        realSrc={developerPortalImage}
-        width={imageSize}
-      />
+      <h1 className="DeveloperPortalHero__title">
+        Build with <br />
+        thenewboston
+      </h1>
+      <p className="DeveloperPortalHero__description">Explore our guides and examples to integrate TNBC.</p>
+      <div className="DeveloperPortalHero__buttons">
+        <Button color="quaternary" className="DeveloperPortalHero__button">
+          Propose Project
+        </Button>
+        <Button className="DeveloperPortalHero__button" color="quaternary" variant="outlined">
+          <Icon icon={IconType.discord} />
+          Discord
+        </Button>
+      </div>
     </div>
   );
 };

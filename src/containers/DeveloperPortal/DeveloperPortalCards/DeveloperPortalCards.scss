@@ -1,13 +1,13 @@
 @import 'styles/font-mixins';
 
 .DeveloperPortalCards {
-  background-color: var(--color-gray-900);
+  background-color: var(--color-neutral-075);
 
   &__container {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    padding: 48px 48px;
+    padding: 48px 0px;
 
     @media (max-width: 1366px) {
       padding: 72px 48px;
@@ -20,8 +20,7 @@
   }
 
   &__card {
-    background: url('./card-bg-1366.png');
-    background-color: #0e1733;
+    background-color: var(--color-white);
     background-position: right;
     background-size: cover;
     border-radius: 12px;
@@ -30,26 +29,22 @@
     padding: 48px 24px;
 
     &:not(:last-child) {
-      margin-right: 36px;
+      margin-right: 40px;
     }
 
-    @media (max-width: 992px) {
-      background: url('./card-bg-768.png');
-      background-color: #0e1733;
-      background-position: right;
-      background-size: cover;
-      min-width: 324px;
-      padding: 24px 24px;
+    @media (max-width: 1366px) {
       &:not(:last-child) {
-        margin-right: 24px;
+        margin-right: 32px;
       }
     }
 
+    @media (max-width: 992px) {
+      min-width: 324px;
+      padding: 24px 24px;
+    }
+
     @media (max-width: 768px) {
-      background: url('./card-bg-992.png');
-      background-color: #0e1733;
-      background-position: right;
-      background-size: cover;
+      background-color: var(--color-white);
       min-width: 100%;
       width: 100%;
 
@@ -60,20 +55,9 @@
     }
   }
 
-  &__card-icon {
-    align-items: center;
-    background: var(--color-gray-900);
-    border-radius: 6px;
-    display: flex;
-    height: 64px;
-    justify-content: center;
-    margin-bottom: 16px;
-    width: 64px;
-  }
-
   &__card-title {
     @extend %h2;
-    color: white;
+    color: var(--color-neutral-900);
     font-weight: var(--font-weight-medium);
     margin-bottom: 16px;
   }
@@ -87,11 +71,6 @@
   // need to increase specificity to override base css
   &__card-button.ButtonWebsite.ButtonWebsite--outlined {
     align-items: center;
-    color: var(--color-gray-200);
     display: flex;
-
-    &:hover {
-      color: var(--color-primary);
-    }
   }
 }

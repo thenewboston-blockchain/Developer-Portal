@@ -17,6 +17,7 @@ import {
   DocSubHeader,
   DocSubSection,
 } from './DocWrapper';
+import EmojiIcon, {EmojiType} from './EmojiIcon';
 import Footer from './Footer';
 import {Button} from './FormElements';
 import GoToTop from './GoToTop';
@@ -57,6 +58,8 @@ export {
   DocList,
   DocSubHeader,
   DocSubSection,
+  EmojiIcon,
+  EmojiType,
   Footer,
   GoToTop,
   HashLink,

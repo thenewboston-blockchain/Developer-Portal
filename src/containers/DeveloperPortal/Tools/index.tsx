@@ -23,7 +23,6 @@ const Tools: FC = () => {
             </div>
             <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push(ROUTES.tools.apis)}>
               Learn More
-              <Icon icon={IconType.chevronRight} size={16} />
             </Button>
           </div>
           <div className="Tools__tool">
@@ -35,7 +34,6 @@ const Tools: FC = () => {
             </div>
             <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push(ROUTES.tools.sdks)}>
               Learn More
-              <Icon icon={IconType.chevronRight} size={16} />
             </Button>
           </div>
         </div>

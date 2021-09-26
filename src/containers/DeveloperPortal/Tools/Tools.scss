@@ -63,8 +63,7 @@
   }
 
   &__tool-button {
-    align-items: center;
-    display: flex;
+    background-color: var(--color-white);
     width: fit-content;
   }
 }

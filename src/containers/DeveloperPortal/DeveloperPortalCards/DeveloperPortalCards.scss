@@ -67,10 +67,4 @@
     color: var(--color-gray-500);
     margin-bottom: 16px;
   }
-
-  // need to increase specificity to override base css
-  &__card-button.ButtonWebsite.ButtonWebsite--outlined {
-    align-items: center;
-    display: flex;
-  }
 }

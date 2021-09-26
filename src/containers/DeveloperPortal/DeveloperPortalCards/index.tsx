@@ -26,7 +26,6 @@ const DeveloperPortalCards: FC = () => {
             onClick={() => history.push(ROUTES.whitepaper.home)}
           >
             Learn More
-            <Icon icon={IconType.chevronRight} size={16} />
           </Button>
         </div>
         <div className="DeveloperPortalCards__card">
@@ -42,7 +41,6 @@ const DeveloperPortalCards: FC = () => {
             onClick={() => history.push(ROUTES.projects.home)}
           >
             Learn More
-            <Icon icon={IconType.chevronRight} size={16} />
           </Button>
         </div>
       </Container>

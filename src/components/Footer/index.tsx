@@ -2,8 +2,8 @@ import React, {FC, memo, useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 
-import Logo from 'assets/svgs/thenewboston-white.svg';
-import {Button, SocialMediaIcon} from 'components';
+import TNBLogo from 'assets/images/TNB-Logo.png';
+import {SocialMediaIcon} from 'components';
 import {ROUTES, URLS} from 'constants/routes';
 import {SocialMedia} from 'types/social-media';
 
@@ -117,20 +117,12 @@ const Footer: FC<ComponentProps> = ({className}) => {
     <footer className={clsx('Footer', className)} data-testid="Footer">
       <div className="Footer__left">
         <div className="Footer__left-brand-details">
-          <Link to="/">
-            <img src={Logo} alt="thenewboston logo" />
+          <Link className="Footer__logo" to="/">
+            <img src={TNBLogo} alt="thenewboston logo" height={30} />
+            <div className="Footer__logo-text">developer</div>
           </Link>
           <div className="Footer__social-media-links">{renderSocialMediaLinks()}</div>
         </div>
-        <Button
-          className="Footer__download-button"
-          onClick={() => {
-            window.location.href = URLS.website.download;
-          }}
-          variant="outlined"
-        >
-          Download Wallet
-        </Button>
       </div>
       <div className="Footer__right">{renderNavLists()}</div>
     </footer>

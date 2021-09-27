@@ -7,14 +7,14 @@
   background-size: cover;
 
   &__container {
-    padding: 72px 0;
+    padding: 80px 0 160px;
 
     @media (max-width: 1366px) {
-      padding: 48px 48px;
+      padding: 80px 48px 160px;
     }
 
     @media (max-width: 768px) {
-      padding: 24px 24px;
+      padding: 72px 24px 96px;
     }
   }
 
@@ -46,7 +46,7 @@
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 40px 32px;
   }
 
   &__tool-title {
@@ -58,8 +58,7 @@
   &__tool-description {
     @extend %body1;
     color: var(--color-gray-500);
-    margin-bottom: 24px;
-    max-width: 480px;
+    margin-bottom: 40px;
   }
 
   &__tool-button {

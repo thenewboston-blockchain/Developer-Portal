@@ -5,14 +5,13 @@
   background-color: #111;
   display: flex;
   flex-direction: column;
-  height: 512px;
   justify-content: center;
-  padding: 0 32px;
+  padding: 120px 32px;
   position: relative;
   text-align: center;
 
   @media (max-width: 768px) {
-    height: 386px;
+    padding: 64px 32px;
   }
 
   &__title {
@@ -23,18 +22,35 @@
   }
 
   &__description {
-    @extend %body3;
+    @extend %h3;
     color: var(--color-white);
     margin-bottom: 40px;
+    margin-top: 0px;
   }
 
   &__buttons {
     display: flex;
+
+    @media (max-width: 375px) {
+      flex-direction: column;
+    }
   }
 
   &__button {
     align-items: center;
     display: flex;
-    margin-right: 24px;
+    justify-content: center;
+
+    &:first-child {
+      margin-right: 24px;
+    }
+
+    @media (max-width: 375px) {
+      &:first-child {
+        display: grid;
+        margin-bottom: 16px;
+        margin-right: 0px;
+      }
+    }
   }
 }

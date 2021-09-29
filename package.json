@@ -23,7 +23,6 @@
     "react-scroll": "^1.8.2",
     "react-syntax-highlighter": "^15.3.0",
     "react-toastify": "^6.0.8",
-    "react-tsparticles": "^1.29.2",
     "sass": "^1.32.8",
     "styled-components": "^5.3.1"
   },

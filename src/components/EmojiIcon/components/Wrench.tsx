@@ -1,0 +1,30 @@
+import React, {FC} from 'react';
+
+const Wrench: FC<React.HTMLAttributes<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      width="40"
+      height="41"
+      viewBox="0 0 40 41"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...props}
+    >
+      <path d="M40 40.8H0V0.8H40V40.8Z" fill="url(#patternWrench0)" />
+      <defs>
+        <pattern id="patternWrench0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#imageWrench0" transform="scale(0.015625)" />
+        </pattern>
+        <image
+          id="imageWrench0"
+          width="64"
+          height="64"
+          xlinkHref="data:image/png;base64,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"
+        />
+      </defs>
+    </svg>
+  );
+};
+
+export default Wrench;

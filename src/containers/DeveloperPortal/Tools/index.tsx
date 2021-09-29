@@ -25,7 +25,7 @@ const Tools: FC = () => {
             </Button>
           </div>
           <div className="Tools__tool">
-            <EmojiIcon color="#4F52FF" emoji={EmojiType.Web} marginBottom={24} />
+            <EmojiIcon color="#4F52FF" emoji={EmojiType.Wrench} marginBottom={24} />
             <div className="Tools__tool-title">SDKs & Libraries</div>
             <div className="Tools__tool-description">
               Are you a JavaScript or Python developer? Are you ready to develop your awesome software for thenewboston

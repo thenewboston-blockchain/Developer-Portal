@@ -19,9 +19,9 @@
   }
 
   &__title {
-    @extend %display2;
+    @extend %h1;
     font-weight: var(--font-weight-semibold);
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   &__content-container {

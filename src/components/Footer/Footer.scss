@@ -1,3 +1,5 @@
+@import 'styles/font-mixins';
+
 .Footer {
   display: grid;
   grid-template-columns: 35% 65%;
@@ -46,7 +48,7 @@
   }
 
   &__SocialMediaLink {
-    color: var(--color-white);
+    color: var(--color-neutral-900);
     margin-top: 18px;
 
     &:not(:last-child) {
@@ -61,24 +63,15 @@
     margin-top: 32px;
   }
 
-  // need to increase specificity to override base css
-  &__download-button.ButtonWebsite.ButtonWebsite--outlined {
-    background: var(--color-primary);
-    color: var(--color-white);
-    margin-top: 48px;
-    padding-left: 20px;
-    padding-right: 20px;
+  &__logo {
+    align-items: center;
+    display: flex;
+  }
 
-    &:hover {
-      color: var(--color-primary);
-    }
-
-    @media (max-width: 1400px) {
-      margin-top: 0;
-    }
-
-    @media (max-width: 786px) {
-      margin-top: 48px;
-    }
+  &__logo-text {
+    @extend %h2;
+    color: var(--color-neutral-900);
+    font-weight: var(--font-weight-medium);
+    margin-left: 8px;
   }
 }

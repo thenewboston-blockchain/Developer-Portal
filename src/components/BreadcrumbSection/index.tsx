@@ -1,11 +1,10 @@
 import React, {FC, useState} from 'react';
-
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
-import {Popover} from 'components';
+
+import {Popover, ReactScrollLink} from 'components';
 import {useWindowDimensions} from 'hooks';
-import {Link as ReactRouterLink} from 'react-router-dom';
-import {Link} from 'react-scroll';
 
 import './BreadcrumbSection.scss';
 
@@ -57,12 +56,12 @@ const BreadcrumbSection: FC<Props> = ({
           {hasPrecedingArrowIcon && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
           )}
-          <ReactRouterLink
+          <Link
             className={clsx('BreadcrumbSection__link', isSectionSelected && 'BreadcrumbSection__link--active')}
             to={titleLink}
           >
             {title}
-          </ReactRouterLink>
+          </Link>
         </div>
       ) : (
         <>
@@ -96,25 +95,21 @@ const BreadcrumbSection: FC<Props> = ({
                 if (isItemsInSamePage) {
                   const selectionHash = item.url.slice(item.url.indexOf('#') + 1);
                   return (
-                    <Link
+                    <ReactScrollLink
                       activeClass="BreadcrumbSection__link--active"
                       className="BreadcrumbSection__Popover-link"
-                      hashSpy
-                      ignoreCancelEvents
                       key={item.url}
                       offset={scrollOffset || 0}
-                      smooth
-                      spy
                       to={selectionHash}
                     >
                       {item.title}
-                    </Link>
+                    </ReactScrollLink>
                   );
                 }
                 return (
-                  <ReactRouterLink className="BreadcrumbSection__Popover-link" key={item.url} to={item.url}>
+                  <Link className="BreadcrumbSection__Popover-link" key={item.url} to={item.url}>
                     {item.title}
-                  </ReactRouterLink>
+                  </Link>
                 );
               })}
           </Popover>

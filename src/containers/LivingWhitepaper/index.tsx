@@ -1,8 +1,9 @@
 import React, {FC, useState} from 'react';
-
 import {Icon, IconType} from '@thenewboston/ui';
-import {Button, Divider} from 'components';
 import {useHistory} from 'react-router';
+
+import {Button, Divider} from 'components';
+import {ROUTES} from 'constants/routes';
 import DeveloperPortalLayout from './components/DeveloperPortalLayout';
 import LivingWhitepaperIcon from './assets/LivingWhitepaperIcon.webp';
 import LivingWhitepaperCover from './assets/LivingWhitepaperCover.webp';
@@ -34,7 +35,7 @@ const LivingWhitepaper: FC = () => {
           <div className="LivingWhitepaper__main-buttons">
             <Button
               className="LivingWhitepaper__button-explore"
-              onClick={() => history.push('/whitepaper/principal-entities')}
+              onClick={() => history.push(ROUTES.whitepaper.principalEvents)}
             >
               Explore Document
             </Button>
@@ -59,7 +60,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/whitepaper/principal-entities')}
+          onClick={() => history.push(ROUTES.whitepaper.principalEntities)}
           onFocus={() => {}}
           onMouseLeave={() => setIsPrincipalEntitiesTopicHovered(false)}
           onMouseOver={() => setIsPrincipalEntitiesTopicHovered(true)}
@@ -79,7 +80,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/whitepaper/principal-events')}
+          onClick={() => history.push(ROUTES.whitepaper.principalEvents)}
           onFocus={() => {}}
           onMouseLeave={() => setIsPrincipalEventsTopicHovered(false)}
           onMouseOver={() => setIsPrincipalEventsTopicHovered(true)}
@@ -99,7 +100,7 @@ const LivingWhitepaper: FC = () => {
         </div>
         <div
           className="LivingWhitepaper__topic"
-          onClick={() => history.push('/whitepaper/architecture')}
+          onClick={() => history.push(ROUTES.whitepaper.architecture)}
           onFocus={() => {}}
           onMouseLeave={() => setIsArchitectureTopicHovered(false)}
           onMouseOver={() => setIsArchitectureTopicHovered(true)}

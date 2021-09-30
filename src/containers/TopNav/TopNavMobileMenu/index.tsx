@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {A} from 'components';
+import {ROUTES, URLS} from 'constants/routes';
 import './TopNavMobileMenu.scss';
 
 interface ComponentProps {
@@ -13,7 +14,7 @@ interface ComponentProps {
   toggleMenu(): void;
 }
 
-type SectionStrings = 'whitepaper' | 'projects' | 'developer';
+type SectionStrings = 'whitepaper' | 'projects' | 'tools';
 
 const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice, toggleMenu}) => {
   const [openSection, setOpenSection] = useState<SectionStrings | null>(null);
@@ -49,24 +50,31 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice,
       <>
         <div className="TopNavMobileMenu__dropdown-container">
           <div className="TopNavMobileMenu__links-container">
-            {renderColumn('developer', 'Developer', <>{renderMobileLink('Home', '/')}</>)}
             {renderColumn(
               'whitepaper',
               'Living Whitepaper',
               <>
-                {renderMobileLink('Home', '/whitepaper')}
-                {renderMobileLink('Principal Entities on the Network', '/whitepaper/principal-entities')}
-                {renderMobileLink('Principal Events and Processes on the Network', '/whitepaper/principal-events')}
-                {renderMobileLink('Architecture Deep Dive', '/whitepaper/architecture')}
+                {renderMobileLink('Home', ROUTES.whitepaper.home)}
+                {renderMobileLink('Principal Entities on the Network', ROUTES.whitepaper.principalEntities)}
+                {renderMobileLink('Principal Events and Processes on the Network', ROUTES.whitepaper.principalEvents)}
+                {renderMobileLink('Architecture Deep Dive', ROUTES.whitepaper.architecture)}
               </>,
             )}
             {renderColumn(
               'projects',
               'Projects',
               <>
-                {renderMobileLink('Home', '/projects')}
-                {renderMobileLink('Approved Projects', '/projects/approved-projects')}
-                {renderMobileLink('Projects Rules and Guidelines', '/projects/rules')}
+                {renderMobileLink('Home', ROUTES.projects.home)}
+                {renderMobileLink('Approved Projects', ROUTES.projects.approvedProjects)}
+                {renderMobileLink('Projects Rules and Guidelines', ROUTES.projects.rules)}
+              </>,
+            )}
+            {renderColumn(
+              'tools',
+              'Tools',
+              <>
+                {renderMobileLink('APIs', ROUTES.tools.apis)}
+                {renderMobileLink('SDKs & Libraries', ROUTES.tools.sdks)}
               </>,
             )}
           </div>
@@ -93,6 +101,9 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice,
 
   return (
     <div className="TopNavMobileMenu">
+      <A className="TopNavMobileMenu__home" href={URLS.website.home}>
+        thenewboston.com
+      </A>
       <button className="TopNavMobileMenu__button" onClick={toggleMenu}>
         <Icon icon={IconType.menu} size={24} />
       </button>

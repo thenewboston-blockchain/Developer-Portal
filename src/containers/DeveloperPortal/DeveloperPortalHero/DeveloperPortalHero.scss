@@ -1,12 +1,56 @@
 @import 'styles/font-mixins';
 
 .DeveloperPortalHero {
+  align-items: center;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 32px;
   position: relative;
+  text-align: center;
 
-  &__main-image {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  @media (max-width: 768px) {
+    padding: 64px 32px;
+  }
+
+  &__title {
+    @extend %display1;
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    @extend %h3;
+    color: var(--color-white);
+    margin-bottom: 40px;
+    margin-top: 0px;
+  }
+
+  &__buttons {
+    display: flex;
+
+    @media (max-width: 375px) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &:first-child {
+      margin-right: 24px;
+    }
+
+    @media (max-width: 375px) {
+      &:first-child {
+        display: grid;
+        margin-bottom: 16px;
+        margin-right: 0px;
+      }
+    }
   }
 }

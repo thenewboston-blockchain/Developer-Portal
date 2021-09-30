@@ -1,10 +1,8 @@
 import React, {FC} from 'react';
-import {Icon, IconType} from '@thenewboston/ui';
-
-import {Button, Container} from 'components';
 import {useHistory} from 'react-router';
-import ArchitectureIcon from '../icons/ArchitectureIcon';
-import ProjectsIcon from '../icons/ProjectsIcon';
+
+import {Button, Container, EmojiIcon, EmojiType} from 'components';
+import {ROUTES} from 'constants/routes';
 import './DeveloperPortalCards.scss';
 
 const DeveloperPortalCards: FC = () => {
@@ -14,9 +12,7 @@ const DeveloperPortalCards: FC = () => {
     <div className="DeveloperPortalCards">
       <Container className="DeveloperPortalCards__container">
         <div className="DeveloperPortalCards__card">
-          <div className="DeveloperPortalCards__card-icon">
-            <ArchitectureIcon size={36} />
-          </div>
+          <EmojiIcon color="#FF928E" emoji={EmojiType.Paper} marginBottom={24} />
           <div className="DeveloperPortalCards__card-title">Living Whitepaper</div>
           <div className="DeveloperPortalCards__card-description">
             Our living whitepaper is a constantly evolving set of technical docs about thenewboston blockchain
@@ -26,16 +22,13 @@ const DeveloperPortalCards: FC = () => {
           <Button
             className="DeveloperPortalCards__card-button"
             variant="outlined"
-            onClick={() => history.push('/whitepaper')}
+            onClick={() => history.push(ROUTES.whitepaper.home)}
           >
             Learn More
-            <Icon icon={IconType.chevronRight} size={16} />
           </Button>
         </div>
         <div className="DeveloperPortalCards__card">
-          <div className="DeveloperPortalCards__card-icon">
-            <ProjectsIcon size={36} />
-          </div>
+          <EmojiIcon color="#2DA15D" emoji={EmojiType.Bulb} marginBottom={24} />
           <div className="DeveloperPortalCards__card-title">Projects</div>
           <div className="DeveloperPortalCards__card-description">
             Earn coins by building apps, games, tools, and other software for thenewboston network. Learn how to submit
@@ -44,10 +37,9 @@ const DeveloperPortalCards: FC = () => {
           <Button
             className="DeveloperPortalCards__card-button"
             variant="outlined"
-            onClick={() => history.push('/projects')}
+            onClick={() => history.push(ROUTES.projects.home)}
           >
             Learn More
-            <Icon icon={IconType.chevronRight} size={16} />
           </Button>
         </div>
       </Container>

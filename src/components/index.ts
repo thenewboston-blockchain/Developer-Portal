@@ -17,6 +17,7 @@ import {
   DocSubHeader,
   DocSubSection,
 } from './DocWrapper';
+import EmojiIcon, {EmojiType} from './EmojiIcon';
 import Footer from './Footer';
 import {Button} from './FormElements';
 import GoToTop from './GoToTop';
@@ -32,6 +33,7 @@ import PageTitle from './PageTitle';
 import Pagination from './Pagination';
 import Popover from './Popover';
 import {QueryParamsOffsetAndLimit} from './QueryParams';
+import ReactScrollLink from './ReactScrollLink';
 import RequiredAsterisk from './RequiredAsterisk';
 import Shadow from './Shadow';
 import SocialMediaIcon from './SocialMediaIcon';
@@ -56,6 +58,8 @@ export {
   DocList,
   DocSubHeader,
   DocSubSection,
+  EmojiIcon,
+  EmojiType,
   Footer,
   GoToTop,
   HashLink,
@@ -71,6 +75,7 @@ export {
   Popover,
   ProgressiveImage,
   QueryParamsOffsetAndLimit,
+  ReactScrollLink,
   RequestResponseSnippet,
   RequiredAsterisk,
   Shadow,

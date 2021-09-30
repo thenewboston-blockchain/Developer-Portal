@@ -15,7 +15,7 @@ export const ROUTES = {
   },
   tools: {
     apis: '/api',
-    sdks: '/sdks-and-libraries',
+    developerTools: '/developer-tools',
   },
   whitepaper: {
     architecture: '/whitepaper/architecture',

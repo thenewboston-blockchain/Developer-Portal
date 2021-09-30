@@ -7,7 +7,7 @@ import {Popover} from 'components';
 import {NAVBAR_HEIGHT, BREADCRUMB_HEIGHT} from 'constants/offsets';
 import {useWindowDimensions} from 'hooks';
 import {SFC} from 'types/generic';
-import {Language} from 'types/libraries';
+import {Language} from 'types/developer-tools';
 
 import {PATHNAME_TO_TITLE_MAPPING} from '../../constants';
 import BreadcrumbSection from '../../../../components/BreadcrumbSection';

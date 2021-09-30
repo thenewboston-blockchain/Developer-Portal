@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, useState} from 'react';
-import {Language} from 'types/libraries';
+import {Language} from 'types/developer-tools';
 
 import {Container, Divider, PageTitle} from 'components';
 import Breadcrumb from '../Breadcrumb';

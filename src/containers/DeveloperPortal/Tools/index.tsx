@@ -29,7 +29,7 @@ const Tools: FC = () => {
             <div className="Tools__tool-title">Developer Tools</div>
             <div className="Tools__tool-description">
               Are you a JavaScript or Python developer? Are you ready to develop your awesome software for thenewboston
-              network? Our Developer Tools will help you get started.
+              network? Our Developer Tools include SDKs, Libraries, and Utilities that get you started.
             </div>
             <Button
               className="Tools__tool-button"

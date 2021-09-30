@@ -1,10 +1,10 @@
-import {Language, LibraryType} from 'types/libraries';
+import {Language, DevToolType} from 'types/developer-tools';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
   'developer-tools': 'Developer Tools',
 };
 
-export const LIBRARIES: LibraryType[] = [
+export const LIBRARIES: DevToolType[] = [
   {
     description:
       'This library contains all of the core logic, shared functionality, and constants used by both the Bank and Validator on thenewboston network.',
@@ -21,7 +21,7 @@ export const LIBRARIES: LibraryType[] = [
   },
 ];
 
-export const SDKS: LibraryType[] = [
+export const SDKS: DevToolType[] = [
   {
     description:
       'This is the SDK written in Kotlin for thenewboston with primary focus for Android and Desktop clients.',
@@ -35,5 +35,13 @@ export const SDKS: LibraryType[] = [
     language: Language.dotNet,
     title: 'thenewboston .NET Core SDK',
     url: 'https://github.com/thenewboston-developers/dotnetcore-sdk',
+  },
+];
+
+export const UTILITIES: DevToolType[] = [
+  {
+    description: 'Create accounts and server node options with ease.',
+    title: 'TNB Account Generator',
+    url: 'https://tnb-account-generator.vercel.app',
   },
 ];

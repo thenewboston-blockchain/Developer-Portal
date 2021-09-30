@@ -1,21 +1,21 @@
 import React, {ReactNode, useState} from 'react';
 
-import type {Language, LibraryType} from 'types/libraries';
+import type {Language, DevToolType} from 'types/developer-tools';
 
 import DeveloperPortalLayout from './components/DeveloperPortalLayout';
 import ConfirmationModal from './components/ConfirmationModal';
 import HeroImg from './assets/hero-img.svg';
 import TNBLogoImg from './assets/tnb-logo.svg';
-import {LIBRARIES, SDKS} from './constants';
+import {LIBRARIES, SDKS, UTILITIES} from './constants';
 
 import './DeveloperTools.scss';
 
 const DeveloperTools = () => {
   const [goToUrl, setGoToUrl] = useState<string | null>(null);
 
-  const renderTiles = (items: LibraryType[], selectedLanguages: Language[], section: string): ReactNode => {
+  const renderTiles = (items: DevToolType[], selectedLanguages: Language[], section: string): ReactNode => {
     const filteredItems = selectedLanguages.length
-      ? items.filter((item) => selectedLanguages.includes(item.language))
+      ? items.filter((item) => item.language && selectedLanguages.includes(item.language))
       : items;
 
     if (!filteredItems.length) {
@@ -35,7 +35,7 @@ const DeveloperTools = () => {
             <div className="DeveloperTools__section-tile-top">
               <div className="DeveloperTools__section-tile-top-pill">
                 <img className="DeveloperTools__section-tile-top-pill-img" src={TNBLogoImg} alt="TNB Icon" />
-                <h2 className="DeveloperTools__section-tile-top-pill-text">{item.language}</h2>
+                {!!item.language && <h2 className="DeveloperTools__section-tile-top-pill-text">{item.language}</h2>}
               </div>
             </div>
             <div className="DeveloperTools__section-tile-bottom">
@@ -70,6 +70,12 @@ const DeveloperTools = () => {
           <section className="DeveloperTools__section">
             <h3 className="DeveloperTools__section-title">SDKs</h3>
             <div className="DeveloperTools__section-tiles">{renderTiles(SDKS, selectedLanguages, 'SDKs')}</div>
+          </section>
+          <section className="DeveloperTools__section">
+            <h3 className="DeveloperTools__section-title">Utilities</h3>
+            <div className="DeveloperTools__section-tiles">
+              {renderTiles(UTILITIES, selectedLanguages, 'Utilities')}
+            </div>
           </section>
           <ConfirmationModal url={goToUrl} onClose={() => setGoToUrl(null)} />
         </>

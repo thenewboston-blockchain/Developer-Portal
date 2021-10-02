@@ -10,17 +10,15 @@ import './TopNavMobileMenu.scss';
 interface ComponentProps {
   closeMenu(): void;
   menuOpen: boolean;
-  smallDevice: boolean;
   toggleMenu(): void;
 }
 
 type SectionStrings = 'whitepaper' | 'projects' | 'tools';
 
-const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice, toggleMenu}) => {
+const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu}) => {
   const [openSection, setOpenSection] = useState<SectionStrings | null>(null);
 
   const handleColumnTitleClick = (section: SectionStrings) => (): void => {
-    if (!smallDevice) return;
     setOpenSection(openSection === section ? null : section);
   };
 
@@ -29,18 +27,16 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, smallDevice,
       <div className="TopNavMobileMenu__column">
         <button className="TopNavMobileMenu__title-wrapper" onClick={handleColumnTitleClick(section)}>
           <span className="TopNavMobileMenu__column-title TopNavMobileMenu__column-title--accordion">{title}</span>
-          {smallDevice && (
-            <span className="TopNavMobileMenu__icon-holder">
-              <Icon
-                className={clsx('TopNavMobileMenu__chevron-icon', {
-                  'TopNavMobileMenu__chevron-icon--open': openSection === section,
-                })}
-                icon={IconType.chevronDown}
-              />
-            </span>
-          )}
+          <span className="TopNavMobileMenu__icon-holder">
+            <Icon
+              className={clsx('TopNavMobileMenu__chevron-icon', {
+                'TopNavMobileMenu__chevron-icon--open': openSection === section,
+              })}
+              icon={IconType.chevronDown}
+            />
+          </span>
         </button>
-        <div className="TopNavMobileMenu__links">{!smallDevice || openSection === section ? links : null}</div>
+        <div className="TopNavMobileMenu__links">{openSection === section ? links : null}</div>
       </div>
     );
   };

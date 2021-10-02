@@ -5,7 +5,6 @@ import type {Language, DevToolType} from 'types/developer-tools';
 import DeveloperPortalLayout from './components/DeveloperPortalLayout';
 import ConfirmationModal from './components/ConfirmationModal';
 import HeroImg from './assets/hero-img.svg';
-import TNBLogoImg from './assets/tnb-logo.svg';
 import {LIBRARIES, SDKS, UTILITIES} from './constants';
 
 import './DeveloperTools.scss';
@@ -34,8 +33,7 @@ const DeveloperTools = () => {
           >
             <div className="DeveloperTools__section-tile-top">
               <div className="DeveloperTools__section-tile-top-pill">
-                <img className="DeveloperTools__section-tile-top-pill-img" src={TNBLogoImg} alt="TNB Icon" />
-                {!!item.language && <h2 className="DeveloperTools__section-tile-top-pill-text">{item.language}</h2>}
+                <h2 className="DeveloperTools__section-tile-top-pill-text">{item.title}</h2>
               </div>
             </div>
             <div className="DeveloperTools__section-tile-bottom">

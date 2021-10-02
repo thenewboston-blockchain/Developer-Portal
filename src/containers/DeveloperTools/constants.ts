@@ -14,7 +14,7 @@ export const LIBRARIES: DevToolType[] = [
   },
   {
     description:
-      'A JavaScript library for thenewboston that allows you to create new account, create signatures, verify signatures, etc.',
+      'A JavaScript library for thenewboston that allows you to create new accounts and signatures, verify signatures, and so on.',
     language: Language.javascript,
     title: 'thenewboston-js',
     url: 'https://github.com/thenewboston-developers/thenewboston-js',
@@ -23,15 +23,14 @@ export const LIBRARIES: DevToolType[] = [
 
 export const SDKS: DevToolType[] = [
   {
-    description:
-      'This is the SDK written in Kotlin for thenewboston with primary focus for Android and Desktop clients.',
+    description: 'This is thenewboston SDK in Kotlin with primary focus on developing Android and Desktop clients.',
     language: Language.kotlin,
     title: 'thenewboston Kotlin-SDK',
     url: 'https://github.com/thenewboston-developers/Kotlin-SDK',
   },
   {
     description:
-      'This is a .NET Core SDK for thenewboston, which is available cross-platform. The SDK itself will solely contain the domain and data layers of thenewboston.',
+      'This is a .NET Core SDK for thenewboston, which is available cross-platform. The SDK itself solely contains the domain and data layers of thenewboston.',
     language: Language.dotNet,
     title: 'thenewboston .NET Core SDK',
     url: 'https://github.com/thenewboston-developers/dotnetcore-sdk',

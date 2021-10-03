@@ -26,12 +26,16 @@ const Tools: FC = () => {
           </div>
           <div className="Tools__tool">
             <EmojiIcon color="#4F52FF" emoji={EmojiType.Wrench} marginBottom={24} />
-            <div className="Tools__tool-title">SDKs & Libraries</div>
+            <div className="Tools__tool-title">Developer Tools</div>
             <div className="Tools__tool-description">
               Are you a JavaScript or Python developer? Are you ready to develop your awesome software for thenewboston
-              network? Our SDKs and Libraries will help you get started.
+              network? Our Developer Tools include SDKs, Libraries, and Utilities that get you started.
             </div>
-            <Button className="Tools__tool-button" variant="outlined" onClick={() => history.push(ROUTES.tools.sdks)}>
+            <Button
+              className="Tools__tool-button"
+              variant="outlined"
+              onClick={() => history.push(ROUTES.tools.developerTools)}
+            >
               Learn More
             </Button>
           </div>

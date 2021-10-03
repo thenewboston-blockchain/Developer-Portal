@@ -12,8 +12,8 @@ const toolsPopoverItems: TopNavPopoverItemType[] = [
     to: ROUTES.tools.apis,
   },
   {
-    title: 'SDKs & Libraries',
-    to: ROUTES.tools.sdks,
+    title: 'Developer Tools',
+    to: ROUTES.tools.developerTools,
   },
 ];
 

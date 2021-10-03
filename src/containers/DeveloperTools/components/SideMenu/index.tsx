@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Language} from 'types/libraries';
+import {Language} from 'types/developer-tools';
 
 import Filters from '../Filters';
 

@@ -58,8 +58,8 @@ const navLists = [
         url: ROUTES.tools.apis,
       },
       {
-        title: 'SDKs & Libraries',
-        url: ROUTES.tools.sdks,
+        title: 'Developer Tools',
+        url: ROUTES.tools.developerTools,
       },
     ],
   },

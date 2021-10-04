@@ -82,6 +82,18 @@
   line-height: var(--line-height-h1);
 }
 
+@mixin h2 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+}
+
+@mixin h3 {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+}
+
 @mixin display2 {
   font-family: var(--font-family-default);
   font-size: var(--font-size-display2);

@@ -17,7 +17,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import Projects from './Projects';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
-import SdkAndLibraries from './SdkAndLibraries';
+import DeveloperTools from './DeveloperTools';
 import TermsOfUse from './TermsOfUse';
 
 /**
@@ -76,7 +76,7 @@ const App: FC = () => {
           />
           <Route path={`${ROUTES.tools.apis}/primary-validator-api/:chapter?`} component={PrimaryValidatorApi} />
           <Redirect path={ROUTES.tools.apis} to={`${ROUTES.tools.apis}/bank-api`} />
-          <Route exact path={ROUTES.tools.sdks} component={SdkAndLibraries} />
+          <Route exact path={ROUTES.tools.developerTools} component={DeveloperTools} />
           <Route path={ROUTES.legal.guidelines} component={Guidelines} />
           <Route path={ROUTES.legal.termsOfUse} component={TermsOfUse} />
           <Route path={ROUTES.legal.privacyPolicy} component={PrivacyPolicy} />

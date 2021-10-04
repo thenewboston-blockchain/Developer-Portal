@@ -7,9 +7,9 @@ export enum Language {
 }
 
 // This type is also used for SDKs
-export type LibraryType = {
+export type DevToolType = {
   description: string;
-  language: Language;
+  language?: Language;
   title: string;
   url: string;
 };

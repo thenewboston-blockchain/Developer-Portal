@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import clsx from 'clsx';
 
 import {Checkbox} from 'components/FormElements';
-import {Language} from 'types/libraries';
+import {Language} from 'types/developer-tools';
 
 import './Filters.scss';
 

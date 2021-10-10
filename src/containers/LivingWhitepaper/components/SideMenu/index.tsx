@@ -27,18 +27,18 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
   const isArchitectureSelected = pathname.includes(architecturePath);
 
   return (
-    <div className="SideMenu">
-      <div className="SideMenu__section">
+    <div className="LivingWhitepaperSideMenu">
+      <div className="LivingWhitepaperSideMenu__section">
         <button
           className={clsx(
-            'SideMenu__section-header',
-            isPrincipalEntitiesSelected && 'SideMenu__section-header--active',
+            'LivingWhitepaperSideMenu__section-header',
+            isPrincipalEntitiesSelected && 'LivingWhitepaperSideMenu__section-header--active',
           )}
           onClick={() => history.push(principalEntitiesPath)}
         >
           <div>Principle Entities on the Network</div>
           <Icon
-            className="SideMenu__toggle-icon"
+            className="LivingWhitepaperSideMenu__toggle-icon"
             icon={isPrincipalEntitiesSelected ? IconType.chevronUp : IconType.chevronDown}
             size={20}
             totalSize={20}
@@ -49,8 +49,8 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
               <ReactScrollLink
-                activeClass="SideMenu__link--active"
-                className={clsx('SideMenu__link')}
+                activeClass="LivingWhitepaperSideMenu__link--active"
+                className={clsx('LivingWhitepaperSideMenu__link')}
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
                 to={selectionHash}
@@ -61,14 +61,17 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
           })}
       </div>
 
-      <div className="SideMenu__section">
+      <div className="LivingWhitepaperSideMenu__section">
         <button
-          className={clsx('SideMenu__section-header', isPrincipalEventsSelected && 'SideMenu__section-header--active')}
+          className={clsx(
+            'LivingWhitepaperSideMenu__section-header',
+            isPrincipalEventsSelected && 'LivingWhitepaperSideMenu__section-header--active',
+          )}
           onClick={() => history.push(principalEventsPath)}
         >
           <div>Principle Events and Processes on the Network</div>
           <Icon
-            className="SideMenu__toggle-icon"
+            className="LivingWhitepaperSideMenu__toggle-icon"
             icon={isPrincipalEventsSelected ? IconType.chevronUp : IconType.chevronDown}
             size={20}
             totalSize={20}
@@ -79,8 +82,8 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
               <ReactScrollLink
-                activeClass="SideMenu__link--active"
-                className={clsx('SideMenu__link')}
+                activeClass="LivingWhitepaperSideMenu__link--active"
+                className={clsx('LivingWhitepaperSideMenu__link')}
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
                 to={selectionHash}
@@ -91,14 +94,17 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
           })}
       </div>
 
-      <div className="SideMenu__section">
+      <div className="LivingWhitepaperSideMenu__section">
         <button
-          className={clsx('SideMenu__section-header', isArchitectureSelected && 'SideMenu__section-header--active')}
+          className={clsx(
+            'LivingWhitepaperSideMenu__section-header',
+            isArchitectureSelected && 'LivingWhitepaperSideMenu__section-header--active',
+          )}
           onClick={() => history.push(architecturePath)}
         >
           <div>Architecture - Deep Dive</div>
           <Icon
-            className="SideMenu__toggle-icon"
+            className="LivingWhitepaperSideMenu__toggle-icon"
             icon={isArchitectureSelected ? IconType.chevronUp : IconType.chevronDown}
             size={20}
             totalSize={20}
@@ -109,8 +115,8 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
               <ReactScrollLink
-                activeClass="SideMenu__link--active"
-                className={clsx('SideMenu__link')}
+                activeClass="LivingWhitepaperSideMenu__link--active"
+                className={clsx('LivingWhitepaperSideMenu__link')}
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
                 to={selectionHash}

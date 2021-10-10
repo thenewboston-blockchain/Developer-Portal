@@ -88,7 +88,7 @@ const BreadcrumbSection: FC<Props> = ({
             id="whitepaper"
             open={!!dropDownEl}
             transformOrigin={{horizontal: 'center', vertical: 'top'}}
-            transformOffset={{horizontal: width > 414 ? 0 : 50, vertical: 12}}
+            transformOffset={{horizontal: width > 400 ? 0 : 50, vertical: 12}}
           >
             {items &&
               items.map((item) => {

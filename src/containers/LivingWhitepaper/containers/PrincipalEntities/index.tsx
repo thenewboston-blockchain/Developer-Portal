@@ -108,7 +108,7 @@ const PrincipalEntities: FC = () => {
             />
           </div>
           <p className="PrincipalEntities__section-paragraph">
-            When users first download an account manager, it guides them through creating a key pair. A{' '}
+            When users first download wallet, it guides them through creating a key pair. A{' '}
             <span className="PrincipalEntities__section-text--highlight">key pair</span> comprises a signing key
             (private key) and an account number (public key).
           </p>
@@ -134,7 +134,7 @@ const PrincipalEntities: FC = () => {
           </p>
           <p className="PrincipalEntities__section-paragraph">
             Users can have more than one account and they can create and manage several accounts (key pairs) through the
-            same account manager app. This is similar to an individual that has multiple email addresses and manages all
+            same wallet. This is similar to an individual that has multiple email addresses and manages all
             of these email accounts using a single app.
           </p>
         </section>

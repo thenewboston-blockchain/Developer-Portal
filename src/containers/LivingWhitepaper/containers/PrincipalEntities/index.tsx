@@ -134,8 +134,8 @@ const PrincipalEntities: FC = () => {
           </p>
           <p className="PrincipalEntities__section-paragraph">
             Users can have more than one account and they can create and manage several accounts (key pairs) through the
-            same wallet. This is similar to an individual that has multiple email addresses and manages all
-            of these email accounts using a single app.
+            same wallet. This is similar to an individual that has multiple email addresses and manages all of these
+            email accounts using a single app.
           </p>
         </section>
         <Divider className="PrincipalEntities__divider" />

@@ -1,7 +1,4 @@
 .A {
-  align-items: center;
-  display: flex;
-
   // Needed to add extra specificity to override `Icon`'s styling
   .A__Icon--new-window {
     display: inline-flex;

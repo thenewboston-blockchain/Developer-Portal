@@ -39,7 +39,7 @@ const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
       <PageTitle title={pageName} />
       <Measure bounds onResize={(contentRect) => setBreadcrumbHeight(contentRect?.bounds?.height || 0)}>
         {({measureRef}) => (
-          <div className="DeveloperPortalLayout__breadcrumb" ref={measureRef}>
+          <div className="LivingWhitepaperDeveloperPortalLayout__breadcrumb" ref={measureRef}>
             <Container>
               <Breadcrumb breadcrumbHeight={breadcrumbHeight} />
             </Container>
@@ -48,11 +48,11 @@ const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
         )}
       </Measure>
       <Container>
-        <div className="DeveloperPortalLayout__main-content">
-          <div className="DeveloperPortalLayout__left-content">
+        <div className="LivingWhitepaperDeveloperPortalLayout__main-content">
+          <div className="LivingWhitepaperDeveloperPortalLayout__left-content">
             <SideMenu breadcrumbHeight={breadcrumbHeight} />
           </div>
-          <div className="DeveloperPortalLayout__right-content">{children}</div>
+          <div className="LivingWhitepaperDeveloperPortalLayout__right-content">{children}</div>
         </div>
       </Container>
     </>

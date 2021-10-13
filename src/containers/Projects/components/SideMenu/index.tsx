@@ -32,10 +32,13 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
   const [shouldOpenProjectRules, setShouldOpenProjectRules] = useState(isProjectRulesSelected);
 
   return (
-    <div className="SideMenu">
-      <div className="SideMenu__section">
+    <div className="ProjectsSideMenu">
+      <div className="ProjectsSideMenu__section">
         <button
-          className={clsx('SideMenu__section-header', isApprovedProjectsSelected && 'SideMenu__section-header--active')}
+          className={clsx(
+            'ProjectsSideMenu__section-header',
+            isApprovedProjectsSelected && 'ProjectsSideMenu__section-header--active',
+          )}
           onClick={() => {
             if (!isApprovedProjectsSelected) {
               history.push(approvedProjectsPath);
@@ -46,13 +49,13 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
         >
           <div>Approved Projects</div>
           <Icon
-            className="SideMenu__toggle-icon"
+            className="ProjectsSideMenu__toggle-icon"
             icon={isApprovedProjectsSelected && shouldOpenApprovedProjects ? IconType.chevronUp : IconType.chevronDown}
             size={20}
             totalSize={20}
           />
         </button>
-        <div className="SideMenu__approved-projects-container">
+        <div className="ProjectsSideMenu__approved-projects-container">
           {isApprovedProjectsSelected &&
             shouldOpenApprovedProjects &&
             approvedProjectUrls &&
@@ -60,7 +63,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
               const isActive = pathname === selection.url;
               return (
                 <Link
-                  className={clsx('SideMenu__link', {'SideMenu__link--active': isActive})}
+                  className={clsx('ProjectsSideMenu__link', {'ProjectsSideMenu__link--active': isActive})}
                   to={selection.url}
                   key={selection.url}
                 >
@@ -70,9 +73,12 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             })}
         </div>
       </div>
-      <div className="SideMenu__section">
+      <div className="ProjectsSideMenu__section">
         <button
-          className={clsx('SideMenu__section-header', isProjectRulesSelected && 'SideMenu__section-header--active')}
+          className={clsx(
+            'ProjectsSideMenu__section-header',
+            isProjectRulesSelected && 'ProjectsSideMenu__section-header--active',
+          )}
           onClick={() => {
             if (!isProjectRulesSelected) {
               history.push(projectRulesPath);
@@ -83,7 +89,7 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
         >
           <div>Rules &amp; Guidelines</div>
           <Icon
-            className="SideMenu__toggle-icon"
+            className="ProjectsSideMenu__toggle-icon"
             icon={isProjectRulesSelected && shouldOpenProjectRules ? IconType.chevronUp : IconType.chevronDown}
             size={20}
             totalSize={20}
@@ -95,8 +101,8 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
               <ReactScrollLink
-                activeClass="SideMenu__link--active"
-                className={clsx('SideMenu__link')}
+                activeClass="ProjectsSideMenu__link--active"
+                className={clsx('ProjectsSideMenu__link')}
                 key={selection.url}
                 offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
                 to={selectionHash}
@@ -106,9 +112,9 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
             );
           })}
       </div>
-      <div className="SideMenu__section">
+      <div className="ProjectsSideMenu__section">
         <A
-          className="SideMenu__section-header"
+          className="ProjectsSideMenu__section-header"
           href="https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT"
         >
           Propose a Project

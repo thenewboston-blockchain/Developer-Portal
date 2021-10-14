@@ -62,9 +62,9 @@ const PrincipalEntities: FC = () => {
         <section className="PrincipalEntities__section" id={PrincipleEntitiesId.Account}>
           <h2 className="PrincipalEntities__section-heading">Account</h2>
           <p className="PrincipalEntities__section-paragraph">
-            Accounts are anonymous digital identities on the network where coins can be sent to and from.
-            Wallets are software apps (such as client desktop software) that individuals use to create new accounts,
-            manage existing accounts, send coins, and receive coins.
+            Accounts are anonymous digital identities on the network where coins can be sent to and from. Wallets are
+            software apps (such as client desktop software) that individuals use to create new accounts, manage existing
+            accounts, send coins, and receive coins.
           </p>
           <p className="PrincipalEntities__section-paragraph PrincipalEntities__section-paragraph--mb-0 PrincipalEntities__section-text--bold">
             Every account has:

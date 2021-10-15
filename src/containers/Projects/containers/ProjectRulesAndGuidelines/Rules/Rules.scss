@@ -27,7 +27,7 @@
       margin-bottom: 8px;
       margin-top: 0;
       padding-inline-start: 20px;
-      text-align: justify;
+      text-align: left;
     }
 
     &:not(:last-child) {
@@ -40,7 +40,7 @@
     color: var(--color-gray-500);
     margin-bottom: 32px;
     margin-top: 0;
-    text-align: justify;
+    text-align: left;
   }
 
   @media (max-width: 480px) {

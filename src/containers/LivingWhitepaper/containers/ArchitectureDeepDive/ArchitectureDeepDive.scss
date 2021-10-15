@@ -49,7 +49,7 @@
     @extend %body1;
     color: var(--color-gray-500);
     margin: 16px 0;
-    text-align: justify;
+    text-align: left;
   }
 
   &__point-divider {
@@ -72,7 +72,7 @@
     @extend %body1;
     color: var(--color-gray-500);
     margin: 8px 0;
-    text-align: justify;
+    text-align: left;
   }
 
   &__navigation {

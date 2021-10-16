@@ -40,7 +40,7 @@
           @extend %body1;
           color: var(--color-gray-500);
           margin: 0;
-          text-align: justify;
+          text-align: left;
         }
       }
     }
@@ -70,7 +70,7 @@
       &-text {
         @extend %body1;
         color: var(--color-gray-700);
-        text-align: justify;
+        text-align: left;
 
         &--bold {
           font-weight: var(--font-weight-medium);
@@ -82,7 +82,7 @@
       @extend %body1;
       color: var(--color-gray-500);
       margin-bottom: 32px;
-      text-align: justify;
+      text-align: left;
     }
   }
 
@@ -111,7 +111,7 @@
       color: var(--color-gray-500);
       margin: 0;
       margin-bottom: 32px;
-      text-align: justify;
+      text-align: left;
     }
   }
 

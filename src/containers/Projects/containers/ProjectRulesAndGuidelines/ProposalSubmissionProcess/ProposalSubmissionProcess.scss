@@ -22,7 +22,7 @@
 
     &-content {
       color: var(--color-gray-500);
-      text-align: justify;
+      text-align: left;
     }
 
     &-header {
@@ -70,7 +70,7 @@
       @extend %h3;
       color: var(--color-gray-700);
       margin: 0;
-      text-align: justify;
+      text-align: left;
     }
 
     &-text {
@@ -83,7 +83,7 @@
     @extend %body1;
     color: var(--color-gray-500);
     margin-top: 0;
-    text-align: justify;
+    text-align: left;
   }
 
   @media (max-width: 992px) {

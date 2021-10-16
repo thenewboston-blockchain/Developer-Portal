@@ -17,14 +17,14 @@
     color: var(--color-gray-800);
     font-weight: var(--font-weight-bold);
     margin-bottom: 8px;
-    text-align: justify;
+    text-align: left;
   }
 
   &__answer {
     @extend %body1;
     color: var(--color-gray-500);
     margin-bottom: 24px;
-    text-align: justify;
+    text-align: left;
 
     &-items {
       margin-bottom: 8px;
@@ -36,7 +36,7 @@
       @extend %body1;
       color: var(--color-gray-500);
       margin-bottom: 8px;
-      text-align: justify;
+      text-align: left;
     }
   }
 

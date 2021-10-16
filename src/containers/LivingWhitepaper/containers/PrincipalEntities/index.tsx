@@ -62,9 +62,9 @@ const PrincipalEntities: FC = () => {
         <section className="PrincipalEntities__section" id={PrincipleEntitiesId.Account}>
           <h2 className="PrincipalEntities__section-heading">Account</h2>
           <p className="PrincipalEntities__section-paragraph">
-            Accounts are anonymous digital identities on the network where coins can be sent to and from. Account
-            managers are software apps (such as client desktop software) that individuals use to create new accounts,
-            manage existing accounts, send coins, and receive coins.
+            Accounts are anonymous digital identities on the network where coins can be sent to and from. Wallets are
+            software apps (such as client desktop software) that individuals use to create new accounts, manage existing
+            accounts, send coins, and receive coins.
           </p>
           <p className="PrincipalEntities__section-paragraph PrincipalEntities__section-paragraph--mb-0 PrincipalEntities__section-text--bold">
             Every account has:
@@ -108,7 +108,7 @@ const PrincipalEntities: FC = () => {
             />
           </div>
           <p className="PrincipalEntities__section-paragraph">
-            When users first download an account manager, it guides them through creating a key pair. A{' '}
+            When users first download wallet, it guides them through creating a key pair. A{' '}
             <span className="PrincipalEntities__section-text--highlight">key pair</span> comprises a signing key
             (private key) and an account number (public key).
           </p>
@@ -134,8 +134,8 @@ const PrincipalEntities: FC = () => {
           </p>
           <p className="PrincipalEntities__section-paragraph">
             Users can have more than one account and they can create and manage several accounts (key pairs) through the
-            same account manager app. This is similar to an individual that has multiple email addresses and manages all
-            of these email accounts using a single app.
+            same wallet. This is similar to an individual that has multiple email addresses and manages all of these
+            email accounts using a single app.
           </p>
         </section>
         <Divider className="PrincipalEntities__divider" />

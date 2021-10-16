@@ -48,6 +48,10 @@
       &-container {
         text-align: center;
       }
+
+      @media (max-width: 414px) {
+        width: 100%;
+      }
     }
 
     &-list {
@@ -76,7 +80,7 @@
       @extend %body1;
       color: var(--color-gray-500);
       margin-bottom: 16px;
-      text-align: justify;
+      text-align: left;
 
       &--mb-0 {
         margin-bottom: 0px;

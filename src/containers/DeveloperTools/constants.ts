@@ -13,6 +13,12 @@ export const LIBRARIES: DevToolType[] = [
     url: 'https://github.com/thenewboston-developers/thenewboston-python',
   },
   {
+    description: 'The official Discord Python framework for thenewboston blockchain.',
+    language: Language.python,
+    title: 'Discord-Python-Framework',
+    url: 'https://github.com/buckyroberts/Discord-Python-Framework',
+  },
+  {
     description:
       'A JavaScript library for thenewboston that allows you to create new accounts and signatures, verify signatures, and so on.',
     language: Language.javascript,

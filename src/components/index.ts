@@ -6,6 +6,7 @@ import Container from './Container';
 import DataTable from './DataTable';
 import Divider from './Divider';
 import DashboardLayout from './DashboardLayout';
+import DocsMenuItems from './DocsMenuItems';
 import {
   CalloutType,
   DocCallout,
@@ -56,6 +57,7 @@ export {
   DocImage,
   DocInlineCode,
   DocList,
+  DocsMenuItems,
   DocSubHeader,
   DocSubSection,
   EmojiIcon,

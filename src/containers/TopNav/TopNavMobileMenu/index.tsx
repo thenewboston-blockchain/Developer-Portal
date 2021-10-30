@@ -70,7 +70,9 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
               'Tools',
               <>
                 {renderMobileLink('APIs', ROUTES.tools.apis)}
-                {renderMobileLink('Developer Tools', ROUTES.tools.developerTools)}
+                {renderMobileLink('Node Deployment', ROUTES.tools.nodeDeployment)}
+                {renderMobileLink('SDKs & Libraries', ROUTES.tools.developerTools)}
+                {renderMobileLink('Utilities', ROUTES.tools.utilities)}
               </>,
             )}
           </div>

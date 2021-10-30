@@ -15,6 +15,7 @@ import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
 import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/PrincipalEventsAndProcesses';
 import PrivacyPolicy from './PrivacyPolicy';
 import Projects from './Projects';
+import NodeDeployment from './NodeDeployment';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
 import DeveloperTools from './DeveloperTools';
@@ -65,6 +66,7 @@ const App: FC = () => {
             path={`${ROUTES.whitepaper.principalEvents}/:chapter?`}
             component={PrincipalEventsAndProcesses}
           />
+          <Route exact path={`${ROUTES.tools.nodeDeployment}/:chapter?`} component={NodeDeployment} />
           <Route exact path={`${ROUTES.whitepaper.architecture}/:chapter?`} component={ArchitectureDeepDive} />
           <Route exact path={ROUTES.projects.home} component={Projects} />
           <Route exact path={ROUTES.projects.rules} component={ProjectRulesAndGuidelines} />

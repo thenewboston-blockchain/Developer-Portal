@@ -1,14 +1,12 @@
 import React, {FC, memo, useCallback} from 'react';
-import {Link} from 'react-router-dom';
-import clsx from 'clsx';
 
-import TNBLogo from 'assets/images/TNB-Logo.png';
-import {SocialMediaIcon} from 'components';
+import colors from 'styles/colors';
 import {ROUTES, URLS} from 'constants/routes';
 import {SocialMedia} from 'types/social-media';
+import {socialMediaUrls, socialMediaFooterIcons} from 'utils/social-media';
 
 import FooterNavList from './FooterNavList';
-import './Footer.scss';
+import * as S from './Styles';
 
 interface ComponentProps {
   className?: string;
@@ -19,15 +17,15 @@ const navLists = [
     header: 'Living Whitepaper',
     links: [
       {
-        title: 'Principal Entities on the Network',
+        title: 'Entities',
         url: ROUTES.whitepaper.principalEntities,
       },
       {
-        title: 'Principal Events and Processes on the Network',
+        title: 'Events and Processes',
         url: ROUTES.whitepaper.principalEvents,
       },
       {
-        title: 'Architecture - Deep Dive',
+        title: 'Architecture Details',
         url: ROUTES.whitepaper.architecture,
       },
     ],
@@ -58,8 +56,110 @@ const navLists = [
         url: ROUTES.tools.apis,
       },
       {
-        title: 'Developer Tools',
+        title: 'Node Deployment',
+        url: ROUTES.tools.nodeDeployment,
+      },
+      {
+        title: 'SDKs & Libraries',
         url: ROUTES.tools.developerTools,
+      },
+      {
+        title: 'Utilities',
+        url: ROUTES.tools.utilities,
+      },
+    ],
+  },
+  {
+    header: 'Social',
+    links: [
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            {/* material ui's discord icon is slightly different from the design, hence we will use the custom one */}
+            <S.DiscordIcon color={colors.palette.neutral['400']} />
+            {SocialMedia.discord}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.discord],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.github]} size={20} totalSize={20} />
+            {SocialMedia.github}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.github],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.youtube]} size={20} totalSize={20} />
+            {SocialMedia.youtube}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.youtube],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.reddit]} size={20} totalSize={20} />
+            {SocialMedia.reddit}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.reddit],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.facebook]} size={20} totalSize={20} />
+            {SocialMedia.facebook}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.facebook],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.twitter]} size={20} totalSize={20} />
+            {SocialMedia.twitter}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.twitter],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.instagram]} size={20} totalSize={20} />
+            {SocialMedia.instagram}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.instagram],
+      },
+      {
+        isExternal: true,
+        newWindow: true,
+        title: (
+          <S.SocialMediaLink>
+            <S.SocialMediaIcon icon={socialMediaFooterIcons[SocialMedia.linkedin]} size={20} totalSize={20} />
+            {SocialMedia.linkedin}
+          </S.SocialMediaLink>
+        ),
+        url: socialMediaUrls[SocialMedia.linkedin],
       },
     ],
   },
@@ -83,49 +183,15 @@ const navLists = [
 ];
 
 const Footer: FC<ComponentProps> = ({className}) => {
-  const renderSocialMediaLinks = useCallback(
-    () =>
-      [
-        SocialMedia.github,
-        SocialMedia.youtube,
-        SocialMedia.reddit,
-        SocialMedia.linkedin,
-        SocialMedia.facebook,
-        SocialMedia.instagram,
-        SocialMedia.twitter,
-        SocialMedia.discord,
-        SocialMedia.twitch,
-        SocialMedia.pinterest,
-      ].map((website) => (
-        <SocialMediaIcon
-          className="Footer__SocialMediaLink"
-          iconSize={28}
-          key={website}
-          totalSize={28}
-          website={website}
-        />
-      )),
-    [],
-  );
-
   const renderNavLists = useCallback(
     () => navLists.map((list) => <FooterNavList header={list.header} key={list.header} links={list.links} />),
     [],
   );
 
   return (
-    <footer className={clsx('Footer', className)} data-testid="Footer">
-      <div className="Footer__left">
-        <div className="Footer__left-brand-details">
-          <Link className="Footer__logo" to="/">
-            <img src={TNBLogo} alt="thenewboston logo" height={30} />
-            <div className="Footer__logo-text">developer</div>
-          </Link>
-          <div className="Footer__social-media-links">{renderSocialMediaLinks()}</div>
-        </div>
-      </div>
-      <div className="Footer__right">{renderNavLists()}</div>
-    </footer>
+    <S.Container className={className} data-testid="Footer">
+      {renderNavLists()}
+    </S.Container>
   );
 };
 

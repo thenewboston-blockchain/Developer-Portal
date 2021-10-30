@@ -56,7 +56,7 @@
   }
 
   &__card-title {
-    @extend %h2;
+    @extend %h1;
     color: var(--color-neutral-900);
     font-weight: var(--font-weight-medium);
     margin-bottom: 16px;

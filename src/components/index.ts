@@ -1,6 +1,7 @@
 import A from './A';
 import Avatar from './Avatar';
 import BreadcrumbMenu from './BreadcrumbMenu';
+import BreadcrumbSection from './BreadcrumbSection';
 import {CodeSnippet, RequestResponseSnippet, SnippetLang} from './CodeSnippet';
 import Container from './Container';
 import DataTable from './DataTable';
@@ -44,6 +45,7 @@ export {
   A,
   Avatar,
   BreadcrumbMenu,
+  BreadcrumbSection,
   Button,
   CalloutType,
   CodeSnippet,

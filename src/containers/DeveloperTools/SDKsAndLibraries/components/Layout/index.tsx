@@ -5,15 +5,14 @@ import {Container, Divider, PageTitle} from 'components';
 import Breadcrumb from '../Breadcrumb';
 import SideMenu from '../SideMenu';
 
-import './DeveloperPortalLayout.scss';
+import * as S from './Styles';
 
 type Props = {
   children: (selectedLanguages: Language[]) => ReactNode;
   pageName: string;
-  hasLanguageFilter?: boolean;
 };
 
-const DeveloperPortalLayout: FC<Props> = ({children, hasLanguageFilter, pageName}) => {
+const Layout: FC<Props> = ({children, pageName}) => {
   const [selectedLanguages, setSelectedLanguages] = useState<Language[]>([]);
 
   const toggleLanguage = React.useCallback(
@@ -30,26 +29,20 @@ const DeveloperPortalLayout: FC<Props> = ({children, hasLanguageFilter, pageName
   return (
     <>
       <PageTitle title={pageName} />
-      <div className="DeveloperPortalLayout__breadcrumb">
+      <S.BreadcrumbContainer>
         <Container>
-          <Breadcrumb
-            hasLanguageFilter={hasLanguageFilter}
-            selectedLanguages={selectedLanguages}
-            toggleLanguage={toggleLanguage}
-          />
+          <Breadcrumb selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />
         </Container>
         <Divider />
-      </div>
+      </S.BreadcrumbContainer>
       <Container>
-        <div className="DeveloperPortalLayout__main-content">
-          <div className="DeveloperPortalLayout__left-content">
-            <SideMenu selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />
-          </div>
-          <div className="DeveloperPortalLayout__right-content">{children(selectedLanguages)}</div>
-        </div>
+        <S.MainContainer>
+          <SideMenu selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />
+          <S.RightContainer>{children(selectedLanguages)}</S.RightContainer>
+        </S.MainContainer>
       </Container>
     </>
   );
 };
 
-export default DeveloperPortalLayout;
+export default Layout;

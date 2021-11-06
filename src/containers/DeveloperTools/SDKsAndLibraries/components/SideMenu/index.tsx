@@ -4,7 +4,7 @@ import {Language} from 'types/developer-tools';
 
 import Filters from '../Filters';
 
-import './SideMenu.scss';
+import * as S from './Styles';
 
 type Props = {
   selectedLanguages: string[];
@@ -13,9 +13,9 @@ type Props = {
 
 const SideMenu: FC<Props> = ({selectedLanguages, toggleLanguage}) => {
   return (
-    <div className="SideMenu">
+    <S.Container>
       <Filters selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />
-    </div>
+    </S.Container>
   );
 };
 

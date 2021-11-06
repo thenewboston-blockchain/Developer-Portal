@@ -14,6 +14,7 @@ type Props = {
   isSectionSelected: boolean;
   disabled?: boolean;
   hasItems: boolean;
+  shouldShowDropdownByDefault?: boolean; // to override dropdown being shown in mobile widths only
   items?: {
     url: string;
     title: string;
@@ -22,6 +23,7 @@ type Props = {
   hasPrecedingArrowIcon?: boolean;
   hasPrecedingArrowIcon992px?: boolean;
   scrollOffset?: number; // only used if items are in the same page
+  popoverOffsetX414?: number;
 };
 
 const BreadcrumbSection: FC<Props> = ({
@@ -33,6 +35,8 @@ const BreadcrumbSection: FC<Props> = ({
   isSectionSelected,
   items,
   scrollOffset,
+  shouldShowDropdownByDefault = false,
+  popoverOffsetX414 = 50,
   title,
   titleLink,
 }) => {
@@ -52,8 +56,8 @@ const BreadcrumbSection: FC<Props> = ({
 
   return (
     <>
-      {/* Only show breadcrumb without dropdown if width > 992 or breadcrumb section does not have sub-items */}
-      {width > 992 || !hasItems ? (
+      {/* Only show breadcrumb without dropdown if width > 992 */}
+      {width > 992 && !shouldShowDropdownByDefault ? (
         <div className="BreadcrumbSection__link-container">
           {hasPrecedingArrowIcon && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
@@ -84,13 +88,15 @@ const BreadcrumbSection: FC<Props> = ({
             >
               {title}
             </span>
-            <Icon
-              className="BreadcrumbSection__icon"
-              id={titleLink}
-              icon={dropDownEl ? IconType.chevronUp : IconType.chevronDown}
-              size={16}
-              totalSize={16}
-            />
+            {hasItems && (
+              <Icon
+                className="BreadcrumbSection__icon"
+                id={titleLink}
+                icon={dropDownEl ? IconType.chevronUp : IconType.chevronDown}
+                size={16}
+                totalSize={16}
+              />
+            )}
           </button>
           <Popover
             anchorEl={dropDownEl}
@@ -100,7 +106,7 @@ const BreadcrumbSection: FC<Props> = ({
             id="whitepaper"
             open={!!dropDownEl}
             transformOrigin={{horizontal: 'center', vertical: 'top'}}
-            transformOffset={{horizontal: width > 414 ? 0 : 50, vertical: 12}}
+            transformOffset={{horizontal: width > 414 ? 0 : popoverOffsetX414, vertical: 12}}
           >
             {items &&
               items.map((item) => {

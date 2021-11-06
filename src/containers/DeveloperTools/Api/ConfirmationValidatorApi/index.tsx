@@ -1,9 +1,8 @@
 import React, {FC, useMemo} from 'react';
 import {Redirect, useParams} from 'react-router-dom';
 
-import {Container, DashboardLayout, PageTitle, Pagination} from 'components';
 import {PageData, PageDataObject} from 'types/page-data';
-import Breadcrumb from '../../components/Breadcrumb';
+import Layout from '../components/Layout';
 
 import ConfirmationValidatorApiAccounts from './ConfirmationValidatorApiAccounts';
 import ConfirmationValidatorApiBankConfirmationServices from './ConfirmationValidatorApiBankConfirmationServices';
@@ -14,7 +13,6 @@ import ConfirmationValidatorApiPrimaryValidatorUpdated from './ConfirmationValid
 import ConfirmationValidatorApiUpgradeRequest from './ConfirmationValidatorApiUpgradeRequest';
 import ConfirmationValidatorApiValidators from './ConfirmationValidatorApiValidators';
 
-import ApiDocsMenuItems, {confirmationValidatorApiNavigationData} from '../ApiDocsMenuItems';
 import NodeApiClean from '../NodeApi/NodeApiClean';
 import NodeApiConnectionRequests from '../NodeApi/NodeApiConnectionRequests';
 import NodeApiCrawl from '../NodeApi/NodeApiCrawl';
@@ -79,18 +77,7 @@ const ConfirmationValidatorApi: FC = () => {
   const {chapter} = useParams<{chapter: string}>();
   const {content, name} = useMemo(() => getPageData(chapter), [chapter]);
 
-  return (
-    <>
-      <Container>
-        <Breadcrumb />
-      </Container>
-      <DashboardLayout menuItems={<ApiDocsMenuItems />} pageName={name} sectionName="Confirmation Validator API">
-        <PageTitle ogDescription={`${name} | Confirmation Validator API`} title={name} />
-        {content}
-        <Pagination navigationData={confirmationValidatorApiNavigationData} />
-      </DashboardLayout>
-    </>
-  );
+  return <Layout pageName={`${name} | Confirmation Validator API`}>{content}</Layout>;
 };
 
 export default ConfirmationValidatorApi;

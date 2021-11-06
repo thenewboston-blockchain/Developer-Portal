@@ -2,7 +2,7 @@ import React, {ReactNode, useState} from 'react';
 
 import type {Language, DevToolType} from 'types/developer-tools';
 
-import DeveloperPortalLayout from '../components/DeveloperPortalLayout';
+import Layout from './components/Layout';
 import ConfirmationModal from '../components/ConfirmationModal';
 import HeroImg from '../assets/hero-img.svg';
 import {LIBRARIES, SDKS} from '../constants';
@@ -47,7 +47,7 @@ const SDKsAndLibraries = () => {
   };
 
   return (
-    <DeveloperPortalLayout hasLanguageFilter pageName="SDKs & Libraries">
+    <Layout pageName="SDKs & Libraries">
       {(selectedLanguages) => (
         <>
           <div className="SDKsAndLibraries__hero">
@@ -72,7 +72,7 @@ const SDKsAndLibraries = () => {
           <ConfirmationModal url={goToUrl} onClose={() => setGoToUrl(null)} />
         </>
       )}
-    </DeveloperPortalLayout>
+    </Layout>
   );
 };
 

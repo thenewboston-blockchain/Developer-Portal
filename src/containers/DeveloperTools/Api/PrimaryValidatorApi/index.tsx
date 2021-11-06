@@ -1,9 +1,8 @@
 import React, {FC, useMemo} from 'react';
 import {Redirect, useParams} from 'react-router-dom';
 
-import {Container, DashboardLayout, PageTitle, Pagination} from 'components';
 import {PageData, PageDataObject} from 'types/page-data';
-import Breadcrumb from '../../components/Breadcrumb';
+import Layout from '../components/Layout';
 
 import PrimaryValidatorApiAccounts from './PrimaryValidatorApiAccounts';
 import PrimaryValidatorApiBankBlocks from './PrimaryValidatorApiBankBlocks';
@@ -11,7 +10,6 @@ import PrimaryValidatorApiBanks from './PrimaryValidatorApiBanks';
 import PrimaryValidatorApiConfig from './PrimaryValidatorApiConfig';
 import PrimaryValidatorApiConfirmationBlocks from './PrimaryValidatorApiConfirmationBlocks';
 import PrimaryValidatorApiValidators from './PrimaryValidatorApiValidators';
-import ApiDocsMenuItems, {primaryValidatorApiNavigationData} from '../ApiDocsMenuItems';
 import NodeApiConnectionRequests from '../NodeApi/NodeApiConnectionRequests';
 
 const defaultPageData: PageData = {
@@ -58,18 +56,7 @@ const PrimaryValidatorApi: FC = () => {
   const {chapter} = useParams<{chapter: string}>();
   const {content, name} = useMemo(() => getPageData(chapter), [chapter]);
 
-  return (
-    <>
-      <Container>
-        <Breadcrumb />
-      </Container>
-      <DashboardLayout menuItems={<ApiDocsMenuItems />} pageName={name} sectionName="Primary Validator API">
-        <PageTitle ogDescription={`${name} | Primary Validator API`} title={name} />
-        {content}
-        <Pagination navigationData={primaryValidatorApiNavigationData} />
-      </DashboardLayout>
-    </>
-  );
+  return <Layout pageName={`${name} | Primary Validator API`}>{content}</Layout>;
 };
 
 export default PrimaryValidatorApi;

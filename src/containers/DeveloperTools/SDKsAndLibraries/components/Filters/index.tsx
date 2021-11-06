@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {Checkbox} from 'components/FormElements';
 import {Language} from 'types/developer-tools';
 
-import './Filters.scss';
+import * as S from './Styles';
 
 type Props = {
   selectedLanguages: string[];
@@ -15,12 +15,12 @@ const Filters: FC<Props> = ({selectedLanguages, toggleLanguage}) => {
   const allLanguages = Object.values(Language);
 
   return (
-    <div className="Filters">
-      <h3 className="Filters__title">Language</h3>
+    <S.Container>
+      <S.Title>Language</S.Title>
 
       {allLanguages.map((language) => (
-        <div
-          className={clsx('Filters__filter', selectedLanguages.includes(language) && 'Filters__filter--selected')}
+        <S.Filter
+          selected={selectedLanguages.includes(language)}
           key={language}
           role="button"
           tabIndex={0}
@@ -33,9 +33,9 @@ const Filters: FC<Props> = ({selectedLanguages, toggleLanguage}) => {
             size={18}
           />
           {language}
-        </div>
+        </S.Filter>
       ))}
-    </div>
+    </S.Container>
   );
 };
 

@@ -3,10 +3,14 @@
 .Utilities {
   &__section {
     margin-bottom: 120px;
-    padding: 0 48px;
+    padding-top: 32px;
 
-    @media (max-width: 768px) {
-      padding: 0 24px;
+    @media (max-width: 1366px) {
+      padding: 32px 48px 0 48px;
+    }
+
+    @media (max-width: 992px) {
+      padding: 32px 24px 0 24px;
     }
 
     &-title {

@@ -1,29 +1,26 @@
 import React, {useCallback, useState} from 'react';
 import {useLocation} from 'react-router';
-import {Icon, IconType} from '@thenewboston/ui';
-import clsx from 'clsx';
+import {IconType} from '@thenewboston/ui';
 
-import {Popover} from 'components';
+import {BreadcrumbSection, Popover} from 'components';
 import {NAVBAR_HEIGHT, BREADCRUMB_HEIGHT} from 'constants/offsets';
 import {useWindowDimensions} from 'hooks';
 import {SFC} from 'types/generic';
 import {Language} from 'types/developer-tools';
 
-import {PATHNAME_TO_TITLE_MAPPING} from '../../constants';
-import BreadcrumbSection from '../../../../components/BreadcrumbSection';
+import {TOOLS_DROPDOWN_SELECTIONS, PATHNAME_TO_TITLE_MAPPING} from '../../../constants';
 import Filters from '../Filters';
 
-import './Breadcrumb.scss';
+import * as S from './Styles';
 
 type Props = {
   selectedLanguages?: string[];
   toggleLanguage?: (language: Language) => void;
-  hasLanguageFilter?: boolean;
 };
 
 const DO_NOTHING = () => {};
 
-const Breadcrumb: SFC<Props> = ({className, hasLanguageFilter = false, selectedLanguages, toggleLanguage}) => {
+const Breadcrumb: SFC<Props> = ({selectedLanguages, toggleLanguage}) => {
   const location = useLocation();
   const {width} = useWindowDimensions();
   const pathnames = location.pathname.slice(1).split('/');
@@ -45,7 +42,7 @@ const Breadcrumb: SFC<Props> = ({className, hasLanguageFilter = false, selectedL
   };
 
   return (
-    <div className={clsx('Breadcrumb', className)}>
+    <S.Container>
       <BreadcrumbSection
         isItemsInSamePage
         isSectionSelected={false}
@@ -55,38 +52,34 @@ const Breadcrumb: SFC<Props> = ({className, hasLanguageFilter = false, selectedL
         titleLink="/"
       />
       <BreadcrumbSection
-        disabled // no link under tools
-        isItemsInSamePage
+        isItemsInSamePage={false}
         isSectionSelected={false}
-        hasItems={false}
+        items={TOOLS_DROPDOWN_SELECTIONS}
+        hasItems
         hasPrecedingArrowIcon
         hasPrecedingArrowIcon992px
         scrollOffset={-(NAVBAR_HEIGHT + BREADCRUMB_HEIGHT)}
+        shouldShowDropdownByDefault
         title="Tools"
-        titleLink=""
+        titleLink="/"
       />
-      {pathnames.map((pathname, index) => {
-        if (index === 0) {
-          return (
-            <BreadcrumbSection
-              isItemsInSamePage
-              isSectionSelected
-              hasItems={false}
-              hasPrecedingArrowIcon
-              hasPrecedingArrowIcon992px
-              key={pathname}
-              scrollOffset={-(NAVBAR_HEIGHT + BREADCRUMB_HEIGHT)}
-              title={PATHNAME_TO_TITLE_MAPPING[pathname]}
-              titleLink={`/developer/${pathname}`}
-            />
-          );
-        }
-        return null;
+      {pathnames.map((pathname) => {
+        return (
+          <BreadcrumbSection
+            isItemsInSamePage
+            isSectionSelected
+            hasItems={false}
+            key={pathname}
+            scrollOffset={-(NAVBAR_HEIGHT + BREADCRUMB_HEIGHT)}
+            title={PATHNAME_TO_TITLE_MAPPING[pathname]}
+            titleLink={`${pathname}`}
+          />
+        );
       })}
       {/* Filter */}
-      {Boolean(width < 992) && hasLanguageFilter && (
+      {Boolean(width < 992) && (
         <>
-          <Icon className="Breadcrumb__filter-icon" icon={IconType.filterMenu} onClick={handleButtonClick} size={20} />
+          <S.Icon icon={IconType.filterMenu} onClick={handleButtonClick} size={20} />
           <Popover
             anchorEl={anchorEl}
             open={isPopoverOpen}
@@ -99,7 +92,7 @@ const Breadcrumb: SFC<Props> = ({className, hasLanguageFilter = false, selectedL
           </Popover>
         </>
       )}
-    </div>
+    </S.Container>
   );
 };
 

@@ -46,7 +46,7 @@ const Tools: FC = () => {
             <Button
               className="Tools__tool-button"
               variant="outlined"
-              onClick={() => history.push(ROUTES.tools.developerTools)}
+              onClick={() => history.push(ROUTES.tools.sdksAndLibraries)}
             >
               Learn More
             </Button>

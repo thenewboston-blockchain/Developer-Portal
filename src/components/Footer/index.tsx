@@ -61,7 +61,7 @@ const navLists = [
       },
       {
         title: 'SDKs & Libraries',
-        url: ROUTES.tools.developerTools,
+        url: ROUTES.tools.sdksAndLibraries,
       },
       {
         title: 'Utilities',

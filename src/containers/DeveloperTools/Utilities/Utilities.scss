@@ -1,60 +1,6 @@
 @import 'styles/font-mixins';
 
-.DeveloperTools {
-  &__hero {
-    align-items: center;
-    background: url('./assets/hero-bg.webp');
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    height: 248px;
-    justify-content: space-between;
-    margin-bottom: 72px;
-    padding: 48px 72px;
-
-    @media (max-width: 992px) {
-      padding: 48px;
-    }
-
-    @media (max-width: 768px) {
-      align-items: flex-start;
-      flex-direction: column;
-      height: fit-content;
-      padding: 48px 24px;
-    }
-
-    &-left {
-      @media (max-width: 768px) {
-        margin-bottom: 32px;
-      }
-
-      &-tnb {
-        @extend %h4;
-        color: var(--color-neutral-500);
-        font-weight: var(--font-weight-semibold);
-        letter-spacing: 2px;
-      }
-
-      &-title {
-        @extend %display2;
-        color: var(--color-cyan-900);
-        font-weight: var(--font-weight-semibold);
-      }
-    }
-
-    &-right {
-      @media (max-width: 768px) {
-        align-self: flex-end;
-      }
-
-      &-img {
-        @media (max-width: 768px) {
-          width: 185px;
-        }
-      }
-    }
-  }
-
+.Utilities {
   &__section {
     margin-bottom: 120px;
     padding: 0 48px;
@@ -90,7 +36,7 @@
       overflow: hidden;
 
       &-top {
-        background: url('./assets/tile-bg.svg');
+        background: url('../assets/tile-bg.svg');
         background-position: center;
         background-size: cover;
         display: grid;

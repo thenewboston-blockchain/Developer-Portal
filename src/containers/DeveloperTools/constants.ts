@@ -1,7 +1,7 @@
 import {Language, DevToolType} from 'types/developer-tools';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
-  'developer-tools': 'Developer Tools',
+  'sdks-and-libraries': 'SDKs & Libraries',
 };
 
 export const LIBRARIES: DevToolType[] = [

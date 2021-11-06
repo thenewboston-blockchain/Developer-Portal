@@ -10,9 +10,10 @@ import './DeveloperPortalLayout.scss';
 type Props = {
   children: (selectedLanguages: Language[]) => ReactNode;
   pageName: string;
+  hasLanguageFilter?: boolean;
 };
 
-const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
+const DeveloperPortalLayout: FC<Props> = ({children, hasLanguageFilter, pageName}) => {
   const [selectedLanguages, setSelectedLanguages] = useState<Language[]>([]);
 
   const toggleLanguage = React.useCallback(
@@ -31,7 +32,11 @@ const DeveloperPortalLayout: FC<Props> = ({children, pageName}) => {
       <PageTitle title={pageName} />
       <div className="DeveloperPortalLayout__breadcrumb">
         <Container>
-          <Breadcrumb selectedLanguages={selectedLanguages} toggleLanguage={toggleLanguage} />
+          <Breadcrumb
+            hasLanguageFilter={hasLanguageFilter}
+            selectedLanguages={selectedLanguages}
+            toggleLanguage={toggleLanguage}
+          />
         </Container>
         <Divider />
       </div>

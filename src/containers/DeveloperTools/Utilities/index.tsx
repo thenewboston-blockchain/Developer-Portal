@@ -3,6 +3,7 @@ import React, {ReactNode, useState} from 'react';
 import type {DevToolType} from 'types/developer-tools';
 
 import {Container} from 'components';
+import Breadcrumb from '../components/Breadcrumb';
 import ConfirmationModal from '../components/ConfirmationModal';
 import {UTILITIES} from '../constants';
 
@@ -43,6 +44,7 @@ const Utilities = () => {
 
   return (
     <Container>
+      <Breadcrumb />
       <section className="Utilities__section">
         <h3 className="Utilities__section-title">Utilities</h3>
         <div className="Utilities__section-tiles">{renderTiles(UTILITIES, 'Utilities')}</div>

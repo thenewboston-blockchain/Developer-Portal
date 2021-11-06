@@ -1,9 +1,10 @@
 import React, {FC, useMemo} from 'react';
 import {Redirect, useParams} from 'react-router-dom';
 
-import {DashboardLayout, DocsMenuItems, PageTitle} from 'components';
+import {Container, DashboardLayout, DocsMenuItems, PageTitle} from 'components';
 import {ROUTES} from 'constants/routes';
 import {PageData, PageDataObject} from 'types/page-data';
+import Breadcrumb from '../components/Breadcrumb';
 
 import DeploymentGuideBank from './DeploymentGuideBank';
 import DeploymentGuideValidator from './DeploymentGuideValidator';
@@ -33,10 +34,15 @@ const NodeDeployment: FC = () => {
   const {content, name} = useMemo(() => getPageData(chapter), [chapter]);
 
   return (
-    <DashboardLayout menuItems={<DocsMenuItems />} pageName={name} sectionName="Node Deployment">
-      <PageTitle ogDescription={`${name} Node Deployment`} title={`${name} Node Deployment`} />
-      {content}
-    </DashboardLayout>
+    <>
+      <Container>
+        <Breadcrumb />
+      </Container>
+      <DashboardLayout menuItems={<DocsMenuItems />} pageName={name} sectionName="Node Deployment">
+        <PageTitle ogDescription={`${name} Node Deployment`} title={`${name} Node Deployment`} />
+        {content}
+      </DashboardLayout>
+    </>
   );
 };
 

@@ -47,7 +47,7 @@ const SDKsAndLibraries = () => {
   };
 
   return (
-    <DeveloperPortalLayout pageName="SDKs & Libraries">
+    <DeveloperPortalLayout hasLanguageFilter pageName="SDKs & Libraries">
       {(selectedLanguages) => (
         <>
           <div className="SDKsAndLibraries__hero">

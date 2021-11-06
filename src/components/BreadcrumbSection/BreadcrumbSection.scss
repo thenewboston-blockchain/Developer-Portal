@@ -25,6 +25,10 @@
       text-align: left;
     }
 
+    &--disabled {
+      pointer-events: none;
+    }
+
     &:hover {
       color: var(--color-blue-gray-900);
     }

@@ -12,6 +12,7 @@ type Props = {
   titleLink: string;
   title: string;
   isSectionSelected: boolean;
+  disabled?: boolean;
   hasItems: boolean;
   items?: {
     url: string;
@@ -24,6 +25,7 @@ type Props = {
 };
 
 const BreadcrumbSection: FC<Props> = ({
+  disabled = false,
   hasItems,
   hasPrecedingArrowIcon = false,
   hasPrecedingArrowIcon992px = false,
@@ -56,20 +58,30 @@ const BreadcrumbSection: FC<Props> = ({
           {hasPrecedingArrowIcon && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
           )}
-          <Link
-            className={clsx('BreadcrumbSection__link', isSectionSelected && 'BreadcrumbSection__link--active')}
-            to={titleLink}
-          >
-            {title}
-          </Link>
+          {disabled ? (
+            <div className={clsx('BreadcrumbSection__link', 'BreadcrumbSection__link--disabled')}>{title}</div>
+          ) : (
+            <Link
+              className={clsx('BreadcrumbSection__link', isSectionSelected && 'BreadcrumbSection__link--active')}
+              to={titleLink}
+            >
+              {title}
+            </Link>
+          )}
         </div>
       ) : (
         <>
           {hasPrecedingArrowIcon992px && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />
           )}
-          <button className="BreadcrumbSection__button" onClick={toggleDropdown}>
-            <span className={clsx('BreadcrumbSection__link', isSectionSelected && 'BreadcrumbSection__link--active')}>
+          <button className="BreadcrumbSection__button" onClick={toggleDropdown} disabled={disabled}>
+            <span
+              className={clsx(
+                'BreadcrumbSection__link',
+                isSectionSelected && 'BreadcrumbSection__link--active',
+                disabled && 'BreadcrumbSection__link--disabled',
+              )}
+            >
               {title}
             </span>
             <Icon

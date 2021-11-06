@@ -6,19 +6,21 @@ import {ROUTES} from 'constants/routes';
 import withSuspense from 'hoc/withSuspense';
 
 import ArchitectureDeepDive from './LivingWhitepaper/containers/ArchitectureDeepDive';
-import BankApi from './Api/BankApi';
-import ConfirmationValidatorApi from './Api/ConfirmationValidatorApi';
+import BankApi from './DeveloperTools/Api/BankApi';
+import ConfirmationValidatorApi from './DeveloperTools/Api/ConfirmationValidatorApi';
 import Guidelines from './Guidelines';
 import LivingWhitepaper from './LivingWhitepaper';
-import PrimaryValidatorApi from './Api/PrimaryValidatorApi';
+import PrimaryValidatorApi from './DeveloperTools/Api/PrimaryValidatorApi';
 import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
 import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/PrincipalEventsAndProcesses';
 import PrivacyPolicy from './PrivacyPolicy';
 import Projects from './Projects';
+import NodeDeployment from './DeveloperTools/NodeDeployment';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
 import ApprovedProjects from './Projects/containers/ApprovedProjects';
-import DeveloperTools from './DeveloperTools';
+import SDKsAndLibraries from './DeveloperTools/SDKsAndLibraries';
 import TermsOfUse from './TermsOfUse';
+import Utilities from './DeveloperTools/Utilities';
 
 /**
  * Lazy load pages that may contribute a lot to the bundle size
@@ -65,6 +67,7 @@ const App: FC = () => {
             path={`${ROUTES.whitepaper.principalEvents}/:chapter?`}
             component={PrincipalEventsAndProcesses}
           />
+          <Route exact path={`${ROUTES.tools.nodeDeployment}/:chapter?`} component={NodeDeployment} />
           <Route exact path={`${ROUTES.whitepaper.architecture}/:chapter?`} component={ArchitectureDeepDive} />
           <Route exact path={ROUTES.projects.home} component={Projects} />
           <Route exact path={ROUTES.projects.rules} component={ProjectRulesAndGuidelines} />
@@ -76,7 +79,8 @@ const App: FC = () => {
           />
           <Route path={`${ROUTES.tools.apis}/primary-validator-api/:chapter?`} component={PrimaryValidatorApi} />
           <Redirect path={ROUTES.tools.apis} to={`${ROUTES.tools.apis}/bank-api`} />
-          <Route exact path={ROUTES.tools.developerTools} component={DeveloperTools} />
+          <Route exact path={ROUTES.tools.sdksAndLibraries} component={SDKsAndLibraries} />
+          <Route exact path={ROUTES.tools.utilities} component={Utilities} />
           <Route path={ROUTES.legal.guidelines} component={Guidelines} />
           <Route path={ROUTES.legal.termsOfUse} component={TermsOfUse} />
           <Route path={ROUTES.legal.privacyPolicy} component={PrivacyPolicy} />

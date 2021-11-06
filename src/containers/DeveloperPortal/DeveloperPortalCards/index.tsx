@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {useHistory} from 'react-router';
 
-import {Button, Container, EmojiIcon, EmojiType} from 'components';
+import {Button, Container} from 'components';
 import {ROUTES} from 'constants/routes';
 import './DeveloperPortalCards.scss';
 
@@ -12,7 +12,6 @@ const DeveloperPortalCards: FC = () => {
     <div className="DeveloperPortalCards">
       <Container className="DeveloperPortalCards__container">
         <div className="DeveloperPortalCards__card">
-          <EmojiIcon color="#FF928E" emoji={EmojiType.Paper} marginBottom={24} />
           <div className="DeveloperPortalCards__card-title">Living Whitepaper</div>
           <div className="DeveloperPortalCards__card-description">
             Our living whitepaper is a constantly evolving set of technical docs about thenewboston blockchain
@@ -28,7 +27,6 @@ const DeveloperPortalCards: FC = () => {
           </Button>
         </div>
         <div className="DeveloperPortalCards__card">
-          <EmojiIcon color="#2DA15D" emoji={EmojiType.Bulb} marginBottom={24} />
           <div className="DeveloperPortalCards__card-title">Projects</div>
           <div className="DeveloperPortalCards__card-description">
             Earn coins by building apps, games, tools, and other software for thenewboston network. Learn how to submit

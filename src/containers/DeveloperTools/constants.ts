@@ -1,8 +1,31 @@
+import {ROUTES} from 'constants/routes';
 import {Language, DevToolType} from 'types/developer-tools';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
-  'developer-tools': 'Developer Tools',
+  api: 'APIs',
+  'node-deployment': 'Node Deployment',
+  'sdks-and-libraries': 'SDKs & Libraries',
+  utilities: 'Utilities',
 };
+
+export const TOOLS_DROPDOWN_SELECTIONS: {title: string; url: string}[] = [
+  {
+    title: 'APIs',
+    url: ROUTES.tools.apis,
+  },
+  {
+    title: 'Node Deployment',
+    url: ROUTES.tools.nodeDeployment,
+  },
+  {
+    title: 'SDKs & Libraries',
+    url: ROUTES.tools.sdksAndLibraries,
+  },
+  {
+    title: 'Utilities',
+    url: ROUTES.tools.utilities,
+  },
+];
 
 export const LIBRARIES: DevToolType[] = [
   {

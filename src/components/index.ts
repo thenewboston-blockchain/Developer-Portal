@@ -1,11 +1,13 @@
 import A from './A';
 import Avatar from './Avatar';
 import BreadcrumbMenu from './BreadcrumbMenu';
+import BreadcrumbSection from './BreadcrumbSection';
 import {CodeSnippet, RequestResponseSnippet, SnippetLang} from './CodeSnippet';
 import Container from './Container';
 import DataTable from './DataTable';
 import Divider from './Divider';
 import DashboardLayout from './DashboardLayout';
+import DocsMenuItems from './DocsMenuItems';
 import {
   CalloutType,
   DocCallout,
@@ -43,6 +45,7 @@ export {
   A,
   Avatar,
   BreadcrumbMenu,
+  BreadcrumbSection,
   Button,
   CalloutType,
   CodeSnippet,
@@ -56,6 +59,7 @@ export {
   DocImage,
   DocInlineCode,
   DocList,
+  DocsMenuItems,
   DocSubHeader,
   DocSubSection,
   EmojiIcon,

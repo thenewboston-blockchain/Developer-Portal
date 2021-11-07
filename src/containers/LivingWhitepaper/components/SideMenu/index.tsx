@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
-import {useLocation, useHistory} from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import clsx from 'clsx';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {
-  PATHNAME_TO_DROPDOWN_SELECTIONS,
   architecturePath,
+  PATHNAME_TO_DROPDOWN_SELECTIONS,
   principalEntitiesPath,
   principalEventsPath,
 } from '../../constants';

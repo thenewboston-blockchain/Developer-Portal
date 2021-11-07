@@ -5,7 +5,7 @@ import {Icon} from '@thenewboston/ui';
 import {A} from 'components';
 import {SFC} from 'types/generic';
 import {SocialMedia} from 'types/social-media';
-import {socialMediaUrls, socialMediaFooterIcons} from 'utils/social-media';
+import {socialMediaFooterIcons, socialMediaUrls} from 'utils/social-media';
 
 interface ComponentProps {
   iconSize: number;

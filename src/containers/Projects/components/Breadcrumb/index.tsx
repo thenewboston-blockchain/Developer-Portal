@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {useLocation} from 'react-router';
 import {useWindowDimensions} from 'hooks';
-import {PATHNAME_TO_TITLE_MAPPING, PATHNAME_TO_DROPDOWN_SELECTIONS} from '../../constants';
+import {PATHNAME_TO_DROPDOWN_SELECTIONS, PATHNAME_TO_TITLE_MAPPING} from '../../constants';
 import BreadcrumbSection from '../../../../components/BreadcrumbSection';
 import {orderedProjectDetailsTopic} from '../../containers/ProjectDetails/constants';
 

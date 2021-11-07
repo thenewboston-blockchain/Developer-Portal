@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {A, Note, NoteType, Divider} from 'components';
+import {A, Divider, Note, NoteType} from 'components';
 import Step from '../../../components/Step';
 
 import RoadmapIllustration from '../../../assets/roadmap.png';

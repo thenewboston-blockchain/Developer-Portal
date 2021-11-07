@@ -1,5 +1,5 @@
 import {ROUTES} from 'constants/routes';
-import {Language, DevToolType} from 'types/developer-tools';
+import {DevToolType, Language} from 'types/developer-tools';
 
 import python_logo from './assets/python-logo.png';
 import javascript_logo from './assets/javascript-logo.png';

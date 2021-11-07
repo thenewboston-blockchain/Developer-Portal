@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import clsx from 'clsx';
 
 import {Checkbox} from 'components/FormElements';
 import {Language} from 'types/developer-tools';

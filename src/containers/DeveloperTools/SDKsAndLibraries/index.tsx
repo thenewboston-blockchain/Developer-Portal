@@ -1,6 +1,6 @@
 import React, {ReactNode, useState} from 'react';
 
-import type {Language, DevToolType} from 'types/developer-tools';
+import type {DevToolType, Language} from 'types/developer-tools';
 
 import Layout from './components/Layout';
 import ConfirmationModal from '../components/ConfirmationModal';

@@ -7,7 +7,7 @@ import {Icon, IconType} from '@thenewboston/ui';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {Popover, ReactScrollLink} from 'components';
 import {useWindowDimensions} from 'hooks';
-import {PATHNAME_TO_TITLE_MAPPING, PATHNAME_TO_DROPDOWN_SELECTIONS} from '../../constants';
+import {PATHNAME_TO_DROPDOWN_SELECTIONS, PATHNAME_TO_TITLE_MAPPING} from '../../constants';
 
 import './Breadcrumb.scss';
 

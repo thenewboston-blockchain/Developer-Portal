@@ -3,12 +3,12 @@ import {useLocation} from 'react-router';
 import {IconType} from '@thenewboston/ui';
 
 import {BreadcrumbSection, Popover} from 'components';
-import {NAVBAR_HEIGHT, BREADCRUMB_HEIGHT} from 'constants/offsets';
+import {BREADCRUMB_HEIGHT, NAVBAR_HEIGHT} from 'constants/offsets';
 import {useWindowDimensions} from 'hooks';
 import {SFC} from 'types/generic';
 import {Language} from 'types/developer-tools';
 
-import {TOOLS_DROPDOWN_SELECTIONS, PATHNAME_TO_TITLE_MAPPING} from '../../../constants';
+import {PATHNAME_TO_TITLE_MAPPING, TOOLS_DROPDOWN_SELECTIONS} from '../../../constants';
 import Filters from '../Filters';
 
 import * as S from './Styles';

@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import {useLocation, useHistory} from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import {IconType} from '@thenewboston/ui';
 
 import {
   bankApiPath,
   confirmationValidatorApiPath,
-  primaryValidatorApiPath,
   PATHNAME_TO_DROPDOWN_SELECTIONS,
+  primaryValidatorApiPath,
 } from '../../constants';
 
 import * as S from './Styles';

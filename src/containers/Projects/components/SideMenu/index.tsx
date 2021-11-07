@@ -1,13 +1,13 @@
 import React, {FC, useState} from 'react';
 import clsx from 'clsx';
-import {useLocation, useHistory} from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import {Link} from 'react-router-dom';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {A, ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 
-import {PATHNAME_TO_DROPDOWN_SELECTIONS, approvedProjectsPath, projectRulesPath} from '../../constants';
+import {approvedProjectsPath, PATHNAME_TO_DROPDOWN_SELECTIONS, projectRulesPath} from '../../constants';
 
 import './SideMenu.scss';
 

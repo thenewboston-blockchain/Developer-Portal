@@ -3,7 +3,7 @@ import React, {FC, memo, useCallback} from 'react';
 import colors from 'styles/colors';
 import {ROUTES, URLS} from 'constants/routes';
 import {SocialMedia} from 'types/social-media';
-import {socialMediaUrls, socialMediaFooterIcons} from 'utils/social-media';
+import {socialMediaFooterIcons, socialMediaUrls} from 'utils/social-media';
 
 import FooterNavList from './FooterNavList';
 import * as S from './Styles';

@@ -2,10 +2,10 @@ import React from 'react';
 import {useLocation} from 'react-router';
 
 import {BreadcrumbSection} from 'components';
-import {NAVBAR_HEIGHT, BREADCRUMB_HEIGHT} from 'constants/offsets';
+import {BREADCRUMB_HEIGHT, NAVBAR_HEIGHT} from 'constants/offsets';
 import {SFC} from 'types/generic';
 
-import {TOOLS_DROPDOWN_SELECTIONS, PATHNAME_TO_TITLE_MAPPING} from '../../../constants';
+import {PATHNAME_TO_TITLE_MAPPING, TOOLS_DROPDOWN_SELECTIONS} from '../../../constants';
 import {
   NODE_DEPLOYMENT_ITEMS,
   NODE_DEPLOYMENT_PATHNAME_TO_TITLE_MAPPING,

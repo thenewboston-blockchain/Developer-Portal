@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {useLocation, useHistory} from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import {IconType} from '@thenewboston/ui';
 
 import {NAVBAR_HEIGHT} from 'constants/offsets';
-import {bankPath, validatorPath, PATHNAME_TO_DROPDOWN_SELECTIONS} from '../../constants';
+import {bankPath, PATHNAME_TO_DROPDOWN_SELECTIONS, validatorPath} from '../../constants';
 
 import * as S from './Styles';
 

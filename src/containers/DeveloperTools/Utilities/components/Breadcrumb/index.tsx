@@ -2,7 +2,7 @@ import React from 'react';
 import {useLocation} from 'react-router';
 
 import BreadcrumbSection from 'components/BreadcrumbSection';
-import {NAVBAR_HEIGHT, BREADCRUMB_HEIGHT} from 'constants/offsets';
+import {BREADCRUMB_HEIGHT, NAVBAR_HEIGHT} from 'constants/offsets';
 import {SFC} from 'types/generic';
 
 import {PATHNAME_TO_TITLE_MAPPING, TOOLS_DROPDOWN_SELECTIONS} from '../../../constants';

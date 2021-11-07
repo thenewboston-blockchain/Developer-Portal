@@ -1,5 +1,5 @@
 import {ROUTES} from 'constants/routes';
-import {Language, DevToolType} from 'types/developer-tools';
+import {DevToolType, Language} from 'types/developer-tools';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
   api: 'APIs',

@@ -8,7 +8,9 @@ export enum Language {
 
 // This type is also used for SDKs
 export type DevToolType = {
+  background_color?: string;
   description: string;
+  image?: string;
   language?: Language;
   title: string;
   url: string;

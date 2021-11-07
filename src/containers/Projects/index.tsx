@@ -23,7 +23,7 @@ const Projects: FC = () => {
         const allProjects = await projectsApi.getProjects();
         setFeaturedProjects(allProjects.filter((project) => project.is_featured));
       })();
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     } finally {
       setIsLoading(false);

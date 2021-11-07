@@ -50,7 +50,7 @@ const ApprovedProjects = () => {
         } else {
           setProject(null);
         }
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message);
       } finally {
         setIsLoading(false);

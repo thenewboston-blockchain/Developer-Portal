@@ -31,10 +31,17 @@ const SDKsAndLibraries = () => {
             tabIndex={0}
             onClick={() => setGoToUrl(item.url)}
           >
-            <div className="SDKsAndLibraries__section-tile-top">
-              <div className="SDKsAndLibraries__section-tile-top-pill">
-                <h2 className="SDKsAndLibraries__section-tile-top-pill-text">{item.title}</h2>
-              </div>
+            <div
+              className="SDKsAndLibraries__section-tile-top"
+              style={{background: item.background_color && item.background_color}}
+            >
+              {item.image ? (
+                <img className="SDKsAndLibraries__section-tile-top-pill-image" src={item.image} alt={`${item.title}`} />
+              ) : (
+                <div className="SDKsAndLibraries__section-tile-top-pill">
+                  <h2 className="SDKsAndLibraries__section-tile-top-pill-text">{item.title}</h2>
+                </div>
+              )}
             </div>
             <div className="SDKsAndLibraries__section-tile-bottom">
               <h3 className="SDKsAndLibraries__section-tile-bottom-title">{item.title}</h3>

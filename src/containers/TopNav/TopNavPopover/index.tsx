@@ -55,50 +55,50 @@ const TopNavPopover: FC<ComponentProps> = ({
     setAnchorEl(null);
   }, [setAnchorEl]);
 
-  const handleOptionKeyDown = (to: string, index: number, disabled?: boolean) => (
-    e: KeyboardEvent<HTMLAnchorElement>,
-  ): void => {
-    if (e.shiftKey && e.key === 'Tab') {
-      // Shift + Tab at first item -> focus at last item
-      if (index === 0) {
-        e.preventDefault();
-        itemsRef.current[items.length - 1]?.focus();
+  const handleOptionKeyDown =
+    (to: string, index: number, disabled?: boolean) =>
+    (e: KeyboardEvent<HTMLAnchorElement>): void => {
+      if (e.shiftKey && e.key === 'Tab') {
+        // Shift + Tab at first item -> focus at last item
+        if (index === 0) {
+          e.preventDefault();
+          itemsRef.current[items.length - 1]?.focus();
+        }
+        return;
       }
-      return;
-    }
 
-    if (e.key === 'Tab') {
-      // Tab at the last item -> focus at first item
-      if (index === items.length - 1) {
-        e.preventDefault();
-        itemsRef.current[0]?.focus();
+      if (e.key === 'Tab') {
+        // Tab at the last item -> focus at first item
+        if (index === items.length - 1) {
+          e.preventDefault();
+          itemsRef.current[0]?.focus();
+        }
+        return;
       }
-      return;
-    }
 
-    e.preventDefault();
+      e.preventDefault();
 
-    if (e.key === 'Escape') {
-      unsetAnchorEl();
-      popoverButtonRef.current?.focus(); // focus back to popover button when close popover
-      return;
-    }
+      if (e.key === 'Escape') {
+        unsetAnchorEl();
+        popoverButtonRef.current?.focus(); // focus back to popover button when close popover
+        return;
+      }
 
-    if (e.key === 'ArrowDown' && index !== items.length - 1) {
-      itemsRef.current[index + 1]?.focus();
-      return;
-    }
+      if (e.key === 'ArrowDown' && index !== items.length - 1) {
+        itemsRef.current[index + 1]?.focus();
+        return;
+      }
 
-    if (e.key === 'ArrowUp' && index !== 0) {
-      itemsRef.current[index - 1]?.focus();
-      return;
-    }
+      if (e.key === 'ArrowUp' && index !== 0) {
+        itemsRef.current[index - 1]?.focus();
+        return;
+      }
 
-    if (e.key === 'Enter' && !disabled) {
-      unsetAnchorEl();
-      history.push(to);
-    }
-  };
+      if (e.key === 'Enter' && !disabled) {
+        unsetAnchorEl();
+        history.push(to);
+      }
+    };
 
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     if (!anchorEl) {

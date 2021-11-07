@@ -121,6 +121,10 @@
               @include h3;
             }
           }
+
+          &-image {
+            max-height: 64px;
+          }
         }
       }
 

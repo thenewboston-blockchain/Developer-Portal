@@ -35,7 +35,7 @@ const LivingWhitepaper: FC = () => {
           <div className="LivingWhitepaper__main-buttons">
             <Button
               className="LivingWhitepaper__button-explore"
-              onClick={() => history.push(ROUTES.whitepaper.principalEvents)}
+              onClick={() => history.push(ROUTES.whitepaper.principalEntities)}
             >
               Explore Document
             </Button>

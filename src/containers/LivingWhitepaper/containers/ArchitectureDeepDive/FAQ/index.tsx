@@ -23,7 +23,7 @@ const FAQ = () => {
 
       <div className="ArchitectureDeepDive__emphasized-text">What is the difference between coins and points?</div>
       <p className="ArchitectureDeepDive__description">
-        Unlike coins, points refill over time. The refill rate is proportional to the amount of coins lockedBy locking
+        Unlike coins, points refill over time. The refill rate is proportional to the amount of coins locked. By locking
         coins, users receive points in return for services to the network.
       </p>
       <Divider className="ArchitectureDeepDive__point-divider" />

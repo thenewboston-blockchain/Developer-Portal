@@ -19,6 +19,7 @@ export const ROUTES = {
     sdksAndLibraries: '/sdks-and-libraries',
     utilities: '/utilities',
   },
+  tutorials: '/tutorials',
   whitepaper: {
     architecture: '/whitepaper/architecture',
     home: '/whitepaper',

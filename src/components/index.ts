@@ -20,6 +20,8 @@ import {
   DocSubSection,
 } from './DocWrapper';
 import EmojiIcon, {EmojiType} from './EmojiIcon';
+import EmptyPage from './EmptyPage';
+import FlatNavLinks from './FlatNavLinks';
 import Footer from './Footer';
 import {Button} from './FormElements';
 import GoToTop from './GoToTop';
@@ -40,6 +42,7 @@ import RequiredAsterisk from './RequiredAsterisk';
 import Shadow from './Shadow';
 import SocialMediaIcon from './SocialMediaIcon';
 import {TableBorderGrid, TableParams, TableVertical} from './Table';
+import VideoPlayer from './VideoPlayer';
 
 export {
   A,
@@ -64,6 +67,8 @@ export {
   DocSubSection,
   EmojiIcon,
   EmojiType,
+  EmptyPage,
+  FlatNavLinks,
   Footer,
   GoToTop,
   HashLink,
@@ -88,4 +93,5 @@ export {
   TableBorderGrid,
   TableParams,
   TableVertical,
+  VideoPlayer,
 };

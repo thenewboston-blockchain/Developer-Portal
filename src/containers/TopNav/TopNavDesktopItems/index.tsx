@@ -39,6 +39,9 @@ const TopNavDesktopItems = () => {
       <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to={ROUTES.projects.home}>
         Projects
       </Link>
+      <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to={ROUTES.tutorials}>
+        Tutorials
+      </Link>
       <TopNavPopover
         anchorEl={toolsAnchorEl}
         buttonText="Tools"

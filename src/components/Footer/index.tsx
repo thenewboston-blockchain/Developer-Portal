@@ -34,13 +34,8 @@ const navLists = [
     header: 'Projects',
     links: [
       {
-        isExternal: true,
-        title: 'Propose Project',
-        url: URLS.github.proposeProjects,
-      },
-      {
-        title: 'Approved Projects',
-        url: ROUTES.projects.approvedProjects,
+        title: 'App Submission Guide',
+        url: ROUTES.projects.home,
       },
       {
         title: 'Rules & Guidelines',

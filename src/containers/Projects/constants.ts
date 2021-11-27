@@ -30,10 +30,6 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
       title: 'Rules & Guidelines',
       url: projectRulesPath,
     },
-    {
-      title: 'Approved Projects',
-      url: approvedProjectsPath,
-    },
   ],
   rules: [
     {
@@ -55,10 +51,6 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: 'Eligible Milestone Payments',
       url: `${projectRulesPath}#${ProjectRulesId.EligibleMilestonePayments}`,
-    },
-    {
-      title: 'Projects FAQ',
-      url: `${projectRulesPath}#${ProjectRulesId.ProjectsFaq}`,
     },
   ],
 };

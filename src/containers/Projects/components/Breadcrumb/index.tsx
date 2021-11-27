@@ -13,10 +13,6 @@ import './Breadcrumb.scss';
 type Props = {
   className?: string;
   breadcrumbHeight: number;
-  approvedProjectUrls?: {
-    title: string;
-    url: string;
-  }[];
   projectName?: string;
 };
 
@@ -24,7 +20,7 @@ const TOP_LINK_HEIGHT = 72;
 const PROJECT_DETAILS_HEADER_HEIGHT = 180;
 const PROJECT_DETAILS_HEADER_HEIGHT_768 = 260;
 
-const Breadcrumb: FC<Props> = ({approvedProjectUrls, breadcrumbHeight, className, projectName}) => {
+const Breadcrumb: FC<Props> = ({breadcrumbHeight, className, projectName}) => {
   const location = useLocation();
   const {width} = useWindowDimensions();
   const pathnames = location.pathname.slice(1).split('/');
@@ -62,20 +58,6 @@ const Breadcrumb: FC<Props> = ({approvedProjectUrls, breadcrumbHeight, className
 
         // rules or approved projects
         if (index === 1) {
-          if (pathname === 'approved-projects') {
-            return (
-              <BreadcrumbSection
-                isItemsInSamePage={false}
-                isSectionSelected={isLastIndex}
-                items={approvedProjectUrls}
-                hasItems
-                hasPrecedingArrowIcon
-                key={pathname}
-                title={PATHNAME_TO_TITLE_MAPPING[pathname]}
-                titleLink={`/projects/${pathname}`}
-              />
-            );
-          }
           return (
             <BreadcrumbSection
               isItemsInSamePage

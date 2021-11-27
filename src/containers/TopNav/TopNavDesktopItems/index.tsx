@@ -37,7 +37,7 @@ const TopNavDesktopItems = () => {
         Living Whitepaper
       </Link>
       <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to={ROUTES.projects.home}>
-        Projects
+        App Submission Guide
       </Link>
       <Link className="TopNavDesktopItems__right-item TopNavDesktopItems__link" tabIndex={-1} to={ROUTES.tutorials}>
         Tutorials

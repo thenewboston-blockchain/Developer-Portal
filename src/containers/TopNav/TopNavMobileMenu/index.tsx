@@ -60,9 +60,8 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
               'projects',
               'Projects',
               <>
-                {renderMobileLink('Home', ROUTES.projects.home)}
-                {renderMobileLink('Approved Projects', ROUTES.projects.approvedProjects)}
-                {renderMobileLink('Projects Rules and Guidelines', ROUTES.projects.rules)}
+                {renderMobileLink('App Submission Guide', ROUTES.projects.home)}
+                {renderMobileLink('Rules and Guidelines', ROUTES.projects.rules)}
               </>,
             )}
             {renderColumn('tutorials', 'Tutorials', <>{renderMobileLink('Tutorials', ROUTES.tutorials)}</>)}

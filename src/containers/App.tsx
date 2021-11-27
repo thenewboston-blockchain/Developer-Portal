@@ -5,6 +5,7 @@ import {Layout} from 'components';
 import {ROUTES} from 'constants/routes';
 import withSuspense from 'hoc/withSuspense';
 
+import AppSubmissionGuide from './AppSubmissionGuide';
 import ArchitectureDeepDive from './LivingWhitepaper/containers/ArchitectureDeepDive';
 import BankApi from './DeveloperTools/Api/BankApi';
 import ConfirmationValidatorApi from './DeveloperTools/Api/ConfirmationValidatorApi';
@@ -14,10 +15,8 @@ import PrimaryValidatorApi from './DeveloperTools/Api/PrimaryValidatorApi';
 import PrincipalEntities from './LivingWhitepaper/containers/PrincipalEntities';
 import PrincipalEventsAndProcesses from './LivingWhitepaper/containers/PrincipalEventsAndProcesses';
 import PrivacyPolicy from './PrivacyPolicy';
-import Projects from './Projects';
 import NodeDeployment from './DeveloperTools/NodeDeployment';
 import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuidelines';
-import ApprovedProjects from './Projects/containers/ApprovedProjects';
 import SDKsAndLibraries from './DeveloperTools/SDKsAndLibraries';
 import TermsOfUse from './TermsOfUse';
 import Utilities from './DeveloperTools/Utilities';
@@ -70,9 +69,8 @@ const App: FC = () => {
           />
           <Route exact path={`${ROUTES.tools.nodeDeployment}/:chapter?`} component={NodeDeployment} />
           <Route exact path={`${ROUTES.whitepaper.architecture}/:chapter?`} component={ArchitectureDeepDive} />
-          <Route exact path={ROUTES.projects.home} component={Projects} />
+          <Route exact path={ROUTES.projects.home} component={AppSubmissionGuide} />
           <Route exact path={ROUTES.projects.rules} component={ProjectRulesAndGuidelines} />
-          <Route exact path={`${ROUTES.projects.approvedProjects}/:projectId?`} component={ApprovedProjects} />
           <Route path={`${ROUTES.tools.apis}/bank-api/:chapter?`} component={BankApi} />
           <Route
             path={`${ROUTES.tools.apis}/confirmation-validator-api/:chapter?`}

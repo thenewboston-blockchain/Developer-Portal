@@ -21,6 +21,7 @@ import {
 } from './DocWrapper';
 import EmojiIcon, {EmojiType} from './EmojiIcon';
 import EmptyPage from './EmptyPage';
+import FaqDropdownCard from './FaqDropdownCard';
 import FlatNavLinks from './FlatNavLinks';
 import Footer from './Footer';
 import {Button} from './FormElements';
@@ -68,6 +69,7 @@ export {
   EmojiIcon,
   EmojiType,
   EmptyPage,
+  FaqDropdownCard,
   FlatNavLinks,
   Footer,
   GoToTop,

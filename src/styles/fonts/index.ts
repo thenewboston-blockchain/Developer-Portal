@@ -153,6 +153,10 @@ export const h4 = {
     ${h4Base};
     ${fontWeight.fontWeightRegular};
   `,
+  light: css`
+    ${h4Base};
+    ${fontWeight.fontWeightLight};
+  `,
 };
 
 export const b1 = {

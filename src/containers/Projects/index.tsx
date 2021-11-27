@@ -1,3 +1,7 @@
+/**
+ * This page is deprecated, it is replaced via the AppSubmissionGuide page
+ */
+
 import React, {FC, ReactNode, useEffect, useState} from 'react';
 import {useHistory} from 'react-router';
 

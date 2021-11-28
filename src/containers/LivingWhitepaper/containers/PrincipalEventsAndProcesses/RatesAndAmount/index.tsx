@@ -9,7 +9,7 @@ const RatesAndAmount: FC = () => {
       <h2 className="PrincipalEvents__section-heading" id={PrincipalEventsId.RatesAndAmounts}>
         Rates & Amounts
       </h2>
-      <section id={PrincipalEventsId.ConversionRates}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">
           Conversion Rates
         </h3>
@@ -22,7 +22,7 @@ const RatesAndAmount: FC = () => {
         </p>
       </section>
 
-      <section id={PrincipalEventsId.UsernameAndVotes}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">
           Usernames & Votes
         </h3>
@@ -39,7 +39,7 @@ const RatesAndAmount: FC = () => {
         </p>
       </section>
 
-      <section id={PrincipalEventsId.LockedCoinsAndBoosts}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">
           Locked Coins & Boosts
         </h3>
@@ -54,7 +54,7 @@ const RatesAndAmount: FC = () => {
         </p>
       </section>
 
-      <section id={PrincipalEventsId.Points}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">Points</h3>
         <p className="PrincipalEvents__section-paragraph PrincipalEvents__section-paragraph--my-0">
           <span className="PrincipalEvents__section-text--black">Cast vote for governor</span> - 1 or more votes
@@ -66,7 +66,7 @@ const RatesAndAmount: FC = () => {
         </p>
       </section>
 
-      <section id={PrincipalEventsId.TreasuryBoard}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">
           Treasury Board
         </h3>
@@ -84,7 +84,7 @@ const RatesAndAmount: FC = () => {
         </ul>
       </section>
 
-      <section id={PrincipalEventsId.Government}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">
           Government
         </h3>
@@ -102,7 +102,7 @@ const RatesAndAmount: FC = () => {
         </ul>
       </section>
 
-      <section id={PrincipalEventsId.Nodes}>
+      <section>
         <h3 className="PrincipalEvents__section-sub-heading PrincipalEvents__section-sub-heading--spaced">Nodes</h3>
         <ul className="PrincipalEvents__section-list">
           <li className="PrincipalEvents__section-list-item">

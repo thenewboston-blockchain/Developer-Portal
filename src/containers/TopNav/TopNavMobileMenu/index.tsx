@@ -13,7 +13,7 @@ interface ComponentProps {
   toggleMenu(): void;
 }
 
-type SectionStrings = 'whitepaper' | 'projects' | 'tools' | 'tutorials';
+type SectionStrings = 'whitepaper' | 'app-submission-guide' | 'tools' | 'tutorials';
 
 const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu}) => {
   const [openSection, setOpenSection] = useState<SectionStrings | null>(null);
@@ -51,18 +51,17 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
               'Living Whitepaper',
               <>
                 {renderMobileLink('Home', ROUTES.whitepaper.home)}
-                {renderMobileLink('Principal Entities on the Network', ROUTES.whitepaper.principalEntities)}
-                {renderMobileLink('Principal Events and Processes on the Network', ROUTES.whitepaper.principalEvents)}
-                {renderMobileLink('Architecture Deep Dive', ROUTES.whitepaper.architecture)}
+                {renderMobileLink('Network Entities', ROUTES.whitepaper.principalEntities)}
+                {renderMobileLink('Network Events and Processes', ROUTES.whitepaper.principalEvents)}
+                {renderMobileLink('Architecture Details', ROUTES.whitepaper.architecture)}
               </>,
             )}
             {renderColumn(
-              'projects',
-              'Projects',
+              'app-submission-guide',
+              'App Submission Guide',
               <>
-                {renderMobileLink('Home', ROUTES.projects.home)}
-                {renderMobileLink('Approved Projects', ROUTES.projects.approvedProjects)}
-                {renderMobileLink('Projects Rules and Guidelines', ROUTES.projects.rules)}
+                {renderMobileLink('App Submission Guide', ROUTES.projects.home)}
+                {renderMobileLink('Rules and Guidelines', ROUTES.projects.rules)}
               </>,
             )}
             {renderColumn('tutorials', 'Tutorials', <>{renderMobileLink('Tutorials', ROUTES.tutorials)}</>)}

@@ -1,78 +1,29 @@
 import React, {FC, useState} from 'react';
 import clsx from 'clsx';
 import {useHistory, useLocation} from 'react-router';
-import {Link} from 'react-router-dom';
 import {Icon, IconType} from '@thenewboston/ui';
 
-import {A, ReactScrollLink} from 'components';
+import {ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 
-import {approvedProjectsPath, PATHNAME_TO_DROPDOWN_SELECTIONS, projectRulesPath} from '../../constants';
+import {PATHNAME_TO_DROPDOWN_SELECTIONS, projectRulesPath} from '../../constants';
 
 import './SideMenu.scss';
 
 type Props = {
   breadcrumbHeight: number;
-  approvedProjectUrls?:
-    | {
-        title: string;
-        url: string;
-      }[]
-    | null;
 };
 
-const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
+const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
   const {pathname} = useLocation();
   const history = useHistory();
 
-  const isApprovedProjectsSelected = pathname.includes(approvedProjectsPath);
   const isProjectRulesSelected = pathname.includes(projectRulesPath);
 
-  const [shouldOpenApprovedProjects, setShouldOpenApprovedProjects] = useState(isApprovedProjectsSelected);
   const [shouldOpenProjectRules, setShouldOpenProjectRules] = useState(isProjectRulesSelected);
 
   return (
     <div className="ProjectsSideMenu">
-      <div className="ProjectsSideMenu__section">
-        <button
-          className={clsx(
-            'ProjectsSideMenu__section-header',
-            isApprovedProjectsSelected && 'ProjectsSideMenu__section-header--active',
-          )}
-          onClick={() => {
-            if (!isApprovedProjectsSelected) {
-              history.push(approvedProjectsPath);
-            } else {
-              setShouldOpenApprovedProjects((isOpened) => !isOpened);
-            }
-          }}
-        >
-          <div>Approved Projects</div>
-          <Icon
-            className="ProjectsSideMenu__toggle-icon"
-            icon={isApprovedProjectsSelected && shouldOpenApprovedProjects ? IconType.chevronUp : IconType.chevronDown}
-            size={20}
-            totalSize={20}
-          />
-        </button>
-        <div className="ProjectsSideMenu__approved-projects-container">
-          {isApprovedProjectsSelected &&
-            shouldOpenApprovedProjects &&
-            approvedProjectUrls &&
-            approvedProjectUrls.map((selection) => {
-              const isActive = pathname === selection.url;
-              return (
-                <Link
-                  className={clsx('ProjectsSideMenu__link', {'ProjectsSideMenu__link--active': isActive})}
-                  to={selection.url}
-                  key={selection.url}
-                >
-                  {selection.title}
-                </Link>
-              );
-            })}
-        </div>
-      </div>
       <div className="ProjectsSideMenu__section">
         <button
           className={clsx(
@@ -111,14 +62,6 @@ const SideMenu: FC<Props> = ({approvedProjectUrls, breadcrumbHeight}) => {
               </ReactScrollLink>
             );
           })}
-      </div>
-      <div className="ProjectsSideMenu__section">
-        <A
-          className="ProjectsSideMenu__section-header"
-          href="https://github.com/thenewboston-developers/Projects/issues/new?assignees=&labels=Project&template=project-proposal.md&title=NAME_OF_YOUR_PROJECT"
-        >
-          Propose a Project
-        </A>
       </div>
     </div>
   );

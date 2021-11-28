@@ -6,7 +6,7 @@ export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
   developer: 'Developer',
   'principal-entities': 'Principal Entities on the Network',
   'principal-events': 'Principal Events and Processes on the Network',
-  projects: 'Projects',
+  projects: 'App Submission Guide',
   rules: 'Rules & Guidelines',
   whitepaper: 'Living Whitepaper',
 };
@@ -25,16 +25,6 @@ export const projectRulesPath = ROUTES.projects.rules;
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
   'approved-projects': [], // selections will be obtained from calling API
-  projects: [
-    {
-      title: 'Rules & Guidelines',
-      url: projectRulesPath,
-    },
-    {
-      title: 'Approved Projects',
-      url: approvedProjectsPath,
-    },
-  ],
   rules: [
     {
       title: 'How Proposals Work',
@@ -55,10 +45,6 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: 'Eligible Milestone Payments',
       url: `${projectRulesPath}#${ProjectRulesId.EligibleMilestonePayments}`,
-    },
-    {
-      title: 'Projects FAQ',
-      url: `${projectRulesPath}#${ProjectRulesId.ProjectsFaq}`,
     },
   ],
 };

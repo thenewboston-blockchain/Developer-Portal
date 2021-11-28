@@ -49,13 +49,6 @@ export enum PrincipalEventsId {
   PointsRefilling = 'principal-events-points-refilling',
   ElectionProcess = 'principal-events-election-process',
   RatesAndAmounts = 'principal-events-rates-and-amounts',
-  ConversionRates = 'principal-events-conversion-rates',
-  UsernameAndVotes = 'principal-events-username-and-votes',
-  LockedCoinsAndBoosts = 'principal-events-locked-coins-and-boosts',
-  Points = 'principal-events-points',
-  TreasuryBoard = 'principal-events-treasury-board',
-  Government = 'principal-events-government',
-  Nodes = 'principal-events-nodes',
 }
 
 export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
@@ -200,34 +193,6 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: 'Rates & Amounts',
       url: `${principalEventsPath}#${PrincipalEventsId.RatesAndAmounts}`,
-    },
-    {
-      title: 'Conversion Rates',
-      url: `${principalEventsPath}#${PrincipalEventsId.ConversionRates}`,
-    },
-    {
-      title: 'Username & Votes',
-      url: `${principalEventsPath}#${PrincipalEventsId.UsernameAndVotes}`,
-    },
-    {
-      title: 'Locked Coins & Boosts',
-      url: `${principalEventsPath}#${PrincipalEventsId.LockedCoinsAndBoosts}`,
-    },
-    {
-      title: 'Points',
-      url: `${principalEventsPath}#${PrincipalEventsId.Points}`,
-    },
-    {
-      title: 'Treasury Board',
-      url: `${principalEventsPath}#${PrincipalEventsId.TreasuryBoard}`,
-    },
-    {
-      title: 'Government',
-      url: `${principalEventsPath}#${PrincipalEventsId.Government}`,
-    },
-    {
-      title: 'Nodes',
-      url: `${principalEventsPath}#${PrincipalEventsId.Nodes}`,
     },
   ],
   whitepaper: [

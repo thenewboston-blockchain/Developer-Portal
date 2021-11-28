@@ -26,7 +26,7 @@ const TIMEOUT_DELAY = 200;
 const PROJECT_DETAILS_HEADER_HEIGHT = 180;
 const SECTION_PADDING = 48;
 
-const DeveloperPortalLayout: FC<Props> = ({approvedProjectUrls, children, pageName, projectName}) => {
+const DeveloperPortalLayout: FC<Props> = ({children, pageName, projectName}) => {
   const [breadcrumbHeight, setBreadcrumbHeight] = useState(56);
   const {hash} = useLocation();
 
@@ -59,11 +59,7 @@ const DeveloperPortalLayout: FC<Props> = ({approvedProjectUrls, children, pageNa
         {({measureRef}) => (
           <div className="ProjectsDeveloperPortalLayout__breadcrumb" ref={measureRef}>
             <Container>
-              <Breadcrumb
-                approvedProjectUrls={approvedProjectUrls}
-                breadcrumbHeight={breadcrumbHeight}
-                projectName={projectName}
-              />
+              <Breadcrumb breadcrumbHeight={breadcrumbHeight} projectName={projectName} />
             </Container>
             <Divider />
           </div>
@@ -72,7 +68,7 @@ const DeveloperPortalLayout: FC<Props> = ({approvedProjectUrls, children, pageNa
       <Container>
         <div className="ProjectsDeveloperPortalLayout__main-content">
           <div className="ProjectsDeveloperPortalLayout__left-content">
-            <SideMenu approvedProjectUrls={approvedProjectUrls} breadcrumbHeight={breadcrumbHeight} />
+            <SideMenu breadcrumbHeight={breadcrumbHeight} />
           </div>
           <div className="ProjectsDeveloperPortalLayout__right-content">{children}</div>
         </div>

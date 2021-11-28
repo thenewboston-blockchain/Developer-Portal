@@ -34,7 +34,7 @@ describe('Footer component', () => {
     render(<WrappedComponent />);
 
     expect(screen.getByText('Living Whitepaper')).toBeTruthy();
-    expect(screen.getByText('Projects')).toBeTruthy();
+    expect(screen.getAllByText('App Submission Guide')).toBeTruthy();
     expect(screen.getByText('Tools')).toBeTruthy();
     expect(screen.getByText('Social')).toBeTruthy();
     expect(screen.getByText('Legal')).toBeTruthy();

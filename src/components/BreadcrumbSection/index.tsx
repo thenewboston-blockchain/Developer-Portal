@@ -56,8 +56,8 @@ const BreadcrumbSection: FC<Props> = ({
 
   return (
     <>
-      {/* Only show breadcrumb without dropdown if width > 992 */}
-      {width > 992 && !shouldShowDropdownByDefault ? (
+      {/* Only show breadcrumb without dropdown if width > 992  or does not have items */}
+      {(width > 992 || !hasItems) && !shouldShowDropdownByDefault ? (
         <div className="BreadcrumbSection__link-container">
           {hasPrecedingArrowIcon && (
             <Icon className="BreadcrumbSection__icon" icon={IconType.chevronRight} size={16} totalSize={16} />

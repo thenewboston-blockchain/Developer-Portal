@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {useHistory, useLocation} from 'react-router';
 import {Icon, IconType} from '@thenewboston/ui';
 
-import {A, ReactScrollLink} from 'components';
+import {ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 
 import {PATHNAME_TO_DROPDOWN_SELECTIONS, projectRulesPath} from '../../constants';

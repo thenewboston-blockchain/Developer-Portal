@@ -13,7 +13,7 @@ interface ComponentProps {
   toggleMenu(): void;
 }
 
-type SectionStrings = 'whitepaper' | 'projects' | 'tools' | 'tutorials';
+type SectionStrings = 'whitepaper' | 'app-submission-guide' | 'tools' | 'tutorials';
 
 const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu}) => {
   const [openSection, setOpenSection] = useState<SectionStrings | null>(null);
@@ -57,8 +57,8 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
               </>,
             )}
             {renderColumn(
-              'projects',
-              'Projects',
+              'app-submission-guide',
+              'App Submission Guide',
               <>
                 {renderMobileLink('App Submission Guide', ROUTES.projects.home)}
                 {renderMobileLink('Rules and Guidelines', ROUTES.projects.rules)}

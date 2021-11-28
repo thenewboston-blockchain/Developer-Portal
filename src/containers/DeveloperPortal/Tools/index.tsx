@@ -24,20 +24,6 @@ const Tools: FC = () => {
             </Button>
           </div>
           <div className="Tools__tool">
-            <div className="Tools__tool-title">Node Deployment</div>
-            <div className="Tools__tool-description">
-              If you are interested in deploying and maintaining your own Node or Validator on our network, this
-              detailed documentation is your starting point.
-            </div>
-            <Button
-              className="Tools__tool-button"
-              variant="outlined"
-              onClick={() => history.push(ROUTES.tools.nodeDeployment)}
-            >
-              Learn More
-            </Button>
-          </div>
-          <div className="Tools__tool">
             <div className="Tools__tool-title">SDKs & Libraries</div>
             <div className="Tools__tool-description">
               Are you a JavaScript or Python developer? Are you ready to develop your awesome software for thenewboston
@@ -61,6 +47,20 @@ const Tools: FC = () => {
               className="Tools__tool-button"
               variant="outlined"
               onClick={() => history.push(ROUTES.tools.utilities)}
+            >
+              Learn More
+            </Button>
+          </div>
+          <div className="Tools__tool">
+            <div className="Tools__tool-title">Node Deployment</div>
+            <div className="Tools__tool-description">
+              If you are interested in deploying and maintaining your own Node or Validator on our network, this
+              detailed documentation is your starting point.
+            </div>
+            <Button
+              className="Tools__tool-button"
+              variant="outlined"
+              onClick={() => history.push(ROUTES.tools.nodeDeployment)}
             >
               Learn More
             </Button>

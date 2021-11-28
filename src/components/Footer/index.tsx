@@ -1,7 +1,7 @@
 import React, {FC, memo, useCallback} from 'react';
 
 import colors from 'styles/colors';
-import {ROUTES, URLS} from 'constants/routes';
+import {ROUTES} from 'constants/routes';
 import {SocialMedia} from 'types/social-media';
 import {socialMediaFooterIcons, socialMediaUrls} from 'utils/social-media';
 
@@ -17,11 +17,11 @@ const navLists = [
     header: 'Living Whitepaper',
     links: [
       {
-        title: 'Entities',
+        title: 'Network Entities',
         url: ROUTES.whitepaper.principalEntities,
       },
       {
-        title: 'Events and Processes',
+        title: 'Network Events and Processes',
         url: ROUTES.whitepaper.principalEvents,
       },
       {
@@ -31,7 +31,7 @@ const navLists = [
     ],
   },
   {
-    header: 'Projects',
+    header: 'App Submission Guide',
     links: [
       {
         title: 'App Submission Guide',

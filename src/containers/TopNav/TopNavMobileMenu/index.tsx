@@ -51,9 +51,9 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
               'Living Whitepaper',
               <>
                 {renderMobileLink('Home', ROUTES.whitepaper.home)}
-                {renderMobileLink('Principal Entities on the Network', ROUTES.whitepaper.principalEntities)}
-                {renderMobileLink('Principal Events and Processes on the Network', ROUTES.whitepaper.principalEvents)}
-                {renderMobileLink('Architecture Deep Dive', ROUTES.whitepaper.architecture)}
+                {renderMobileLink('Network Entities', ROUTES.whitepaper.principalEntities)}
+                {renderMobileLink('Network Events and Processes', ROUTES.whitepaper.principalEvents)}
+                {renderMobileLink('Architecture Details', ROUTES.whitepaper.architecture)}
               </>,
             )}
             {renderColumn(

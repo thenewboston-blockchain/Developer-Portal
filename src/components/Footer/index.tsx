@@ -17,11 +17,11 @@ const navLists = [
     header: 'Living Whitepaper',
     links: [
       {
-        title: 'Entities',
+        title: 'Network Entities',
         url: ROUTES.whitepaper.principalEntities,
       },
       {
-        title: 'Events and Processes',
+        title: 'Network Events and Processes',
         url: ROUTES.whitepaper.principalEvents,
       },
       {

@@ -5,7 +5,7 @@ import {Layout} from 'components';
 import {ROUTES} from 'constants/routes';
 import withSuspense from 'hoc/withSuspense';
 
-import AppSubmissionGuide from './AppSubmissionGuide';
+import AppSubmissionGuide from './Projects/containers/AppSubmissionGuide';
 import ArchitectureDeepDive from './LivingWhitepaper/containers/ArchitectureDeepDive';
 import BankApi from './DeveloperTools/Api/BankApi';
 import ConfirmationValidatorApi from './DeveloperTools/Api/ConfirmationValidatorApi';

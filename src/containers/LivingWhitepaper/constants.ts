@@ -1,6 +1,7 @@
 import {ROUTES} from 'constants/routes';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
+  additionalFeatures: 'Additional Features',
   architecture: 'Architecture - Deep Dive',
   developer: 'Developer',
   'principal-entities': 'Principal Entities on the Network',
@@ -54,6 +55,7 @@ export enum PrincipalEventsId {
 export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
 export const principalEventsPath = ROUTES.whitepaper.principalEvents;
 export const architecturePath = ROUTES.whitepaper.architecture;
+export const additionalFeaturesPath = ROUTES.whitepaper.additionalFeatures;
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
   architecture: [
@@ -207,6 +209,10 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: PATHNAME_TO_TITLE_MAPPING.architecture,
       url: architecturePath,
+    },
+    {
+      title: PATHNAME_TO_TITLE_MAPPING.additionalFeatures,
+      url: additionalFeaturesPath,
     },
   ],
 };

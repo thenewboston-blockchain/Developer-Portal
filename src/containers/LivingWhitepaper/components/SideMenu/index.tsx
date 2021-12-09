@@ -6,6 +6,7 @@ import {Icon, IconType} from '@thenewboston/ui';
 import {ReactScrollLink} from 'components';
 import {NAVBAR_HEIGHT} from 'constants/offsets';
 import {
+  additionalFeaturesPath,
   architecturePath,
   PATHNAME_TO_DROPDOWN_SELECTIONS,
   principalEntitiesPath,
@@ -25,6 +26,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
   const isPrincipalEntitiesSelected = pathname.includes(principalEntitiesPath);
   const isPrincipalEventsSelected = pathname.includes(principalEventsPath);
   const isArchitectureSelected = pathname.includes(architecturePath);
+  const isAdditionalFeaturesSelected = pathname.includes(additionalFeaturesPath);
 
   return (
     <div className="LivingWhitepaperSideMenu">
@@ -125,6 +127,40 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
               </ReactScrollLink>
             );
           })}
+      </div>
+
+      {/* Token */}
+      <div className="LivingWhitepaperSideMenu__section">
+        <button
+          className={clsx(
+            'LivingWhitepaperSideMenu__section-header',
+            isAdditionalFeaturesSelected && 'LivingWhitepaperSideMenu__section-header--active',
+          )}
+          onClick={() => history.push(additionalFeaturesPath)}
+        >
+          <div>Additional Features</div>
+          <Icon
+            className="LivingWhitepaperSideMenu__toggle-icon"
+            icon={isAdditionalFeaturesSelected ? IconType.chevronUp : IconType.chevronDown}
+            size={20}
+            totalSize={20}
+          />
+        </button>
+        {/* {isAdditionalFeaturesSelected &&
+          PATHNAME_TO_DROPDOWN_SELECTIONS.additionalFeatures.map((selection) => {
+            const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
+            return (
+              <ReactScrollLink
+                activeClass="LivingWhitepaperSideMenu__link--active"
+                className={clsx('LivingWhitepaperSideMenu__link')}
+                key={selection.url}
+                offset={-(NAVBAR_HEIGHT + breadcrumbHeight)}
+                to={selectionHash}
+              >
+                {selection.title}
+              </ReactScrollLink>
+            );
+          })} */}
       </div>
     </div>
   );

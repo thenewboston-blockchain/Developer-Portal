@@ -52,6 +52,15 @@ export enum PrincipalEventsId {
   RatesAndAmounts = 'principal-events-rates-and-amounts',
 }
 
+export enum AdditionalFeaturesId {
+  Tokens = 'Tokens',
+  TokenMinting = 'TokenMinting',
+  Collections = 'Collections',
+  TokenDistributionExchange = 'TokenDistributionExchange',
+  TokenDistributionApps = 'TokenDistributionApps',
+  CollectionManagersVsTokenOwners = 'CollectionManagersVsTokenOwners',
+}
+
 export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
 export const principalEventsPath = ROUTES.whitepaper.principalEvents;
 export const architecturePath = ROUTES.whitepaper.architecture;
@@ -195,6 +204,20 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: 'Rates & Amounts',
       url: `${principalEventsPath}#${PrincipalEventsId.RatesAndAmounts}`,
+    },
+  ],
+  'additional-features': [
+    {
+      title: 'Collections',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.Collections}`
+    },
+    {
+      title: 'Token Minting',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.TokenMinting}`
+    },
+    {
+      title: 'Collection Managers vs. Token Owners',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.CollectionManagersVsTokenOwners}`
     },
   ],
   whitepaper: [

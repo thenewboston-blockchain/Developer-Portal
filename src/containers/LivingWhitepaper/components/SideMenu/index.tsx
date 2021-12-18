@@ -146,8 +146,8 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
             totalSize={20}
           />
         </button>
-        {/* {isAdditionalFeaturesSelected &&
-          PATHNAME_TO_DROPDOWN_SELECTIONS.additionalFeatures.map((selection) => {
+        {isAdditionalFeaturesSelected &&
+          PATHNAME_TO_DROPDOWN_SELECTIONS['additional-features'].map((selection) => {
             const selectionHash = selection.url.slice(selection.url.indexOf('#') + 1);
             return (
               <ReactScrollLink
@@ -160,7 +160,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
                 {selection.title}
               </ReactScrollLink>
             );
-          })} */}
+          })}
       </div>
     </div>
   );

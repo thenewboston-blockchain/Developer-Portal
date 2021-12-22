@@ -26,10 +26,7 @@ const SideMenu: FC<Props> = ({breadcrumbHeight}) => {
     <div className="ProjectsSideMenu">
       <div className="ProjectsSideMenu__section">
         <button
-          className={clsx(
-            'ProjectsSideMenu__section-header',
-            isProjectRulesSelected && 'ProjectsSideMenu__section-header--active',
-          )}
+          className="ProjectsSideMenu__section-header"
           onClick={() => {
             if (!isProjectRulesSelected) {
               history.push(projectRulesPath);

@@ -5,6 +5,7 @@ import type {DevToolType, Language} from 'types/developer-tools';
 import Layout from './components/Layout';
 import ConfirmationModal from '../components/ConfirmationModal';
 import HeroImg from '../assets/hero-img.svg';
+import backgroundTile from './backgroundTile';
 import {LIBRARIES, SDKS} from '../constants';
 
 import './SDKsAndLibraries.scss';
@@ -31,7 +32,10 @@ const SDKsAndLibraries = () => {
             tabIndex={0}
             onClick={() => setGoToUrl(item.url)}
           >
-            <div className="SDKsAndLibraries__section-tile-top">
+            <div
+              className="SDKsAndLibraries__section-tile-top"
+              style={{background: `url(${backgroundTile(item.language)})`}}
+            >
               <div className="SDKsAndLibraries__section-tile-top-pill">
                 <h2 className="SDKsAndLibraries__section-tile-top-pill-text">{item.title}</h2>
               </div>

@@ -20,6 +20,11 @@
     text-align: left;
     width: 100%;
   }
+  
+  &--active {
+    color: var(--color-gray-900);
+    font-weight: var(--font-weight-bold);
+  }
 
   &__link {
     color: var(--color-gray-300);

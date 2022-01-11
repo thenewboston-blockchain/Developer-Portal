@@ -1,6 +1,6 @@
 import React, {ReactNode, useState} from 'react';
 
-import type {DevToolType, Language} from 'types/developer-tools';
+import {DevToolType, Language} from 'types/developer-tools';
 
 import Layout from './components/Layout';
 import ConfirmationModal from '../components/ConfirmationModal';
@@ -9,8 +9,29 @@ import {LIBRARIES, SDKS} from '../constants';
 
 import './SDKsAndLibraries.scss';
 
+import dotnetBg from '../assets/tile-bg-dotnet.svg';
+import javascriptBg from '../assets/tile-bg-javascript.svg';
+import pythonBg from '../assets/tile-bg-python.svg';
+import kotlinBg from '../assets/tile-bg-kotlin.svg';
+import defaultBg from '../assets/tile-bg.svg';
+
 const SDKsAndLibraries = () => {
   const [goToUrl, setGoToUrl] = useState<string | null>(null);
+
+  const getTileBgUrl = (language?: string): string => {
+    switch (language) {
+      case Language.dotNet:
+        return dotnetBg;
+      case Language.javascript:
+        return javascriptBg;
+      case Language.kotlin:
+        return kotlinBg;
+      case Language.python:
+        return pythonBg;
+      default:
+        return defaultBg;
+    }
+  };
 
   const renderTiles = (items: DevToolType[], selectedLanguages: Language[], section: string): ReactNode => {
     const filteredItems = selectedLanguages.length
@@ -31,11 +52,10 @@ const SDKsAndLibraries = () => {
             tabIndex={0}
             onClick={() => setGoToUrl(item.url)}
           >
-            <div className="SDKsAndLibraries__section-tile-top">
-              <div className="SDKsAndLibraries__section-tile-top-pill">
-                <h2 className="SDKsAndLibraries__section-tile-top-pill-text">{item.title}</h2>
-              </div>
-            </div>
+            <div
+              className="SDKsAndLibraries__section-tile-top"
+              style={{background: `url(${getTileBgUrl(item.language)})`}}
+            />
             <div className="SDKsAndLibraries__section-tile-bottom">
               <h3 className="SDKsAndLibraries__section-tile-bottom-title">{item.title}</h3>
               <p className="SDKsAndLibraries__section-tile-bottom-description">{item.description}</p>

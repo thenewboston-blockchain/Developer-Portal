@@ -2,13 +2,13 @@ import React, {FC} from 'react';
 import {Icon, IconType} from '@thenewboston/ui';
 
 import {Button} from 'components';
-import {URLS} from 'constants/routes';
+import {ROUTES} from 'constants/routes';
 import {socialMediaUrls} from 'utils/social-media';
 
 import './DeveloperPortalHero.scss';
 
 const DeveloperPortalHero: FC = () => {
-  const handleProposeProjectClick = () => window.open(URLS.github.proposeProjects, '_blank', 'noreferrer noopener');
+  const handleProposeProjectClick = () => window.open(ROUTES.projects.home, '_blank', 'noreferrer noopener');
 
   const handleDiscordClick = () => window.open(socialMediaUrls.discord, '_blank', 'noreferrer noopener');
 

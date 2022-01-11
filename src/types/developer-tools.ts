@@ -1,9 +1,9 @@
 export enum Language {
-  dotNet = '.NET Core',
-  go = 'Go',
   javascript = 'JS',
-  kotlin = 'Kotlin',
   python = 'Python',
+  dotNet = '.NET Core',
+  kotlin = 'Kotlin',
+  go = 'Go',
 }
 
 // This type is also used for SDKs

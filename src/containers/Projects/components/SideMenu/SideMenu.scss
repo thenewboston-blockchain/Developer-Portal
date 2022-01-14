@@ -32,14 +32,10 @@
     display: block;
     font-size: var(--font-size-body3);
     font-weight: var(--font-weight-medium);
-    margin-left: 16px;
+    margin: 8px 0px 8px 16px;
 
     &:hover {
       color: var(--color-blue-gray-1000);
-    }
-
-    &:not(:last-child) {
-      margin: 8px 0px 8px 16px;
     }
 
     &--active {

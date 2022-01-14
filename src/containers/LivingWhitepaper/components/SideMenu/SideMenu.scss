@@ -11,8 +11,9 @@
 
   &__section-header {
     @include top-nav-button;
+    color: var(--color-gray-800);
     display: flex;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-bold);
     justify-content: space-between;
     padding: 0;
     text-align: left;
@@ -25,17 +26,15 @@
   }
 
   &__link {
-    color: var(--color-gray-400);
+    color: var(--color-gray-300);
     cursor: pointer;
     display: block;
     font-weight: var(--font-weight-medium);
 
+    margin: 8px 0 8px 16px;
+
     &:hover {
       color: var(--color-blue-gray-1000);
-    }
-
-    &:not(:last-child) {
-      margin: 8px 0;
     }
 
     &--active {

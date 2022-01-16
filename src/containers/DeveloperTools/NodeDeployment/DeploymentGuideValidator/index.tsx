@@ -43,7 +43,7 @@ const DeploymentGuideValidator: FC = () => {
             dataType: 'string',
             description: 'Network standardized type of node (PRIMARY_VALIDATOR or CONFIRMATION_VALIDATOR)',
             param: 'node_type',
-            sampleValue: 'PRIMARY_VALIDATOR',
+            sampleValue: 'CONFIRMATION_VALIDATOR',
           },
           {
             dataType: 'string',
@@ -56,8 +56,7 @@ const DeploymentGuideValidator: FC = () => {
             description:
               'Record of all account balances at the moment in time that the validator was first set to "primary"',
             param: 'root_account_file',
-            sampleValue:
-              'https://gist.githubusercontent.com/buckyroberts/519b5cb82a0a5b5d4ae8a2175b722520/raw/9237deb449e27cab93cb89ea3346ecdfc61fe9ea/0.json',
+            sampleValue: 'http://52.52.160.149:80/media/root_account_file.json',
           },
           {
             dataType: 'string',

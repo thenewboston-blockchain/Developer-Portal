@@ -1,4 +1,4 @@
-export const allTutorialsFilter = {
-  pathname: 'All',
-  title: 'All',
+export const trendingTutorialsFilter = {
+  pathname: 'Trending',
+  title: 'Trending',
 };

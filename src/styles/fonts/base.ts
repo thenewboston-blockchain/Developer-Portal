@@ -10,6 +10,7 @@ const fonts = {
   size: {
     d1: '42px',
     d2: '36px',
+    d3: '32px',
     h1: '24px',
     h2: '20px',
     h3: '16px',

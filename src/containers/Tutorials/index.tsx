@@ -3,7 +3,7 @@ import {useHistory, useParams} from 'react-router-dom';
 
 import {getPlaylistCategories} from 'apis/tutorials';
 import {BreadcrumbMenu, Container, FlatNavLinks, Loader, PageTitle} from 'components';
-import {allTutorialsFilter} from 'constants/tutorials';
+import {trendingTutorialsFilter} from 'constants/tutorials';
 import {ROUTES} from 'constants/routes';
 import {NavOption} from 'types/option';
 import {PlaylistCategory, TutorialsUrlParams} from 'types/tutorials';
@@ -19,7 +19,7 @@ const Tutorials: FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [playlistCategories, setPlaylistCategories] = useState<NavOption[]>([]);
-  const [playlistCategoryFilter, setPlaylistCategoryFilter] = useState<string | null>(null);
+  const [playlistCategoryFilter, setPlaylistCategoryFilter] = useState<string>(trendingTutorialsFilter.title);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
@@ -29,9 +29,9 @@ const Tutorials: FC = () => {
           pathname: playlistCategory.name,
           title: playlistCategory.name,
         }));
-        updatedPlaylistCategories.unshift(allTutorialsFilter);
+        updatedPlaylistCategories.unshift(trendingTutorialsFilter);
         setPlaylistCategories(updatedPlaylistCategories);
-      } catch (error) {
+      } catch (error: any) {
         setErrorMessage(error.message);
       } finally {
         setLoading(false);
@@ -46,7 +46,7 @@ const Tutorials: FC = () => {
       if (playlistCategories.some((playlistCategory: NavOption) => playlistCategory.pathname === categoryParam)) {
         setPlaylistCategoryFilter(categoryParam);
       } else {
-        history.replace(`${ROUTES.tutorials}/${allTutorialsFilter.pathname}`);
+        history.replace(`${ROUTES.tutorials}/${trendingTutorialsFilter.pathname}`);
       }
     }
   }, [playlistCategories, loading, categoryParam, history]);
@@ -63,7 +63,7 @@ const Tutorials: FC = () => {
       <FlatNavLinks
         handleOptionClick={handleNavOptionClick}
         options={playlistCategories}
-        selectedOption={playlistCategoryFilter ?? allTutorialsFilter.title}
+        selectedOption={playlistCategoryFilter ?? trendingTutorialsFilter.title}
       />
     );
   };
@@ -82,7 +82,7 @@ const Tutorials: FC = () => {
         <BreadcrumbMenu
           className="Tutorials__BreadcrumbMenu"
           menuItems={renderCategoryFilter()}
-          pageName={playlistCategoryFilter ?? allTutorialsFilter.title}
+          pageName={playlistCategoryFilter ?? trendingTutorialsFilter.title}
           sectionName="Tutorials"
         />
         <aside className="Tutorials__left-menu">{renderCategoryFilter()}</aside>

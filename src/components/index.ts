@@ -21,6 +21,7 @@ import {
 } from './DocWrapper';
 import EmojiIcon, {EmojiType} from './EmojiIcon';
 import EmptyPage from './EmptyPage';
+import ErrorMessage from './ErrorMessage';
 import FaqDropdownCard from './FaqDropdownCard';
 import FlatNavLinks from './FlatNavLinks';
 import Footer from './Footer';
@@ -42,6 +43,7 @@ import ReactScrollLink from './ReactScrollLink';
 import RequiredAsterisk from './RequiredAsterisk';
 import Shadow from './Shadow';
 import SocialMediaIcon from './SocialMediaIcon';
+import Spacer from './Spacer';
 import {TableBorderGrid, TableParams, TableVertical} from './Table';
 import VideoPlayer from './VideoPlayer';
 
@@ -69,6 +71,7 @@ export {
   EmojiIcon,
   EmojiType,
   EmptyPage,
+  ErrorMessage,
   FaqDropdownCard,
   FlatNavLinks,
   Footer,
@@ -92,6 +95,7 @@ export {
   Shadow,
   SnippetLang,
   SocialMediaIcon,
+  Spacer,
   TableBorderGrid,
   TableParams,
   TableVertical,

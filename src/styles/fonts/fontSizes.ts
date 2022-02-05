@@ -10,6 +10,10 @@ export const fontSizeD2 = css`
   font-size: ${fonts.size.d2};
 `;
 
+export const fontSizeD3 = css`
+  font-size: ${fonts.size.d3};
+`;
+
 export const fontSizeH1 = css`
   font-size: ${fonts.size.h1};
 `;

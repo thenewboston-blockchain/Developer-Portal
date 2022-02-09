@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {trendingTutorialsFilter} from 'constants/tutorials';
 import {PaginatedResponse} from 'types/api';
 import {Instructor, Playlist, PlaylistCategory, PlaylistType} from 'types/tutorials';
 import {standardHeaders} from 'utils/requests';
@@ -13,22 +12,24 @@ export async function getPlaylistCategories(): Promise<PlaylistCategory[]> {
   return response.data.results;
 }
 
-export async function getPlaylists(category: string, type: PlaylistType, count?: number): Promise<Playlist[]> {
+export async function getTrendingPlaylists(type: PlaylistType, count?: number): Promise<Playlist[]> {
   let url = `${process.env.REACT_APP_BACKEND_API}/playlists`;
 
   if (type === PlaylistType.mostRecent) {
-    url += `?ordering=-published_at`;
+    url += `?ordering=-published_at&count=${count || 8}`;
   }
 
   if (type === PlaylistType.popular) {
-    url += `?is_featured=true`;
+    url += `?is_featured=true&count=${count || 8}`;
   }
 
-  if (category !== trendingTutorialsFilter.title) {
-    url += `&category=${category}`;
-  }
+  const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
 
-  url += `&count=${count || 8}`;
+  return response.data.results;
+}
+
+export async function getPlaylists(category: string): Promise<Playlist[]> {
+  const url = `${process.env.REACT_APP_BACKEND_API}/playlists?category=${category}`;
 
   const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
 

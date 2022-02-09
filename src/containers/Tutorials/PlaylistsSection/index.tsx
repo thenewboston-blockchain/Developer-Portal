@@ -1,6 +1,7 @@
 import React from 'react';
 
-import {getPlaylists} from 'apis/tutorials';
+import {getPlaylists, getTrendingPlaylists} from 'apis/tutorials';
+import {trendingTutorialsFilter} from 'constants/tutorials';
 import {ErrorMessage, Loader} from 'components';
 import {Playlist, PlaylistType} from 'types/tutorials';
 
@@ -9,7 +10,7 @@ import PlaylistCard from '../PlaylistCard';
 import * as S from './styles';
 
 type Props = {
-  type: PlaylistType;
+  type?: PlaylistType;
   category: string;
 };
 
@@ -21,7 +22,9 @@ const PlaylistsSection = ({type, category}: Props) => {
   React.useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
-        const playlistsResponse = await getPlaylists(category, type);
+        const isTrendingTab = category === trendingTutorialsFilter.title;
+
+        const playlistsResponse = isTrendingTab ? await getTrendingPlaylists(type!) : await getPlaylists(category);
         setPlaylists(playlistsResponse);
       } catch (err: any) {
         setError(err.message);
@@ -55,7 +58,7 @@ const PlaylistsSection = ({type, category}: Props) => {
 
   return (
     <S.Container>
-      <S.Title>{type}</S.Title>
+      {!!type && <S.Title>{type}</S.Title>}
       {renderContent()}
     </S.Container>
   );

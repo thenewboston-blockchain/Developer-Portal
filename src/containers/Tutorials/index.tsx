@@ -2,7 +2,7 @@ import React, {FC, ReactNode, useCallback, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 
 import {getPlaylistCategories} from 'apis/tutorials';
-import {BreadcrumbMenu, Container, FlatNavLinks, Loader, PageTitle} from 'components';
+import {BreadcrumbMenu, Container, FlatNavLinks, Loader, PageTitle, Spacer} from 'components';
 import {trendingTutorialsFilter} from 'constants/tutorials';
 import {ROUTES} from 'constants/routes';
 import {NavOption} from 'types/option';
@@ -10,6 +10,7 @@ import {PlaylistCategory, TutorialsUrlParams} from 'types/tutorials';
 
 import Playlists from './Playlists';
 import WatchPlaylist from './WatchPlaylist';
+import DiscordBanner from './DiscordBanner';
 import './Tutorials.scss';
 
 const Tutorials: FC = () => {
@@ -85,7 +86,9 @@ const Tutorials: FC = () => {
           pageName={playlistCategoryFilter ?? trendingTutorialsFilter.title}
           sectionName="Tutorials"
         />
+
         <aside className="Tutorials__left-menu">{renderCategoryFilter()}</aside>
+
         <div className="Tutorials__right-content">
           {playlistIdParam ? (
             <WatchPlaylist playlistId={playlistIdParam} />
@@ -94,6 +97,14 @@ const Tutorials: FC = () => {
           )}
         </div>
       </Container>
+
+      {!playlistIdParam && (
+        <Container>
+          <Spacer size={60} />
+          <DiscordBanner />
+          <Spacer size={120} />
+        </Container>
+      )}
     </>
   );
 };

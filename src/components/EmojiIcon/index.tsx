@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {SFC} from 'types/generic';
-import {BulbEmoji, GearEmoji, PaperEmoji, WrenchEmoji} from './components';
+import {BulbEmoji, GearEmoji, PaperEmoji, WrenchEmoji, DiscordEmoji} from './components';
 import * as S from './Styles';
 
 export enum EmojiType {
@@ -9,6 +9,7 @@ export enum EmojiType {
   Bulb = '💡',
   Gear = '⚙️',
   Wrench = '🔧',
+  Discord = 'Discord',
 }
 
 type Props = {
@@ -24,6 +25,8 @@ const getEmojiIcon = (emojiType: EmojiType, emojiSize: number) => {
   switch (emojiType) {
     case EmojiType.Bulb:
       return <BulbEmoji style={style} />;
+    case EmojiType.Discord:
+      return <DiscordEmoji style={style} />;
     case EmojiType.Paper:
       return <PaperEmoji style={style} />;
     case EmojiType.Gear:

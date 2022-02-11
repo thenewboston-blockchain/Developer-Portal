@@ -34,6 +34,7 @@ export const ROUTES = {
 const websiteUrl = 'https://thenewboston.com';
 const githubUrl = 'https://github.com/thenewboston-developers';
 export const URLS = {
+  discord: 'https://discord.com/invite/thenewboston',
   github: {
     home: githubUrl,
     proposeIdeaOnly: `${githubUrl}/Projects/issues/new?assignees=&labels=Idea+Only&template=idea-only-proposal.md&title=NAME_OF_YOUR_IDEA`,

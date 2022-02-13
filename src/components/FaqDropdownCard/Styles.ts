@@ -57,6 +57,7 @@ export const ToggleIcon = styled(Icon)<{isExpanded?: boolean}>`
 export const Question = styled.div`
   ${h3.medium};
   color: ${colors.palette.gray['700']};
+  cursor: pointer;
 `;
 
 const Answer = styled.div`

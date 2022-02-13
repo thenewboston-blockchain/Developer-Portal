@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import {AdditionalFeaturesId} from '../../../constants';
 
+import './TokenDistributionExchange.scss';
+
 const TokenDistributionExchange: React.FC = () => {
   return (
     <section id={AdditionalFeaturesId.TokenDistributionExchange}>

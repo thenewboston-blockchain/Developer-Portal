@@ -6,6 +6,7 @@ const fonts = {
   family: {
     default: 'Inter, sans-serif',
     mono: 'JetBrainsMono, monospace',
+    tokens: 'Roboto Mono, monospace',
   },
   size: {
     d1: '42px',

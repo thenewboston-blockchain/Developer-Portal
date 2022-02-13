@@ -28,7 +28,6 @@ const AdditionalFeatures: FC = () => {
 
         <TokenMinting />
 
-        {/* Token Grid */}
         <TokenDistributionExchange />
 
         <TokenDistributionApps />

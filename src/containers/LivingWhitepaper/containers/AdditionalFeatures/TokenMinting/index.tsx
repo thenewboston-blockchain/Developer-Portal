@@ -1,9 +1,75 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
 import {DataTable} from 'components';
+import DreamArt from 'assets/images/dream-art.png';
+import MagicAxe from 'assets/images/magic-axe.png';
+import Gold from 'assets/images/gold.png';
 import {AdditionalFeaturesId} from '../../../constants';
 
+import './TokenMinting.scss';
+
 const TokenMinting: React.FC = () => {
+  const columns = [
+    'Image',
+    <img src={DreamArt} alt="Dream Art" />,
+    <img src={MagicAxe} alt="Magic Axe" />,
+    <img src={Gold} alt="Gold" />,
+  ];
+
+  const art = {
+    Artist: 'Joe',
+    Year: 2021,
+  };
+  const axe = {
+    Durability: 20,
+    Power: 86,
+  };
+
+  const data: ReactNode[][] = [
+    ['Token ticker', 'DREAM_ART', 'MAGIC_AXE', 'GOLD'],
+    ['Name', 'Sea of Dreams', 'Magic Battle Axe', 'Gold Coins'],
+    ['Royalty', '2.5%', '3.0%', '1.0%'],
+    [
+      'Custom attributes',
+      <pre>
+        <code>{JSON.stringify(art)}</code>
+      </pre>,
+      <pre>{JSON.stringify(axe)}</pre>,
+      `-`,
+    ],
+    ['Quantity', '1', '400', '25000'],
+    ['Mintable', 'False', 'False', 'True'],
+    ['URL', 'thenewboston.com/art', 'thenewboston.com/game', 'thenewboston.com/game'],
+  ];
+
+  const renderTableHeaders = (cols: ReactNode[]): ReactNode => {
+    return (
+      <>
+        {cols.map((col, index) => (
+          <th className="TokenMinting__table-thead-th" key={index}>
+            {col}
+          </th>
+        ))}
+      </>
+    );
+  };
+
+  const renderTableRows = (rows: ReactNode[][]): ReactNode => {
+    return (
+      <>
+        {rows.map((row, index) => (
+          <tr className="TokenMinting__table-tbody-tr" key={index}>
+            {row.map((cell, idx) => (
+              <td className="TokenMinting__table-tbody-tr-td" key={idx}>
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </>
+    );
+  };
+
   return (
     <section id={AdditionalFeaturesId.TokenMinting}>
       <h3 className="AdditionalFeatures__section-sub-heading">Token Minting</h3>
@@ -55,6 +121,13 @@ const TokenMinting: React.FC = () => {
           them with an ongoing revenue stream when tokens are traded on the exchange. Below are examples of tokens that
           can be minted and distributed under this system.
         </p>
+      </section>
+
+      <section className="TokenMinting__table-section">
+        <table className="TokenMinting__table">
+          <thead className="TokenMinting__table-thead">{renderTableHeaders(columns)}</thead>
+          <tbody className="TokenMinting__table-tbody">{renderTableRows(data)}</tbody>
+        </table>
       </section>
     </section>
   );

@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 import TokenDistributionAppsDiagram from 'assets/images/TokenDistributionApps.png';
 import {AdditionalFeaturesId} from '../../../constants';
 
+import './TokenDistributionApps.scss';
+
 const TokenDistributionApps: React.FC = () => {
   return (
     <section id={AdditionalFeaturesId.TokenDistributionApps}>

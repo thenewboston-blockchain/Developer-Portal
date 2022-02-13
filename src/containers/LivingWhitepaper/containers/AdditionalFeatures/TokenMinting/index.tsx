@@ -29,14 +29,7 @@ const TokenMinting: React.FC = () => {
     ['Token ticker', 'DREAM_ART', 'MAGIC_AXE', 'GOLD'],
     ['Name', 'Sea of Dreams', 'Magic Battle Axe', 'Gold Coins'],
     ['Royalty', '2.5%', '3.0%', '1.0%'],
-    [
-      'Custom attributes',
-      <pre>
-        <code>{JSON.stringify(art)}</code>
-      </pre>,
-      <pre>{JSON.stringify(axe)}</pre>,
-      `-`,
-    ],
+    ['Custom attributes', JSON.stringify(art, null, 2), JSON.stringify(axe, null, 2), `-`],
     ['Quantity', '1', '400', '25000'],
     ['Mintable', 'False', 'False', 'True'],
     ['URL', 'thenewboston.com/art', 'thenewboston.com/game', 'thenewboston.com/game'],

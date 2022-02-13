@@ -29,6 +29,7 @@
           font-weight: var(--font-weight-semibold);
           min-width: 120px;
           padding: 8px 16px;
+          white-space: pre;
           &:not(:last-child) {
             border-right: 1px solid var(--color-gray-075);
           }

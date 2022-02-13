@@ -34,8 +34,9 @@ const Collections: React.FC = () => {
           related tokens. They must also pay a creation fee during the collection creation process, which will be set
           on-chain by the government.
         </p>
+
         <Note
-          className="AdditionalFeatures__section-note AdditionalFeatures__section-note--mb-32"
+          className="AdditionalFeatures__section-note"
           text="For this development cycle of the Tokens system, the main goal is core functionality development. Currently, known limitations include cases of transferring ownership, allowing for multiple managers, and so on."
           type={NoteType.Information}
         />

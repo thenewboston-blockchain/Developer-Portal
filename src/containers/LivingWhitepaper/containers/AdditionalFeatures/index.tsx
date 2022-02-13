@@ -1,21 +1,20 @@
 import React, {FC} from 'react';
 
-import {Divider, Navigation, Note, NoteType} from 'components';
+import {Navigation} from 'components';
 
-import {AdditionalFeaturesId} from '../../constants';
 import DeveloperPortalLayout from '../../components/DeveloperPortalLayout';
 import Collections from './Collections';
 import TokenMinting from './TokenMinting';
 import CollectionManagersVsTokenOwners from './CollectionManagersVsTokenOwners';
-
-import {TokenDistributionExchange} from './TokenDistributionExchange';
+import TokenDistributionApps from './TokenDistributionApps';
+import TokenDistributionExchange from './TokenDistributionExchange';
 
 import './AdditionalFeatures.scss';
 
 const AdditionalFeatures: FC = () => {
   return (
     <DeveloperPortalLayout pageName="Living Whitepaper | Principal Entities">
-      <div className="PrincipalEntities">
+      <div className="AdditionalFeatures">
         <h6 className="AdditionalFeatures__heading">Additional Features</h6>
 
         <section className="AdditionalFeatures__section">
@@ -26,11 +25,14 @@ const AdditionalFeatures: FC = () => {
         </section>
 
         <Collections />
+
         <TokenMinting />
 
         {/* Token Grid */}
-        {/* <TokenDistributionApps /> */}
         <TokenDistributionExchange />
+
+        <TokenDistributionApps />
+
         <CollectionManagersVsTokenOwners />
 
         <div className="AdditionalFeatures__bottom-bar">

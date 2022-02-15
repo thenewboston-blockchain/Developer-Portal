@@ -5,6 +5,11 @@
     &-section {
       margin: 0 2rem;
     }
+    @media (max-width: 768px) {
+      &-section {
+        margin: 0;
+      }
+    }
   }
 
   &__table {

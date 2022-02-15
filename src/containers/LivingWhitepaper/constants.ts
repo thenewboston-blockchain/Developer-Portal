@@ -1,7 +1,7 @@
 import {ROUTES} from 'constants/routes';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
-  additionalFeatures: 'Additional Features',
+  'additional-features': 'Additional Features',
   architecture: 'Architecture - Deep Dive',
   developer: 'Developer',
   'principal-entities': 'Principal Entities on the Network',

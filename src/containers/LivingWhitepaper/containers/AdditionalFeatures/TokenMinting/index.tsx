@@ -20,6 +20,7 @@ const TokenMinting: React.FC = () => {
     Artist: 'Joe',
     Year: 2021,
   };
+
   const axe = {
     Durability: 20,
     Power: 86,

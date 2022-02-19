@@ -1,9 +1,10 @@
 import React, {ReactNode} from 'react';
 
 import {DataTable} from 'components';
-import DreamArt from 'assets/images/dream-art.png';
-import MagicAxe from 'assets/images/magic-axe.png';
-import Gold from 'assets/images/gold.png';
+
+import DreamArt from 'containers/LivingWhitepaper/assets/dream-art.png';
+import MagicAxe from 'containers/LivingWhitepaper/assets/magic-axe.png';
+import Gold from 'containers/LivingWhitepaper/assets/gold.png';
 import {AdditionalFeaturesId} from '../../../constants';
 
 import './TokenMinting.scss';

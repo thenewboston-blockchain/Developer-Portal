@@ -1,5 +1,5 @@
 import React from 'react';
-import TokenDistributionAppsDiagram from 'assets/images/TokenDistributionApps.png';
+import TokenDistributionAppsDiagram from 'containers/LivingWhitepaper/assets/TokenDistributionApps.webp';
 import {AdditionalFeaturesId} from '../../../constants';
 
 import './TokenDistributionApps.scss';

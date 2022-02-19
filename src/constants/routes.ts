@@ -21,6 +21,7 @@ export const ROUTES = {
   },
   tutorials: '/tutorials',
   whitepaper: {
+    additionalFeatures: '/whitepaper/additional-features',
     architecture: '/whitepaper/architecture',
     home: '/whitepaper',
     principalEntities: '/whitepaper/principal-entities',

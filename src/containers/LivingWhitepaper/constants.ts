@@ -1,6 +1,7 @@
 import {ROUTES} from 'constants/routes';
 
 export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
+  'additional-features': 'Additional Features',
   architecture: 'Architecture - Deep Dive',
   developer: 'Developer',
   'principal-entities': 'Principal Entities on the Network',
@@ -51,11 +52,43 @@ export enum PrincipalEventsId {
   RatesAndAmounts = 'principal-events-rates-and-amounts',
 }
 
+export enum AdditionalFeaturesId {
+  Tokens = 'Tokens',
+  TokenMinting = 'TokenMinting',
+  Collections = 'Collections',
+  TokenDistributionExchange = 'TokenDistributionExchange',
+  TokenDistributionApps = 'TokenDistributionApps',
+  CollectionManagersVsTokenOwners = 'CollectionManagersVsTokenOwners',
+}
+
 export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
 export const principalEventsPath = ROUTES.whitepaper.principalEvents;
 export const architecturePath = ROUTES.whitepaper.architecture;
+export const additionalFeaturesPath = ROUTES.whitepaper.additionalFeatures;
 
 export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url: string}[]> = {
+  'additional-features': [
+    {
+      title: 'Collections',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.Collections}`,
+    },
+    {
+      title: 'Token Minting',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.TokenMinting}`,
+    },
+    {
+      title: 'Token Distribution: Exchange',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.TokenDistributionExchange}`,
+    },
+    {
+      title: 'Token Distribution: Apps',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.TokenDistributionApps}`,
+    },
+    {
+      title: 'Collection Managers vs. Token Owners',
+      url: `${additionalFeaturesPath}#${AdditionalFeaturesId.CollectionManagersVsTokenOwners}`,
+    },
+  ],
   architecture: [
     {
       title: 'Block structure',
@@ -207,6 +240,10 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
     {
       title: PATHNAME_TO_TITLE_MAPPING.architecture,
       url: architecturePath,
+    },
+    {
+      title: PATHNAME_TO_TITLE_MAPPING['additional-features'],
+      url: additionalFeaturesPath,
     },
   ],
 };

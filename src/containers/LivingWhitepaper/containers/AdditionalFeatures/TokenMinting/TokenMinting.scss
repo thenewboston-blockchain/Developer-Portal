@@ -1,6 +1,17 @@
 @import 'styles/font-mixins';
 
-.DataTable {
+.TokenMinting {
+  &__table {
+    &-section {
+      margin: 0 2rem;
+    }
+    @media (max-width: 768px) {
+      &-section {
+        margin: 0;
+      }
+    }
+  }
+
   &__table {
     box-shadow: 0 1px 13px rgba(0, 0, 0, 0.06);
     display: block;
@@ -11,6 +22,7 @@
       &-tr {
         &:not(:last-child) {
           border-bottom: 1px solid var(--color-gray-075);
+          white-space: nowrap;
         }
 
         &:last-child {
@@ -18,13 +30,13 @@
         }
 
         &-td {
-          @extend %body1;
+          @extend %body2;
+          font-weight: var(--font-weight-semibold);
           min-width: 120px;
           padding: 8px 16px;
-
+          white-space: pre;
           &:not(:last-child) {
             border-right: 1px solid var(--color-gray-075);
-            white-space: nowrap;
           }
         }
 
@@ -37,16 +49,15 @@
     }
 
     &-thead {
-      background: var(--color-blue-800);
-      color: var(--color-white);
-
       &-th {
-        @extend %body1;
+        @extend %body2;
+        border-bottom: 1px solid var(--color-gray-075);
+        font-weight: var(--font-weight-semibold);
         padding: 8px 16px;
         text-align: left;
 
         &:not(:last-child) {
-          border-right: 1px solid var(--color-white);
+          border-right: 1px solid var(--color-gray-075);
           white-space: nowrap;
         }
 

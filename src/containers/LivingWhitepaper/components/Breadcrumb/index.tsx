@@ -132,7 +132,7 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
                     totalSize={16}
                   />
                 </button>
-                {/* <Popover
+                <Popover
                   anchorEl={sectionDropdownEl}
                   anchorOrigin={{horizontal: 'center', vertical: 'bottom'}}
                   className="Breadcrumb__Popover"
@@ -156,7 +156,7 @@ const Breadcrumb: FC<Props> = ({breadcrumbHeight, className}) => {
                       </ReactScrollLink>
                     );
                   })}
-                </Popover> */}
+                </Popover>
               </>
             )}
           </div>

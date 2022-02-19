@@ -242,7 +242,7 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
       url: architecturePath,
     },
     {
-      title: PATHNAME_TO_TITLE_MAPPING.additionalFeatures,
+      title: PATHNAME_TO_TITLE_MAPPING['additional-features'],
       url: additionalFeaturesPath,
     },
   ],

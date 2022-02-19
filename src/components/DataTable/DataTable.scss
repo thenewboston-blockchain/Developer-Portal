@@ -11,7 +11,6 @@
       &-tr {
         &:not(:last-child) {
           border-bottom: 1px solid var(--color-gray-075);
-          white-space: nowrap;
         }
 
         &:last-child {
@@ -25,6 +24,7 @@
 
           &:not(:last-child) {
             border-right: 1px solid var(--color-gray-075);
+            white-space: nowrap;
           }
         }
 

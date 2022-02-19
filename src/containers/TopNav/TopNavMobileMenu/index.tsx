@@ -54,6 +54,7 @@ const TopNavMobileMenu: FC<ComponentProps> = ({closeMenu, menuOpen, toggleMenu})
                 {renderMobileLink('Network Entities', ROUTES.whitepaper.principalEntities)}
                 {renderMobileLink('Network Events and Processes', ROUTES.whitepaper.principalEvents)}
                 {renderMobileLink('Architecture Details', ROUTES.whitepaper.architecture)}
+                {renderMobileLink('Additional Features', ROUTES.whitepaper.additionalFeatures)}
               </>,
             )}
             {renderColumn(

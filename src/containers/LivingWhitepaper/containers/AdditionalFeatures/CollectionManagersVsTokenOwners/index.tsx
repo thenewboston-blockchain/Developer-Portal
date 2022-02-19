@@ -30,6 +30,7 @@ const CollectionManagersVsTokenOwners: React.FC = () => {
             </li>
           </ul>
         </div>
+
         <Note
           className="AdditionalFeatures__section-note"
           text="Although many of the token examples used in this document primarily focus on gaming, developers can use tokens as software credits in a variety of usage based software and web apps."

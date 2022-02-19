@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Navigation} from 'components';
+import {Divider, Navigation} from 'components';
 
 import DeveloperPortalLayout from '../../components/DeveloperPortalLayout';
 import Collections from './Collections';
@@ -19,7 +19,7 @@ const AdditionalFeatures: FC = () => {
 
         <section className="AdditionalFeatures__section">
           <h2 className="AdditionalFeatures__section-heading">Tokens</h2>
-          <p className="AdditionalFeatures__section-paragraph">
+          <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-paragraph--mb-48">
             The token system allows users to represent a variety of digital assets as tokens on thenewboston blockchain.
           </p>
         </section>
@@ -34,8 +34,10 @@ const AdditionalFeatures: FC = () => {
 
         <CollectionManagersVsTokenOwners />
 
+        <Divider className="AdditionalFeatures__divider" />
+
         <div className="AdditionalFeatures__bottom-bar">
-          <Navigation path="/whitepaper/principal-entities" text="Principal Entities on the Network" type="right" />
+          <Navigation path="/whitepaper/architecture" text="Architecture - Deep Dive" type="left" />
         </div>
       </div>
     </DeveloperPortalLayout>

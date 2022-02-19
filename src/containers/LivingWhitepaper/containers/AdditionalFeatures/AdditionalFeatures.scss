@@ -6,7 +6,7 @@
   &__bottom-bar {
     color: var(--color-cyan-900);
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     &-content {
       align-items: center;
@@ -37,6 +37,8 @@
     &-heading {
       @extend %h1;
       font-weight: var(--font-weight-bold);
+      color: var(--color-gray-800);
+      margin-bottom: 16px;
     }
 
     &-image {
@@ -113,9 +115,14 @@
       }
     }
 
+    &-note {
+      margin: 32px 0;
+    }
+
     &-sub-heading {
       @extend %h2;
       font-weight: var(--font-weight-medium);
+      color: var(--color-gray-700);
     }
 
     &-text {
@@ -137,41 +144,6 @@
     }
   }
 
-  /* section specific styles */
-  &__governance {
-    display: flex;
-
-    &-left {
-      margin-right: 32px;
-
-      &-note {
-        background: var(--color-blue-50);
-        border-left: 2px solid var(--color-cyan-500);
-        padding: 16px;
-
-        &-icon {
-          margin-right: 16px;
-        }
-
-        &-title {
-          align-items: center;
-          color: var(--color-cyan-500);
-          display: flex;
-          font-weight: var(--font-weight-semibold);
-          margin-bottom: 10px;
-        }
-      }
-    }
-  }
-
-  &__nodes {
-    display: flex;
-
-    &-left {
-      margin-right: 32px;
-    }
-  }
-
   @media (max-width: 1366px) {
     padding: 24px;
 
@@ -186,18 +158,5 @@
 
   @media (max-width: 768px) {
     padding: 24px;
-
-    &__governance {
-      flex-direction: column;
-
-      &-left {
-        margin-bottom: 32px;
-        margin-right: 0px;
-      }
-
-      &-right {
-        text-align: center;
-      }
-    }
   }
 }

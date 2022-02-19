@@ -110,7 +110,7 @@ const TokenMinting: React.FC = () => {
         <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-text--bold">
           COLLECTION_TICKER.TOKEN_TICKER
         </p>
-        <p className="AdditionalFeatures__section-paragraph">
+        <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-paragraph--mb-32">
           Royalties encourage collection managers to maintain and continuously improve their games or apps by providing
           them with an ongoing revenue stream when tokens are traded on the exchange. Below are examples of tokens that
           can be minted and distributed under this system.

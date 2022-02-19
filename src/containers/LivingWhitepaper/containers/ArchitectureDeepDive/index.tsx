@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-import {Navigation} from 'components';
+import {Divider, Navigation} from 'components';
 import DeveloperPortalLayout from '../../components/DeveloperPortalLayout';
 
 import AccountLock from './AccountLock';
@@ -25,6 +25,9 @@ const ArchitectureDeepDive: FC = () => {
         <ConsensusCV />
         <NetworkInitialization />
         <FAQ />
+
+        <Divider className="ArchitectureDeepDive__divider" />
+
         <div className="ArchitectureDeepDive__navigation">
           <Navigation path="/whitepaper/additional-features" text="Additional Features" type="right" />
         </div>

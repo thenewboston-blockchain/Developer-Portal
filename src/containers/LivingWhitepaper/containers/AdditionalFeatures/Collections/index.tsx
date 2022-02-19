@@ -25,10 +25,10 @@ const Collections: React.FC = () => {
             ['URL', 'No / Optional', 'URL for users to visit for additional information'],
           ]}
         />
-        <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-text--bold">
+        <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-paragraph--mt-32 AdditionalFeatures__section-text--bold">
           After creating the collection, users can update all attributes aside from the collection ticker.
         </p>
-        <p className="AdditionalFeatures__section-paragraph">
+        <p className="AdditionalFeatures__section-paragraph AdditionalFeatures__section-paragraph--mb-32">
           The creator of each collection is referred to as the collection manager. Collection managers are the initial
           owners of all tokens they create and they handle certain management tasks for both the collection itself and
           related tokens. They must also pay a creation fee during the collection creation process, which will be set

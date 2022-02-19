@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React from 'react';
 import TokenDistributionAppsDiagram from 'assets/images/TokenDistributionApps.png';
 import {AdditionalFeaturesId} from '../../../constants';
 

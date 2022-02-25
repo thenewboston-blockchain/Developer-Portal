@@ -5,7 +5,7 @@ import {trendingTutorialsFilter} from 'constants/tutorials';
 import {ErrorMessage, Loader} from 'components';
 import {Playlist, PlaylistType} from 'types/tutorials';
 
-import PlaylistCard from '../PlaylistCard';
+import PlaylistCard from '../components/PlaylistCard';
 
 import * as S from './styles';
 
@@ -22,6 +22,7 @@ const PlaylistsSection = ({type, category}: Props) => {
   React.useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
+        setIsLoading(true);
         const isTrendingTab = category === trendingTutorialsFilter.title;
 
         const playlistsResponse = isTrendingTab ? await getTrendingPlaylists(type!) : await getPlaylists(category);

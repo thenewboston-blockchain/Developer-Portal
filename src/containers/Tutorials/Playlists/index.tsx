@@ -3,25 +3,28 @@ import React, {FC} from 'react';
 import {PageTitle, Spacer} from 'components';
 import {trendingTutorialsFilter} from 'constants/tutorials';
 import {PlaylistType} from 'types/tutorials';
+import {NavOption} from 'types/option';
 
 import PlaylistsSection from '../PlaylistsSection';
 import TutorialsHero from '../TutorialsHero';
+import CategoryDropdown from '../components/CategoryDropdown';
 
 import * as S from './styles';
 
 interface PlaylistsParams {
-  category: string;
+  selectedCategory: string;
+  categories: NavOption[];
 }
 
-const Playlists: FC<PlaylistsParams> = ({category}) => {
+const Playlists: FC<PlaylistsParams> = ({selectedCategory, categories}) => {
   const renderPageTitle = () => (
     <PageTitle
-      ogDescription={category ? `${category} Tutorials` : undefined}
-      title={category ? `${category} Tutorials` : 'Tutorials'}
+      ogDescription={selectedCategory ? `${selectedCategory} Tutorials` : undefined}
+      title={selectedCategory ? `${selectedCategory} Tutorials` : 'Tutorials'}
     />
   );
 
-  if (category === trendingTutorialsFilter.title) {
+  if (selectedCategory === trendingTutorialsFilter.title) {
     return (
       <>
         {renderPageTitle()}
@@ -31,9 +34,11 @@ const Playlists: FC<PlaylistsParams> = ({category}) => {
           <TutorialsHero />
           <Spacer size={66} />
 
-          <PlaylistsSection category={category} type={PlaylistType.mostRecent} />
+          <CategoryDropdown categories={categories} />
+
+          <PlaylistsSection category={selectedCategory} type={PlaylistType.mostRecent} />
           <Spacer size={60} />
-          <PlaylistsSection category={category} type={PlaylistType.popular} />
+          <PlaylistsSection category={selectedCategory} type={PlaylistType.popular} />
         </S.Container>
       </>
     );
@@ -46,7 +51,8 @@ const Playlists: FC<PlaylistsParams> = ({category}) => {
 
       <S.Container>
         <Spacer size={32} />
-        <PlaylistsSection category={category} />
+        <CategoryDropdown categories={categories} />
+        <PlaylistsSection category={selectedCategory} />
       </S.Container>
     </>
   );

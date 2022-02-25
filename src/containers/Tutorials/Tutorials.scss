@@ -3,10 +3,6 @@
   grid-template-columns: 240px auto;
   height: 100%;
 
-  &__BreadcrumbMenu {
-    display: none;
-  }
-
   &__error {
     align-items: center;
     color: var(--color-danger);
@@ -25,24 +21,19 @@
   }
 
   &__right-content {
-    padding: 12px 40px 48px;
+    padding: 12px 48px 48px;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1366px) {
     grid-template-columns: auto;
     grid-template-rows: fit-content(0) auto;
-
-    &__BreadcrumbMenu {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
-      display: block;
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-    }
 
     &__left-menu {
       display: none;
     }
+  }
 
+  @media (max-width: 992px) {
     &__right-content {
       padding-left: 12px;
       padding-right: 12px;

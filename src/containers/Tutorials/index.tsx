@@ -2,7 +2,7 @@ import React, {FC, ReactNode, useCallback, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 
 import {getPlaylistCategories} from 'apis/tutorials';
-import {BreadcrumbMenu, Container, FlatNavLinks, Loader, PageTitle, Spacer} from 'components';
+import {Container, FlatNavLinks, Loader, PageTitle, Spacer} from 'components';
 import {trendingTutorialsFilter} from 'constants/tutorials';
 import {ROUTES} from 'constants/routes';
 import {NavOption} from 'types/option';
@@ -80,20 +80,13 @@ const Tutorials: FC = () => {
     <>
       <PageTitle title="Tutorials" />
       <Container className="Tutorials">
-        <BreadcrumbMenu
-          className="Tutorials__BreadcrumbMenu"
-          menuItems={renderCategoryFilter()}
-          pageName={playlistCategoryFilter ?? trendingTutorialsFilter.title}
-          sectionName="Tutorials"
-        />
-
         <aside className="Tutorials__left-menu">{renderCategoryFilter()}</aside>
 
         <div className="Tutorials__right-content">
           {playlistIdParam ? (
             <WatchPlaylist playlistId={playlistIdParam} />
           ) : (
-            <Playlists category={playlistCategoryFilter} />
+            <Playlists categories={playlistCategories} selectedCategory={playlistCategoryFilter} />
           )}
         </div>
       </Container>

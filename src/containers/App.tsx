@@ -83,7 +83,7 @@ const App: FC = () => {
           <Route path={ROUTES.legal.guidelines} component={Guidelines} />
           <Route path={ROUTES.legal.termsOfUse} component={TermsOfUse} />
           <Route path={ROUTES.legal.privacyPolicy} component={PrivacyPolicy} />
-          <Redirect exact path={ROUTES.tutorials} to={`${ROUTES.tutorials}/All`} />
+          <Redirect exact path={ROUTES.tutorials} to={`${ROUTES.tutorials}/Trending`} />
           <Route exact path={`${ROUTES.tutorials}/:category/:playlistId?`} component={withSuspense(Tutorials)} />
           <Redirect to="/" />
         </Switch>

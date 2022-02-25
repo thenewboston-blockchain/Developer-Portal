@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import colors from 'styles/colors';
-import {d2, h2, h4} from 'styles/fonts';
+import {d2, d3, h2, h3, h4} from 'styles/fonts';
 
 export const Container = styled.div`
   align-items: center;
@@ -9,13 +9,18 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 84px;
+  margin: 0 24px;
+  padding: 84px 0px;
 `;
 
 export const Title = styled.h3`
   ${d2.semiBold};
   color: ${colors.palette.neutral['800']};
   line-height: 125%;
+
+  @media (max-width: 786px) {
+    ${d3.bold}
+  }
 `;
 
 export const Text = styled.p`
@@ -24,6 +29,10 @@ export const Text = styled.p`
   line-height: 140%;
   margin-bottom: 40px;
   margin-top: 8px;
+
+  @media (max-width: 786px) {
+    ${h3.regular}
+  }
 `;
 
 export const DiscordButton = styled.button`
@@ -34,7 +43,6 @@ export const DiscordButton = styled.button`
   color: ${colors.discord};
   cursor: pointer;
   display: flex;
-  margin-right: 16px;
   min-width: 100px;
   outline: none;
   transition: 0.2s ease transform;

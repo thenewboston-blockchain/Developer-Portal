@@ -8,7 +8,7 @@ type OptionsProps = {
 
 export const Container = styled.div`
   display: none;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 
   @media (max-width: 1366px) {
     display: block;

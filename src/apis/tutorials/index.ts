@@ -12,15 +12,15 @@ export async function getPlaylistCategories(): Promise<PlaylistCategory[]> {
   return response.data.results;
 }
 
-export async function getTrendingPlaylists(type: PlaylistType, count?: number): Promise<Playlist[]> {
+export async function getTrendingPlaylists(type: PlaylistType, limit?: number): Promise<Playlist[]> {
   let url = `${process.env.REACT_APP_BACKEND_API}/playlists`;
 
   if (type === PlaylistType.mostRecent) {
-    url += `?ordering=-published_at&count=${count || 8}`;
+    url += `?ordering=-published_at&limit=${limit || 8}`;
   }
 
   if (type === PlaylistType.popular) {
-    url += `?is_featured=true&count=${count || 8}`;
+    url += `?is_featured=true&limit=${limit || 8}`;
   }
 
   const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());

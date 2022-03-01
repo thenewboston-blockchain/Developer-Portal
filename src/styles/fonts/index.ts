@@ -128,6 +128,10 @@ export const h1 = {
     ${h1Base};
     ${fontWeight.fontWeightBold};
   `,
+  semiBold: css`
+    ${h1Base};
+    ${fontWeight.fontWeightSemiBold};
+  `,
   medium: css`
     ${h1Base};
     ${fontWeight.fontWeightMedium};
@@ -142,6 +146,10 @@ export const h2 = {
   bold: css`
     ${h2Base};
     ${fontWeight.fontWeightBold};
+  `,
+  semiBold: css`
+    ${h2Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
   medium: css`
     ${h2Base};
@@ -196,6 +204,10 @@ export const b1 = {
     ${b1Base};
     ${fontWeight.fontWeightRegular};
   `,
+  semiBold: css`
+    ${b1Base};
+    ${fontWeight.fontWeightSemiBold};
+  `,
 };
 
 export const b2 = {
@@ -209,5 +221,9 @@ export const b3 = {
   regular: css`
     ${b3Base};
     ${fontWeight.fontWeightRegular};
+  `,
+  semiBold: css`
+    ${b3Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
 };

@@ -7,12 +7,22 @@ import DiscordLogo from 'assets/svgs/DiscordLogo';
 
 import * as S from './styles';
 
-const DiscordBanner = () => {
+type Props = {
+  variant?: 'small' | 'large';
+};
+
+const DiscordBanner = ({variant = 'large'}: Props) => {
   return (
-    <S.Container>
-      <EmojiIcon color="#4F52FF" emoji={EmojiType.Discord} emojiSize={72} size={136} marginBottom={56} />
-      <S.Title>Join Discord</S.Title>
-      <S.Text>Our Community Is There To Help</S.Text>
+    <S.Container variant={variant}>
+      <EmojiIcon
+        color="#4F52FF"
+        emoji={EmojiType.Discord}
+        emojiSize={variant === 'small' ? 24 : 72}
+        size={variant === 'small' ? 48 : 136}
+        marginBottom={variant === 'small' ? 16 : 56}
+      />
+      <S.Title variant={variant}>Join Discord</S.Title>
+      <S.Text variant={variant}>Our Community Is There To Help</S.Text>
       <S.DiscordButton onClick={() => window.open(URLS.discord, '_blank', 'noreferrer noopener')}>
         <DiscordLogo />
         <Spacer xAxis size={8} />

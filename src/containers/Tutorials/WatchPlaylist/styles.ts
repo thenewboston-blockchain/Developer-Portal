@@ -62,6 +62,7 @@ export const VideoListItem = styled.div`
 
 export const VideoListItemIconContainer = styled.div<{isActive: boolean}>`
   ${b3.semiBold};
+  align-content: center;
   background: ${({isActive}) => (isActive ? '#0085ff' : '#DEE5EB')};
   border-radius: 50%;
   color: ${colors.palette.neutral['600']};

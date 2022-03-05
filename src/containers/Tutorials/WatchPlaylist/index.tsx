@@ -2,13 +2,14 @@ import React, {FC, ReactNode, useCallback, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 import {IconType} from '@thenewboston/ui';
 
-import {getPlaylist} from 'apis/tutorials';
-import {Button, EmojiIcon, EmojiType, EmptyPage, Loader, PageTitle, Spacer, VideoPlayer} from 'components';
+import {getPlaylist, getPlaylistsWithCategoryId} from 'apis/tutorials';
+import {Button, Container, EmojiIcon, EmojiType, EmptyPage, Loader, PageTitle, Spacer, VideoPlayer} from 'components';
 import {ROUTES} from 'constants/routes';
 import {Playlist, TimeFormat, Video, TutorialsUrlParams} from 'types/tutorials';
 import {getFormattedTime} from 'utils/time';
 
 import DiscordBanner from '../DiscordBanner';
+import RelatedTutorials from '../RelatedTutorials';
 
 import * as S from './styles';
 
@@ -18,6 +19,7 @@ const WatchPlaylist: FC = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
   const [playlist, setPlaylist] = useState<Playlist | null>(null);
+  const [relatedPlaylists, setRelatedPlaylists] = useState<Playlist[] | null>(null);
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
 
@@ -42,6 +44,15 @@ const WatchPlaylist: FC = () => {
 
     fetchData();
   }, [playlistId]);
+
+  useEffect(() => {
+    if (playlist) {
+      (async () => {
+        const list = await getPlaylistsWithCategoryId(playlist.categories[0], 8);
+        setRelatedPlaylists(list);
+      })();
+    }
+  }, [playlist]);
 
   const handleVideoEnd = useCallback((): void => {
     if (playlist?.video_list.length) {
@@ -128,9 +139,17 @@ const WatchPlaylist: FC = () => {
 
           <DiscordBanner variant="small" />
         </S.Grid>
+      </S.Container>
 
-        <Spacer size={120} />
+      <Spacer size={120} />
+      {!!relatedPlaylists?.length && (
+        <>
+          <RelatedTutorials playlists={relatedPlaylists} />
+          <Spacer size={120} />
+        </>
+      )}
 
+      <Container>
         <S.Banner>
           <EmojiIcon color="#F9C200" emoji={EmojiType.Wrench} emojiSize={40} size={72} marginBottom={32} />
           <S.BannerHeading>Ready to Develop?</S.BannerHeading>
@@ -140,7 +159,7 @@ const WatchPlaylist: FC = () => {
         </S.Banner>
 
         <Spacer size={120} />
-      </S.Container>
+      </Container>
     </>
   );
 };

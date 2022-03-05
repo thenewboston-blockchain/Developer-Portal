@@ -28,8 +28,24 @@ export async function getTrendingPlaylists(type: PlaylistType, limit?: number): 
   return response.data.results;
 }
 
-export async function getPlaylists(category: string): Promise<Playlist[]> {
-  const url = `${process.env.REACT_APP_BACKEND_API}/playlists?category=${category}`;
+export async function getPlaylists(category: string, count?: number): Promise<Playlist[]> {
+  let url = `${process.env.REACT_APP_BACKEND_API}/playlists?category=${category}`;
+
+  if (count) {
+    url += `&limit=${count}`;
+  }
+
+  const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
+
+  return response.data.results;
+}
+
+export async function getPlaylistsWithCategoryId(categoryId: string, count?: number): Promise<Playlist[]> {
+  let url = `${process.env.REACT_APP_BACKEND_API}/playlists?categoryId=${categoryId}`;
+
+  if (count) {
+    url += `&limit=${count}`;
+  }
 
   const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
 

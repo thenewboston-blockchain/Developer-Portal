@@ -13,7 +13,7 @@ const TutorialsHero = () => {
   return (
     <S.Container>
       <S.Player>
-        <VideoPlayer source={Source.youtube} videoId="6IAgRS66JrU" />
+        <VideoPlayer source={Source.youtube} videoId="_0MZF8Z4tRg" />
       </S.Player>
       <S.Content>
         <S.Heading>Explore thousands of tutorials to learn in-demand skills</S.Heading>

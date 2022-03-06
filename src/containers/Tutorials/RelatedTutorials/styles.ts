@@ -24,13 +24,29 @@ type SliderControlProps = {
 export const Container = styled.div`
   position: relative;
   text-align: center;
+
+  @media (max-width: 1366px) {
+    text-align: left;
+  }
 `;
 
 export const Heading = styled.h2`
   ${h1.semiBold}
   color: ${colors.palette.neutral['800']};
-  font-size: 30px;
   margin-bottom: 32px;
+
+  @media (max-width: 1366px) {
+    padding: 0 48px;
+  }
+
+  @media (max-width: 992px) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 786px) {
+    padding: 0 24px;
+    margin-bottom: 16px;
+  }
 `;
 
 export const Paragraph = styled.h2`

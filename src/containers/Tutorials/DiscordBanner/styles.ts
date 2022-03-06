@@ -38,6 +38,10 @@ export const Title = styled.h3<Props>`
     variant === 'small' &&
     css`
       ${h1.semiBold}
+
+      @media (max-width: 786px) {
+        ${h1.semiBold}
+      }
     `}
 `;
 

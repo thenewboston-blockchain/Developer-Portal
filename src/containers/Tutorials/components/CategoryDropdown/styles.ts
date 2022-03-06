@@ -13,6 +13,10 @@ export const Container = styled.div`
   @media (max-width: 1366px) {
     display: block;
   }
+
+  @media (max-width: 992px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const SelectedOpWrapper = styled.div`

@@ -3,11 +3,19 @@ import {Icon} from '@thenewboston/ui';
 
 import {Container as BaseContainer} from 'components';
 import colors from 'styles/colors';
-import {b1, b3, h2, h3, d3} from 'styles/fonts';
+import {b1, b3, h2, h3, d3, h1} from 'styles/fonts';
 
 export const Container = styled(BaseContainer)`
   color: ${colors.palette.gray['900']};
   margin-top: 20px;
+
+  @media (max-width: 1366px) {
+    padding: 0px 48px;
+  }
+
+  @media (max-width: 786px) {
+    padding: 0px 24px;
+  }
 `;
 
 export const Grid = styled.div`
@@ -16,6 +24,11 @@ export const Grid = styled.div`
   grid-template-columns: auto 360px;
   grid-template-area: 'video list' 'desc banner';
   row-gap: 40px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: auto;
+    grid-template-area: 'video' 'list' 'desc';
+  }
 `;
 
 export const BackLink = styled.span`
@@ -28,13 +41,21 @@ export const BackLink = styled.span`
 
 export const Playlist = styled.div``;
 
-export const PlaylistHeader = styled.div``;
+export const PlaylistHeader = styled.div`
+  @media (max-width: 992px) {
+    cursor: pointer;
+  }
+`;
 
 export const PlaylistHeading = styled.h4`
   ${h2.semiBold};
   color: ${colors.palette.neutral['900']};
   line-height: 130%;
   margin-bottom: 16px;
+
+  @media (max-width: 1366px) {
+    font-size: 18px;
+  }
 `;
 
 export const PlaylistCount = styled.div`
@@ -50,6 +71,10 @@ export const VideoList = styled.div`
   padding: 8px 0;
   /* for firefox */
   scrollbar-width: thin;
+
+  @media (max-width: 992px) {
+    max-height: none;
+  }
 `;
 
 export const VideoListItem = styled.div`
@@ -93,6 +118,17 @@ export const VideoListItemTitle = styled.h3<{isActive: boolean}>`
           ${h3.medium}
           color: ${colors.palette.neutral['900']}
         `}
+
+  @media (max-width: 1366px) {
+    ${({isActive}) =>
+      isActive
+        ? css`
+            ${b1.bold}
+          `
+        : css`
+            ${b1.medium}
+          `}
+  }
 `;
 
 export const VideoListItemDuration = styled.span`
@@ -117,6 +153,10 @@ export const VideoHeading = styled.h1`
   color: ${colors.palette.neutral['800']};
   line-height: 130%;
   margin: 16px 0px;
+
+  @media (max-width: 1366px) {
+    ${h1.bold}
+  }
 `;
 
 export const VideoDescription = styled.p`
@@ -124,6 +164,10 @@ export const VideoDescription = styled.p`
   color: ${colors.palette.neutral['500']};
   line-height: 150%;
   margin-top: 0px;
+
+  @media (max-width: 1366px) {
+    ${b1.regular}
+  }
 `;
 
 export const Banner = styled.div`
@@ -140,4 +184,14 @@ export const BannerHeading = styled.h2`
   ${d3.bold}
   color: ${colors.palette.neutral['800']};
   margin-bottom: 40px;
+
+  @media (max-width: 786px) {
+    ${h1.semiBold}
+  }
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

@@ -5,6 +5,7 @@ import {getPlaylistCategories} from 'apis/tutorials';
 import {Container, ErrorMessage, FlatNavLinks, Loader, PageTitle, Spacer} from 'components';
 import {ROUTES} from 'constants/routes';
 import {trendingTutorialsFilter} from 'constants/tutorials';
+import breakpoints from 'styles/breakpoints';
 import {PlaylistCategory, PlaylistType, TutorialsUrlParams} from 'types/tutorials';
 import {NavOption} from 'types/option';
 
@@ -23,6 +24,8 @@ const Playlists: FC = () => {
   const [errorMessage, setErrorMessage] = React.useState<string>('');
   const [playlistCategories, setPlaylistCategories] = React.useState<NavOption[]>([]);
   const [playlistCategoryFilter, setPlaylistCategoryFilter] = React.useState<string>(trendingTutorialsFilter.title);
+
+  const isSmallScreen = window.innerWidth <= parseInt(breakpoints.medium, 10);
 
   React.useEffect(() => {
     const fetchData = async (): Promise<void> => {
@@ -123,7 +126,7 @@ const Playlists: FC = () => {
       <S.Container>
         <S.LeftMenu>{renderCategoryFilter()}</S.LeftMenu>
         <S.RightContent>
-          <Spacer size={32} />
+          {!isSmallScreen && <Spacer size={32} />}
           <CategoryDropdown categories={playlistCategories} />
           <PlaylistsSection category={playlistCategoryFilter} />
         </S.RightContent>

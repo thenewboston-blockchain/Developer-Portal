@@ -1,10 +1,11 @@
 import React, {FC, ReactNode, useCallback, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
-import {IconType} from '@thenewboston/ui';
+import {Icon, IconType} from '@thenewboston/ui';
 
 import {getPlaylist, getPlaylistsWithCategoryId} from 'apis/tutorials';
-import {Button, Container, EmojiIcon, EmojiType, EmptyPage, Loader, PageTitle, Spacer, VideoPlayer} from 'components';
+import {Button, EmojiIcon, EmojiType, EmptyPage, Loader, PageTitle, Spacer, VideoPlayer} from 'components';
 import {ROUTES} from 'constants/routes';
+import breakpoints from 'styles/breakpoints';
 import {Playlist, TimeFormat, Video, TutorialsUrlParams} from 'types/tutorials';
 import {getFormattedTime} from 'utils/time';
 
@@ -22,6 +23,9 @@ const WatchPlaylist: FC = () => {
   const [relatedPlaylists, setRelatedPlaylists] = useState<Playlist[] | null>(null);
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
   const [errorMessage, setErrorMessage] = useState<string>('');
+  const [isVideoListOpen, setIsVideoListOpen] = useState<boolean>(true);
+
+  const isSmallScreen = window.innerWidth <= parseInt(breakpoints.medium, 10);
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
@@ -48,7 +52,7 @@ const WatchPlaylist: FC = () => {
   useEffect(() => {
     if (playlist) {
       (async () => {
-        const list = await getPlaylistsWithCategoryId(playlist.categories[0], 8);
+        const list = await getPlaylistsWithCategoryId(playlist.categories[0], 11);
         setRelatedPlaylists(list);
       })();
     }
@@ -63,39 +67,50 @@ const WatchPlaylist: FC = () => {
     }
   }, [currentVideo, playlist]);
 
+  const handlePlaylistHeaderClick = () => {
+    if (isSmallScreen) {
+      setIsVideoListOpen(!isVideoListOpen);
+    }
+  };
+
   const renderVideoList = (): ReactNode => (
     <S.Playlist>
-      <S.PlaylistHeader>
-        <S.PlaylistHeading>{playlist?.title}</S.PlaylistHeading>
+      <S.PlaylistHeader onClick={handlePlaylistHeaderClick}>
+        <S.Flex>
+          <S.PlaylistHeading>{playlist?.title}</S.PlaylistHeading>
+          {isSmallScreen && <Icon icon={isVideoListOpen ? IconType.chevronUp : IconType.chevronDown} />}
+        </S.Flex>
         <S.PlaylistCount>{playlist?.video_list.length} videos</S.PlaylistCount>
       </S.PlaylistHeader>
-      <S.VideoList>
-        {playlist?.video_list.map((video, index) => (
-          <S.VideoListItem
-            key={video.video_id}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              setCurrentVideo(video);
-            }}
-            onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
-              if (event.key === 'Enter') {
+      {isVideoListOpen && (
+        <S.VideoList>
+          {playlist?.video_list.map((video, index) => (
+            <S.VideoListItem
+              key={video.video_id}
+              onClick={() => {
+                window.scrollTo(0, 0);
                 setCurrentVideo(video);
-              }
-            }}
-            role="button"
-            tabIndex={0}
-            title={video.title}
-          >
-            <S.VideoListItemIconContainer isActive={video.pk === currentVideo?.pk}>
-              {video.pk === currentVideo?.pk ? <S.VideoListItemIcon size={16} icon={IconType.play} /> : index + 1}
-            </S.VideoListItemIconContainer>
-            <S.VideoListItemTitle isActive={video.pk === currentVideo?.pk}>{video.title}</S.VideoListItemTitle>
-            <S.VideoListItemDuration>
-              {getFormattedTime(video.duration_seconds, TimeFormat.digital)}
-            </S.VideoListItemDuration>
-          </S.VideoListItem>
-        ))}
-      </S.VideoList>
+              }}
+              onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+                if (event.key === 'Enter') {
+                  setCurrentVideo(video);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              title={video.title}
+            >
+              <S.VideoListItemIconContainer isActive={video.pk === currentVideo?.pk}>
+                {video.pk === currentVideo?.pk ? <S.VideoListItemIcon size={16} icon={IconType.play} /> : index + 1}
+              </S.VideoListItemIconContainer>
+              <S.VideoListItemTitle isActive={video.pk === currentVideo?.pk}>{video.title}</S.VideoListItemTitle>
+              <S.VideoListItemDuration>
+                {getFormattedTime(video.duration_seconds, TimeFormat.digital)}
+              </S.VideoListItemDuration>
+            </S.VideoListItem>
+          ))}
+        </S.VideoList>
+      )}
     </S.Playlist>
   );
 
@@ -141,15 +156,15 @@ const WatchPlaylist: FC = () => {
         </S.Grid>
       </S.Container>
 
-      <Spacer size={120} />
+      <Spacer size={100} />
       {!!relatedPlaylists?.length && (
         <>
           <RelatedTutorials playlists={relatedPlaylists} />
-          <Spacer size={120} />
+          <Spacer size={isSmallScreen ? 80 : 120} />
         </>
       )}
 
-      <Container>
+      <S.Container>
         <S.Banner>
           <EmojiIcon color="#F9C200" emoji={EmojiType.Wrench} emojiSize={40} size={72} marginBottom={32} />
           <S.BannerHeading>Ready to Develop?</S.BannerHeading>
@@ -159,7 +174,7 @@ const WatchPlaylist: FC = () => {
         </S.Banner>
 
         <Spacer size={120} />
-      </Container>
+      </S.Container>
     </>
   );
 };

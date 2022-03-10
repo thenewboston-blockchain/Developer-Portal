@@ -28,6 +28,10 @@ const navLists = [
         title: 'Architecture Details',
         url: ROUTES.whitepaper.architecture,
       },
+      {
+        title: 'Additional Features',
+        url: ROUTES.whitepaper.additionalFeatures,
+      },
     ],
   },
   {

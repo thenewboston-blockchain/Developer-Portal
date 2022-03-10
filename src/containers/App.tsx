@@ -20,6 +20,7 @@ import ProjectRulesAndGuidelines from './Projects/containers/ProjectRulesAndGuid
 import SDKsAndLibraries from './DeveloperTools/SDKsAndLibraries';
 import TermsOfUse from './TermsOfUse';
 import Utilities from './DeveloperTools/Utilities';
+import AdditionalFeatures from './LivingWhitepaper/containers/AdditionalFeatures';
 
 /**
  * Lazy load pages that may contribute a lot to the bundle size
@@ -69,6 +70,7 @@ const App: FC = () => {
             component={PrincipalEventsAndProcesses}
           />
           <Route exact path={`${ROUTES.tools.nodeDeployment}/:chapter?`} component={NodeDeployment} />
+          <Route exact path={`${ROUTES.whitepaper.additionalFeatures}/:chapter?`} component={AdditionalFeatures} />
           <Route exact path={`${ROUTES.whitepaper.architecture}/:chapter?`} component={ArchitectureDeepDive} />
           <Route exact path={ROUTES.projects.home} component={AppSubmissionGuide} />
           <Route exact path={ROUTES.projects.rules} component={ProjectRulesAndGuidelines} />

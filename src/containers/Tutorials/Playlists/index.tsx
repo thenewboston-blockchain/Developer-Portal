@@ -1,78 +1,138 @@
-import React, {FC, ReactNode, useCallback, useEffect, useState} from 'react';
+import React, {FC} from 'react';
+import {useHistory, useParams} from 'react-router-dom';
 
-import {getPlaylists} from 'apis/tutorials';
-import {EmptyPage, Loader, PageTitle} from 'components';
-import {Playlist, Source} from 'types/tutorials';
+import {getPlaylistCategories} from 'apis/tutorials';
+import {Container, ErrorMessage, FlatNavLinks, Loader, PageTitle, Spacer} from 'components';
+import {ROUTES} from 'constants/routes';
+import {trendingTutorialsFilter} from 'constants/tutorials';
+import breakpoints from 'styles/breakpoints';
+import {PlaylistCategory, PlaylistType, TutorialsUrlParams} from 'types/tutorials';
+import {NavOption} from 'types/option';
 
-import PlaylistCard from '../PlaylistCard';
-import './Playlists.scss';
+import PlaylistsSection from '../PlaylistsSection';
+import DiscordBanner from '../DiscordBanner';
+import TutorialsHero from '../TutorialsHero';
+import CategoryDropdown from '../components/CategoryDropdown';
 
-interface PlaylistsParams {
-  category: string | null;
-}
+import * as S from './styles';
 
-const Playlists: FC<PlaylistsParams> = ({category}) => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [playlists, setPlaylists] = useState<Playlist[]>([]);
-  const [errorMessage, setErrorMessage] = useState<string>('');
+const Playlists: FC = () => {
+  const history = useHistory();
+  const {category: categoryParam} = useParams<TutorialsUrlParams>();
 
-  useEffect(() => {
-    if (category) {
-      const fetchData = async (): Promise<void> => {
-        try {
-          setLoading(true);
-          const playlistsResponse = await getPlaylists(category);
-          setPlaylists(playlistsResponse);
-        } catch (error) {
-          setErrorMessage(error.message);
-        } finally {
-          setLoading(false);
-        }
-      };
+  const [loading, setLoading] = React.useState<boolean>(true);
+  const [errorMessage, setErrorMessage] = React.useState<string>('');
+  const [playlistCategories, setPlaylistCategories] = React.useState<NavOption[]>([]);
+  const [playlistCategoryFilter, setPlaylistCategoryFilter] = React.useState<string>(trendingTutorialsFilter.title);
 
-      fetchData();
+  const isSmallScreen = window.innerWidth <= parseInt(breakpoints.medium, 10);
+
+  React.useEffect(() => {
+    const fetchData = async (): Promise<void> => {
+      try {
+        const fetchedPlaylistCategories = await getPlaylistCategories();
+        const updatedPlaylistCategories = fetchedPlaylistCategories.map((playlistCategory: PlaylistCategory) => ({
+          pathname: playlistCategory.name,
+          title: playlistCategory.name,
+        }));
+        updatedPlaylistCategories.unshift(trendingTutorialsFilter);
+        setPlaylistCategories(updatedPlaylistCategories);
+      } catch (error: any) {
+        setErrorMessage(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  React.useEffect(() => {
+    if (!loading) {
+      if (playlistCategories.some((playlistCategory: NavOption) => playlistCategory.pathname === categoryParam)) {
+        setPlaylistCategoryFilter(categoryParam);
+      } else {
+        history.replace(`${ROUTES.tutorials}/${trendingTutorialsFilter.pathname}`);
+      }
     }
-  }, [category]);
+  }, [playlistCategories, loading, categoryParam, history]);
 
-  const renderPlaylistGrid = useCallback((): ReactNode => {
-    if (errorMessage) return <div className="Playlists__error">{errorMessage}</div>;
-    if (!playlists.length) return <EmptyPage />;
+  const handleNavOptionClick = React.useCallback(
+    (option: string) => (): void => {
+      history.push(`${ROUTES.tutorials}/${option}`);
+    },
+    [history],
+  );
+
+  const renderCategoryFilter = (): React.ReactNode => {
     return (
-      <div className="Playlists__grid">
-        {playlists.map((playlist) => {
-          const {instructor} = playlist;
-          return (
-            <PlaylistCard
-              author={instructor.name}
-              authorUrl={playlist.playlist_type === Source.youtube ? instructor.youtube_url : instructor.vimeo_url}
-              key={playlist.pk}
-              pk={playlist.pk}
-              thumbnail={playlist.thumbnail}
-              title={playlist.title}
-              video_list={playlist.video_list}
-            />
-          );
-        })}
-      </div>
+      <FlatNavLinks
+        handleOptionClick={handleNavOptionClick}
+        options={playlistCategories}
+        selectedOption={playlistCategoryFilter ?? trendingTutorialsFilter.title}
+      />
     );
-  }, [errorMessage, playlists]);
+  };
 
+  const renderPageTitle = () => (
+    <PageTitle
+      ogDescription={playlistCategoryFilter ? `${playlistCategoryFilter} Tutorials` : undefined}
+      title={playlistCategoryFilter ? `${playlistCategoryFilter} Tutorials` : 'Tutorials'}
+    />
+  );
+
+  const renderDiscordBanner = () => (
+    <Container>
+      <Spacer size={60} />
+      <DiscordBanner />
+      <Spacer size={120} />
+    </Container>
+  );
+
+  if (loading) return <Loader />;
+
+  if (errorMessage) return <ErrorMessage />;
+
+  if (playlistCategoryFilter === trendingTutorialsFilter.title) {
+    return (
+      <>
+        {renderPageTitle()}
+
+        <S.Container>
+          <S.LeftMenu>{renderCategoryFilter()}</S.LeftMenu>
+          <S.RightContent>
+            <Spacer size={32} />
+            <TutorialsHero />
+            <Spacer size={66} />
+
+            <CategoryDropdown categories={playlistCategories} />
+
+            <PlaylistsSection category={playlistCategoryFilter} type={PlaylistType.mostRecent} />
+            <Spacer size={60} />
+            <PlaylistsSection category={playlistCategoryFilter} type={PlaylistType.popular} />
+          </S.RightContent>
+        </S.Container>
+
+        {renderDiscordBanner()}
+      </>
+    );
+  }
+
+  // other categories
   return (
     <>
-      <PageTitle
-        ogDescription={category ? `${category} Tutorials` : undefined}
-        title={category ? `${category} Tutorials` : 'Tutorials'}
-      />
-      <div className="Playlists">
-        <div className="Playlists__header">{category}</div>
-        {loading ? (
-          <div className="Playlists__loader">
-            <Loader />
-          </div>
-        ) : (
-          renderPlaylistGrid()
-        )}
-      </div>
+      {renderPageTitle()}
+
+      <S.Container>
+        <S.LeftMenu>{renderCategoryFilter()}</S.LeftMenu>
+        <S.RightContent>
+          {!isSmallScreen && <Spacer size={32} />}
+          <CategoryDropdown categories={playlistCategories} />
+          <PlaylistsSection category={playlistCategoryFilter} />
+        </S.RightContent>
+      </S.Container>
+
+      {renderDiscordBanner()}
     </>
   );
 };

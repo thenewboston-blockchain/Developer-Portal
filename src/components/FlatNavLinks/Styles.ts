@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
+
 import colors from 'styles/colors';
-import {fontWeightMedium} from 'styles/fonts/fontWeights';
-import {h4} from 'styles/fonts';
+import {h3} from 'styles/fonts';
 
 export const Container = styled.div`
   margin-top: 30px;
@@ -13,30 +13,27 @@ export const Container = styled.div`
 `;
 
 export const OptionButton = styled.button<{isActive?: boolean}>`
+  ${h3.regular}
   align-items: center;
   background: transparent;
-  border: 0;
-  border-radius: 6px;
-  color: ${colors.palette.gray['500']};
+  border: none;
+  color: ${colors.palette.gray['600']};
   cursor: pointer;
   display: flex;
-  ${fontWeightMedium};
-  height: 36px;
+  height: 40px;
   line-height: 1.5;
   margin-bottom: 4px;
-  padding: 4px 0 4px 36px;
   transition: background-color 0.1s;
-  width: 100%;
 
   &:hover {
-    ${h4.regular};
-    color: ${colors.palette.blue['900']};
+    color: ${colors.palette.blue['800']};
   }
 
   ${(props) =>
     props.isActive &&
     css`
-      ${h4.bold};
-      color: ${colors.palette.blue['900']};
+      ${h3.bold}
+      border-bottom: 2px solid ${colors.quaternary};
+      color: ${colors.palette.blue['800']};
     `}
 `;

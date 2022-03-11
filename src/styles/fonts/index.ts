@@ -14,6 +14,11 @@ const d2Base = css`
   ${fontSize.fontSizeD2};
 `;
 
+const d3Base = css`
+  ${fontFamily.fontFamilyDefault};
+  ${fontSize.fontSizeD3};
+`;
+
 const h1Base = css`
   ${fontFamily.fontFamilyDefault};
   ${fontSize.fontSizeH1};
@@ -95,10 +100,37 @@ export const d2 = {
   `,
 };
 
+export const d3 = {
+  bold: css`
+    ${d3Base};
+    ${fontWeight.fontWeightBold};
+  `,
+  semiBold: css`
+    ${d3Base};
+    ${fontWeight.fontWeightSemiBold};
+  `,
+  medium: css`
+    ${d3Base};
+    ${fontWeight.fontWeightMedium};
+  `,
+  regular: css`
+    ${d3Base};
+    ${fontWeight.fontWeightRegular};
+  `,
+  light: css`
+    ${d3Base};
+    ${fontWeight.fontWeightLight};
+  `,
+};
+
 export const h1 = {
   bold: css`
     ${h1Base};
     ${fontWeight.fontWeightBold};
+  `,
+  semiBold: css`
+    ${h1Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
   medium: css`
     ${h1Base};
@@ -115,6 +147,10 @@ export const h2 = {
     ${h2Base};
     ${fontWeight.fontWeightBold};
   `,
+  semiBold: css`
+    ${h2Base};
+    ${fontWeight.fontWeightSemiBold};
+  `,
   medium: css`
     ${h2Base};
     ${fontWeight.fontWeightMedium};
@@ -129,6 +165,10 @@ export const h3 = {
   bold: css`
     ${h3Base};
     ${fontWeight.fontWeightBold};
+  `,
+  semiBold: css`
+    ${h3Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
   medium: css`
     ${h3Base};
@@ -160,9 +200,21 @@ export const h4 = {
 };
 
 export const b1 = {
+  bold: css`
+    ${b1Base};
+    ${fontWeight.fontWeightBold};
+  `,
+  medium: css`
+    ${b1Base};
+    ${fontWeight.fontWeightMedium};
+  `,
   regular: css`
     ${b1Base};
     ${fontWeight.fontWeightRegular};
+  `,
+  semiBold: css`
+    ${b1Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
 };
 
@@ -177,5 +229,9 @@ export const b3 = {
   regular: css`
     ${b3Base};
     ${fontWeight.fontWeightRegular};
+  `,
+  semiBold: css`
+    ${b3Base};
+    ${fontWeight.fontWeightSemiBold};
   `,
 };

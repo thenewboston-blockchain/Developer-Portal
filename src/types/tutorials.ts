@@ -8,6 +8,11 @@ export enum Source {
   youtube = 'youtube',
 }
 
+export enum PlaylistType {
+  mostRecent = 'Most Recent',
+  popular = 'Popular',
+}
+
 export interface CreatedModified {
   created_date: string;
   modified_date: string;

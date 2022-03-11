@@ -26,7 +26,8 @@ import AdditionalFeatures from './LivingWhitepaper/containers/AdditionalFeatures
  * Lazy load pages that may contribute a lot to the bundle size
  */
 const DeveloperPortal = lazy(() => import('./DeveloperPortal'));
-const Tutorials = lazy(() => import('./Tutorials'));
+const Playlists = lazy(() => import('./Tutorials/Playlists'));
+const WatchPlaylist = lazy(() => import('./Tutorials/WatchPlaylist'));
 
 interface GoogleAnalyticsWindow extends Window {
   ga: any;
@@ -85,8 +86,9 @@ const App: FC = () => {
           <Route path={ROUTES.legal.guidelines} component={Guidelines} />
           <Route path={ROUTES.legal.termsOfUse} component={TermsOfUse} />
           <Route path={ROUTES.legal.privacyPolicy} component={PrivacyPolicy} />
-          <Redirect exact path={ROUTES.tutorials} to={`${ROUTES.tutorials}/All`} />
-          <Route exact path={`${ROUTES.tutorials}/:category/:playlistId?`} component={withSuspense(Tutorials)} />
+          <Redirect exact path={ROUTES.tutorials} to={`${ROUTES.tutorials}/Trending`} />
+          <Route exact path={`${ROUTES.tutorials}/:category`} component={withSuspense(Playlists)} />
+          <Route exact path={`${ROUTES.tutorials}/:category/:playlistId`} component={withSuspense(WatchPlaylist)} />
           <Redirect to="/" />
         </Switch>
       </Layout>

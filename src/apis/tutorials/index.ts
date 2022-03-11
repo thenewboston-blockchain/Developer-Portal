@@ -1,7 +1,6 @@
 import axios from 'axios';
-import {allTutorialsFilter} from 'constants/tutorials';
 import {PaginatedResponse} from 'types/api';
-import {Instructor, Playlist, PlaylistCategory} from 'types/tutorials';
+import {Instructor, Playlist, PlaylistCategory, PlaylistType} from 'types/tutorials';
 import {standardHeaders} from 'utils/requests';
 
 export async function getPlaylistCategories(): Promise<PlaylistCategory[]> {
@@ -13,20 +12,42 @@ export async function getPlaylistCategories(): Promise<PlaylistCategory[]> {
   return response.data.results;
 }
 
-export async function getPlaylists(category: string): Promise<Playlist[]> {
-  if (category !== allTutorialsFilter.title) {
-    const response = await axios.get<PaginatedResponse<Playlist>>(
-      `${process.env.REACT_APP_BACKEND_API}/playlists?category=${category}`,
-      standardHeaders(),
-    );
+export async function getTrendingPlaylists(type: PlaylistType, limit?: number): Promise<Playlist[]> {
+  let url = `${process.env.REACT_APP_BACKEND_API}/playlists`;
 
-    return response.data.results;
+  if (type === PlaylistType.mostRecent) {
+    url += `?ordering=-published_at&limit=${limit || 8}`;
   }
 
-  const response = await axios.get<PaginatedResponse<Playlist>>(
-    `${process.env.REACT_APP_BACKEND_API}/playlists`,
-    standardHeaders(),
-  );
+  if (type === PlaylistType.popular) {
+    url += `?is_featured=true&limit=${limit || 8}`;
+  }
+
+  const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
+
+  return response.data.results;
+}
+
+export async function getPlaylists(category: string, count?: number): Promise<Playlist[]> {
+  let url = `${process.env.REACT_APP_BACKEND_API}/playlists?category=${category}`;
+
+  if (count) {
+    url += `&limit=${count}`;
+  }
+
+  const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
+
+  return response.data.results;
+}
+
+export async function getPlaylistsWithCategoryId(categoryId: string, count?: number): Promise<Playlist[]> {
+  let url = `${process.env.REACT_APP_BACKEND_API}/playlists?categoryId=${categoryId}`;
+
+  if (count) {
+    url += `&limit=${count}`;
+  }
+
+  const response = await axios.get<PaginatedResponse<Playlist>>(url, standardHeaders());
 
   return response.data.results;
 }

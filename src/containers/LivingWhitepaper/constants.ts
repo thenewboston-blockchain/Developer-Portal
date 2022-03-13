@@ -10,55 +10,54 @@ export const PATHNAME_TO_TITLE_MAPPING: Record<string, string> = {
 };
 
 export enum ArchitectureDeepDiveId {
-  BlockStructure = 'architecture-block-structure',
-  SignedChangeRequest = 'architecture-signature-change-request',
-  MessageFields = 'architecture-message-fields',
   AccountLock = 'architecture-account-lock',
+  AddingValidators = 'architecture-adding-validators',
+  BlockStructure = 'architecture-block-structure',
+  Consensus = 'architecture-consensus',
+  Faq = 'architecture-faq',
+  MessageFields = 'architecture-message-fields',
+  NetworkInitialization = 'architecture-network-initialization',
   NodeIdentifier = 'architecture-node-identifier',
   SampleRequestAndResponse = 'architecture-sample-request-and-response',
-  AddingValidators = 'architecture-adding-validators',
-  Consensus = 'architecture-consensus',
-  NetworkInitialization = 'architecture-network-initialization',
-  Faq = 'architecture-faq',
+  SignedChangeRequest = 'architecture-signature-change-request',
 }
 
 export enum PrincipleEntitiesId {
-  Overview = 'principal-entities-overview',
-  BlockchainOptimizations = 'blockchain-optimizations',
   Account = 'principal-entities-account',
-  Nodes = 'principal-entities-nodes',
+  BlockchainOptimizations = 'blockchain-optimizations',
   BlocksAndBlockchain = 'blocks-and-blockchain',
-  Validators = 'principal-entities-validators',
-  NodeRoles = 'principal-entities-node-roles',
-  LockedCoinsAndBoosts = 'principal-entities-locked-coins-and-boosts',
-  CoinsVsPoints = 'principal-entities-coins-vs-points',
-  Governance = 'principal-entities-governance',
   Budget = 'principal-entities-budget',
+  CoinsVsPoints = 'principal-entities-coins-vs-points',
   Fees = 'principal-entities-fees',
   Glossary = 'principal-entities-glossary',
+  Governance = 'principal-entities-governance',
+  LockedCoinsAndBoosts = 'principal-entities-locked-coins-and-boosts',
+  NodesAndNodeRoles = 'principal-entities-nodes-and-node-roles',
+  Overview = 'principal-entities-overview',
+  ValidatorSchedule = 'principal-entities-validator-schedule',
+  Validators = 'principal-entities-validators',
 }
 
 export enum PrincipalEventsId {
-  Overview = 'principal-events-overview',
-  Scheduling = 'principal-events-scheduling',
   DataFlows = 'principal-events-data-flows',
-  ScheduleAdjustment = 'principal-events-schedule-adjustment',
-  ValidatorDataFlow = 'principal-events-validator-data-flow',
-  NetworkDataFlow = 'principal-events-network-data-flow',
+  ElectionProcess = 'principal-events-election-process',
   ForkPrevention = 'principal-events-fork-prevention',
   HandlingPV = 'principal-events-handling-pv',
+  NetworkDataFlow = 'principal-events-network-data-flow',
+  Overview = 'principal-events-overview',
   PointsRefilling = 'principal-events-points-refilling',
-  ElectionProcess = 'principal-events-election-process',
   RatesAndAmounts = 'principal-events-rates-and-amounts',
+  ScheduleAdjustment = 'principal-events-schedule-adjustment',
+  Scheduling = 'principal-events-scheduling',
+  ValidatorDataFlow = 'principal-events-validator-data-flow',
 }
 
 export enum AdditionalFeaturesId {
-  Tokens = 'Tokens',
-  TokenMinting = 'TokenMinting',
-  Collections = 'Collections',
-  TokenDistributionExchange = 'TokenDistributionExchange',
-  TokenDistributionApps = 'TokenDistributionApps',
   CollectionManagersVsTokenOwners = 'CollectionManagersVsTokenOwners',
+  Collections = 'Collections',
+  TokenDistributionApps = 'TokenDistributionApps',
+  TokenDistributionExchange = 'TokenDistributionExchange',
+  TokenMinting = 'TokenMinting',
 }
 
 export const principalEntitiesPath = ROUTES.whitepaper.principalEntities;
@@ -145,20 +144,16 @@ export const PATHNAME_TO_DROPDOWN_SELECTIONS: Record<string, {title: string; url
       url: `${principalEntitiesPath}#${PrincipleEntitiesId.Account}`,
     },
     {
-      title: 'Nodes',
-      url: `${principalEntitiesPath}#${PrincipleEntitiesId.Nodes}`,
-    },
-    {
       title: 'Blocks and Blockchain',
       url: `${principalEntitiesPath}#${PrincipleEntitiesId.BlocksAndBlockchain}`,
     },
     {
-      title: 'Validators',
-      url: `${principalEntitiesPath}#${PrincipleEntitiesId.Validators}`,
+      title: 'Nodes & Node Roles',
+      url: `${principalEntitiesPath}#${PrincipleEntitiesId.NodesAndNodeRoles}`,
     },
     {
-      title: 'Node Roles',
-      url: `${principalEntitiesPath}#${PrincipleEntitiesId.NodeRoles}`,
+      title: 'Validator Schedule',
+      url: `${principalEntitiesPath}#${PrincipleEntitiesId.ValidatorSchedule}`,
     },
     {
       title: 'Locked Coins and Boosts',
